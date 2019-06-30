@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<objectives xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>1. Evaluating the acquired knowledge fulfilment of the defined process objectives and its achievement of the aims of the study, the goals of the metabolomics investigation and its compliance with the research hypothesis and assumption.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>1. Evaluating the acquired knowledge fulfilment of the defined process objectives and its achievement of the aims of the study, the goals of the metabolomics investigation and its compliance with the research hypothesis and assumption.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>2. Evaluating the acquired knowledge against the results reported or published in the metabolomics literature which is relevant to the metabolomics research investigation, study and assay.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>2. Evaluating the acquired knowledge against the results reported or published in the metabolomics literature which is relevant to the metabolomics research investigation, study and assay.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>3. Validating the acquired knowledge according domain expert background experience and knowledge, based on biochemical principles and commonsense.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>3. Validating the acquired knowledge according domain expert background experience and knowledge, based on biochemical principles and commonsense.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>4. Identifying possible  investigation  questions  or hypotheses  propagated  by the acquired knowledge.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>4. Identifying  any possible  investigation  questions  or hypotheses  propagated  by the acquired knowledge.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <objectiveType>MANAGEMENT_RELATED</objectiveType>
+        <presetDescription>5. Knowledge evaluation activities which involve human judgements must be unbiased, traceable and reproducible.  It must be justified and backed with scientific evidences and the literature where possible.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>5. Knowledge evaluation activities which involve human judgements must be unbiased, traceable and reproducible.  It must be justified and backed with scientific evidences and the literature where possible.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <objectiveType>MANAGEMENT_RELATED</objectiveType>
+        <presetDescription>6. Knowledge evaluation must be performed from metabolomics and biochemical perspectives.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>6.Knowledge evaluation must be performed from metabolomics and biochemical perspectives.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+</objectives>

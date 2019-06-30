@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<preRequisites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <presetDescription>1. The pre-processed metabolomics dataset and its associated meta-data if available (see section 4.1).</presetDescription>
+        <customisedDescription>1. The pre-processed metabolomics dataset and its associated meta-data if available (see section 4.1).</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Inputs] -&gt; [Metabolomics Data] -&gt; Data Set</sourceElementPath>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <presetDescription>2. The defined process objectives.</presetDescription>
+        <customisedDescription>2. The defined process objectives.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Objectives Definition] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <presetDescription>3. The data exploration report, including: the results of data investigation, understanding and prospecting.</presetDescription>
+        <customisedDescription>3. The data exploration report, including: the results of data investigation, understanding and prospecting.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Data Exploration] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <presetDescription>4. The selected data mining technique(s), as chosen and reported in the previous phase.</presetDescription>
+        <customisedDescription>4. The selected data mining technique(s), as chosen and reported in the previous phase.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Technique Selection] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <presetDescription>5. The requirements of the implementation of the selected technique(s), including: software tools, hardware, and expertise, modelling inputs format, parameters, and expected outputs, as well as their application constraints, including: time, cost, and expertise as well as the availability of the software and hardware infrastructure.</presetDescription>
+        <customisedDescription>5. The requirements of the implementation of the selected technique(s), including: software tools, hardware, and expertise, modelling inputs format, parameters, and expected outputs, as well as their application constraints, including: time, cost, and expertise as well as the availability of the software and hardware infrastructure.</customisedDescription>
+        <preRequisiteType>OTHER</preRequisiteType>
+        <sources/>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <presetDescription>6. Background knowledge/information regarding the basics concepts of data processing in computing, including: databases, data types, data structures, file, and data format.</presetDescription>
+        <customisedDescription>6. Background knowledge/information regarding the basics concepts of data processing in computing, including: databases, data types, data structures, file, and data format.</customisedDescription>
+        <preRequisiteType>LITERATURE_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Maimon, O. and L. Rokach (2005). Data Mining and Knowledge Discovery Handbook. New York, NY, Springer.</description>
+                <externalSourceType>BOOK</externalSourceType>
+            </externalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <presetDescription>7. The process quality assurance policy.</presetDescription>
+        <customisedDescription>7. The process quality assurance policy.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Quality Assurance</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <presetDescription>8. The process standards.</presetDescription>
+        <customisedDescription>8. The process standards.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Standards</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+</preRequisites>

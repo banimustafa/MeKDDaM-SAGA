@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<planning xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>1. Examine  the nature  of the  dataset  and its associated  meta-data  if available,  e.g: data types, structure, size, and format.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>1. Examine  the nature  of the  dataset  and its associated  meta-data  if available,  e.g: data types, structure, size, and format.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Examining the nature of data, e.g. data types, structure, size, files and data format.</presetDescription>
+                <fulfilled>true</fulfilled>
+                <customisedDescription>1. Examining the nature of data, e.g. data types, structure, size, files and data format.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>2. Understanding the data by describing the meanings of data attributes and the scope of their values, as well as the relationship between their variables.</presetDescription>
+                <fulfilled>true</fulfilled>
+                <customisedDescription>2. Understanding the data by describing the meanings of data attributes and the scope of their values, as well as the relationship between their variables.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <resources>
+            <resourcesList xsi:type="resource">
+                <description>Ms Office</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+        </resources>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>2. Verify data understanding by explaining the meanings of their attributes and the scope of their values.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>2. Verify data understanding by explaining the meanings of their attributes and the scope of their values.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>2. Understanding the data by describing the meanings of data attributes and the scope of their values, as well as the relationship between their variables.</presetDescription>
+                <fulfilled>true</fulfilled>
+                <customisedDescription>2. Understanding the data by describing the meanings of data attributes and the scope of their values, as well as the relationship between their variables.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <resources>
+            <resourcesList xsi:type="resource">
+                <description>Weka</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>Ms Office</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+        </resources>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>3. Investigate the quality of the data, e.g: missing values, outliers, and distribution.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>3. Investigate the quality of the data, e.g: missing values, outliers, and distribution.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>3. Investigating  the  quality  of metabolomics  data,  depending,  either  on the  specific quality assurance standards provided as prerequisites to the phase, or on the general data quality standards defined in data mining, regarding data distribution, and the existence of missing values and outliers.</presetDescription>
+                <fulfilled>true</fulfilled>
+                <customisedDescription>3. Investigating  the  quality  of metabolomics  data,  depending,  either  on the  specific quality assurance standards provided as prerequisites to the phase, or on the general data quality standards defined in data mining, regarding data distribution, and the existence of missing values and outliers.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <resources>
+            <resourcesList xsi:type="resource">
+                <description>Weka</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>Metabo-Analyst</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>R</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+        </resources>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>4. Prospect the potential of the data based on the defined process objectives and using statistical measurements and other techniques discussed in chapter 4 (see section 4.6) and chapter 6 (see section 6.2.3).   </description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>4. Prospect the potential of the data based on the defined process objectives and using statistical measurements and other techniques discussed in chapter 4 (see section 4.6) and chapter 6 (see section 6.2.3).   </description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>4. Prospecting data for interesting distributions,  patterns,  and trends.   This can be carried  out  using  the  available  visualisation  tools,  basic  statistical  measurement, and other technique described in (see section 6.2.3.3), in order to provide a compre- hensive overview of data from different perspectives.</presetDescription>
+                <fulfilled>true</fulfilled>
+                <customisedDescription>4. Prospecting data for interesting distributions,  patterns,  and trends.   This can be carried  out  using  the  available  visualisation  tools,  basic  statistical  measurement, and other technique described in (see section 6.2.3.3), in order to provide a compre- hensive overview of data from different perspectives.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <resources>
+            <resourcesList xsi:type="resource">
+                <description>R</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>Weka</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>Metabo-Analyst</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+        </resources>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>5. Gain insight into the data trends, distribution, and relationships between its features.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>5. Gain insight into the data trends, distribution, and relationships between its features.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Computer Science Dept,
+ Aberysswtyth  University,  Wales, UK</contactDetails>
+            <name>Nigel Hardy</name>
+            <role>DOMAIN_EXPERT</role>
+            <level>POFESSIONAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>4. Prospecting data for interesting distributions,  patterns,  and trends.   This can be carried  out  using  the  available  visualisation  tools,  basic  statistical  measurement, and other technique described in (see section 6.2.3.3), in order to provide a compre- hensive overview of data from different perspectives.</presetDescription>
+                <fulfilled>true</fulfilled>
+                <customisedDescription>4. Prospecting data for interesting distributions,  patterns,  and trends.   This can be carried  out  using  the  available  visualisation  tools,  basic  statistical  measurement, and other technique described in (see section 6.2.3.3), in order to provide a compre- hensive overview of data from different perspectives.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+                <objectiveType>MANAGEMENT_RELATED</objectiveType>
+                <presetDescription>6. All  data exploration procedures must be comprehensive and thorough,  and must cover the entire data, and encompass all their related aspects.</presetDescription>
+                <fulfilled>true</fulfilled>
+                <customisedDescription>6. All  data exploration procedures must be comprehensive and thorough,  and must cover the entire data, and encompass all their related aspects.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <resources>
+            <resourcesList xsi:type="resource">
+                <description>R</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>Metabo-Analyst</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>Weka</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+        </resources>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>6. Confirm the relevance, sufficiency, and adequacy of data to fulfil the defined process objectives.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>6. Confirm the relevance, sufficiency, and adequacy of data to fulfil the defined process objectives.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>5. Verifying the sufficiency, adequacy and relevancy of metabolomics data to fulfil the defined modelling by investigating their nature and explaining the meanings of their attributes and values.</presetDescription>
+                <fulfilled>true</fulfilled>
+                <customisedDescription>5. Verifying the sufficiency, adequacy and relevancy of metabolomics data to fulfil the defined modelling by investigating their nature and explaining the meanings of their attributes and values.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <resources>
+            <resourcesList xsi:type="resource">
+                <description>Ms Office</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+        </resources>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+</planning>

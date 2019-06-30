@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<preRequisites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <presetDescription>1. The presented knowledge.</presetDescription>
+        <customisedDescription>1. The presented knowledge.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Knowledge Presentation] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <presetDescription>2. The defined process objectives</presetDescription>
+        <customisedDescription>2. The defined process objectives</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Objectives Definition] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <presetDescription>3. The aims of the metabolomics study and its investigation goals,  hypotheses,  and assumptions.</presetDescription>
+        <customisedDescription>3. The aims of the metabolomics study and its investigation goals,  hypotheses,  and assumptions.</customisedDescription>
+        <preRequisiteType>STUDY_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Scott, I. M., C. P. Vermeer, et al. (2010). &quot;Enhancement of Plant Metabolite Fingerprinting by Machine Learning.&quot; Plant Physiology 153(4): 1506-1520.</description>
+                <externalSourceType>JOURNAL</externalSourceType>
+                <url>http://www.plantphysiol.org/content/153/4/1506.abstract</url>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>lynn Presentation about the experimental design of HiMet Project</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Data/Plant_York_LC-MS_TargetAnalisis/Description/lynne.pdf</url>
+            </externalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <presetDescription>4. Background knowledge/information regarding the data mining approaches, goals and tasks, and their modelling techniques objectives.</presetDescription>
+        <customisedDescription>4. Background knowledge/information regarding the data mining approaches, goals and tasks, and their modelling techniques objectives.</customisedDescription>
+        <preRequisiteType>LITERATURE_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>BaniMustafa, A. (2012). A Knowledge Discovery and Data Mining Process Model for Metabolomics. PhD, University of Wales, Aberystwyth.</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDThesisWriting/PhDThesisLatex/PhDLatex/PhDThesis.pdf</url>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Maimon, O. and L. Rokach (2005). Data Mining and Knowledge Discovery Handbook. New York, NY, Springer.</description>
+                <externalSourceType>BOOK</externalSourceType>
+            </externalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <presetDescription>5. Domain expert background knowledge and experience</presetDescription>
+        <customisedDescription>5. Domain expert background knowledge and experience</customisedDescription>
+        <preRequisiteType>HUMAN_RELATED</preRequisiteType>
+        <sources>
+            <humanSourcesList xsi:type="humanSource">
+                <sourceType>HumanSource</sourceType>
+                <description>An expert in the field, who worked in several metabolmics studies</description>
+                <humanSource>
+                    <contactDetails> CS, Aberystwyth</contactDetails>
+                    <name>Nigel Hardy</name>
+                    <role>DOMAIN_EXPERT</role>
+                    <level>POFESSIONAL</level>
+                </humanSource>
+            </humanSourcesList>
+            <humanSourcesList xsi:type="humanSource">
+                <sourceType>HumanSource</sourceType>
+                <description>A main participant in HiMet project.</description>
+                <humanSource>
+                    <contactDetails>Department of Biology, Aberyswtyth</contactDetails>
+                    <name>Ian Scott</name>
+                    <role>BIOLOGIST</role>
+                    <level>POFESSIONAL</level>
+                </humanSource>
+            </humanSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <presetDescription>6. Metabolomics biochemical principles.</presetDescription>
+        <customisedDescription>6. Metabolomics biochemical principles.</customisedDescription>
+        <preRequisiteType>LITERATURE_RELATED</preRequisiteType>
+        <sources/>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <presetDescription>7. The results reported or published in the metabolomics literature which is relevant to the metabolomics research investigation, study and assay.</presetDescription>
+        <customisedDescription>7. The results reported or published in the metabolomics literature which is relevant to the metabolomics research investigation, study and assay.</customisedDescription>
+        <preRequisiteType>LITERATURE_RELATED</preRequisiteType>
+        <sources/>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:22 GMT 2012</dateTime>
+        <presetDescription>8. The process quality assurance policy.</presetDescription>
+        <customisedDescription>8. The process quality assurance policy.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Quality Assurance</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+</preRequisites>

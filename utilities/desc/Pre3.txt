@@ -1,0 +1,7 @@
+1. The pre-processed metabolomics dataset and its associated meta-data if available (see section 4.1).
+2. The defined objectives of the process.
+3. The aims of the metabolomics study.
+4. Background knowledge/information regarding the assay including its data acquisition technique (see section 2.6.5), metabolic approaches (see section 2.5), and study design (see section 2.6).
+5. Background knowledge/information regarding the basic statistical measures (see section 6.2.3.3) and data visualisation (see section 4.5).
+6. The process quality assurance policy.    
+7. The process standards.

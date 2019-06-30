@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<planning xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>1. Decide whether the results to be deployed as intermediates of a process iteration or as final results of a process termination.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>1. Decide whether the results to be deployed as intermediates of a process iteration or as final results of a process termination.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Computer Science Dept,
+ Aberysswtyth  University,  Wales, UK</contactDetails>
+            <name>Nigel Hardy</name>
+            <role>DOMAIN_EXPERT</role>
+            <level>POFESSIONAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Defining a mechanism of delivering, retaining, accessing and utilising the acquired data mining knowledge for a further analysis.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Defining a mechanism of delivering, retaining, accessing and utilising the acquired data mining knowledge for a further analysis.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>2. Deploying the acquired knowledge and its supplement deliveries, either as intermediate results of the process iteration or as final results.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>2. Deploying the acquired knowledge and its supplement deliveries, either as intermediate results of the process iteration or as final results.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>STANDARD_RELATED</objectiveType>
+                <presetDescription>7. Knowledge deployment should be carried out as a joint phase between data miner and domain expert (biologist).</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>7. Knowledge deployment should be carried out as a joint phase between data miner and domain expert (biologist).</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>STANDARD_RELATED</objectiveType>
+                <presetDescription>6. Knowledge must be based on the requirements and preferences of domain expert (biologist).</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>6. Knowledge must be based on the requirements and preferences of domain expert (biologist).</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>2. Identify the deliveries need to be reported as supplements of the acquired knowledge.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>2. Identify the deliveries need to be reported as supplements of the acquired knowledge.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Computer Science Dept,
+ Aberysswtyth  University,  Wales, UK</contactDetails>
+            <name>Nigel Hardy</name>
+            <role>DOMAIN_EXPERT</role>
+            <level>POFESSIONAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Defining a mechanism of delivering, retaining, accessing and utilising the acquired data mining knowledge for a further analysis.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Defining a mechanism of delivering, retaining, accessing and utilising the acquired data mining knowledge for a further analysis.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>STANDARD_RELATED</objectiveType>
+                <presetDescription>7. Knowledge deployment should be carried out as a joint phase between data miner and domain expert (biologist).</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>7. Knowledge deployment should be carried out as a joint phase between data miner and domain expert (biologist).</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>STANDARD_RELATED</objectiveType>
+                <presetDescription>6. Knowledge must be based on the requirements and preferences of domain expert (biologist).</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>6. Knowledge must be based on the requirements and preferences of domain expert (biologist).</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>3. Identify  the  requirements  of delivering;  retaining,  accessing  and utilising  the  acquired knowledge, e.g. file formats, user interfaces, system interfaces, required soft- ware tools, data bases, etc.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>3. Identify  the  requirements  of delivering;  retaining,  accessing  and utilising  the  acquired knowledge, e.g. file formats, user interfaces, system interfaces, required soft- ware tools, data bases, etc.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Computer Science Dept,
+ Aberysswtyth  University,  Wales, UK</contactDetails>
+            <name>Nigel Hardy</name>
+            <role>DOMAIN_EXPERT</role>
+            <level>POFESSIONAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>MANAGEMENT_RELATED</objectiveType>
+                <presetDescription>5. Knowledge  deployment  should  take  into  consideration  knowledge  utilisation  and possible future analysis.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>5. Knowledge  deployment  should  take  into  consideration  knowledge  utilisation  and possible future analysis.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Defining a mechanism of delivering, retaining, accessing and utilising the acquired data mining knowledge for a further analysis.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Defining a mechanism of delivering, retaining, accessing and utilising the acquired data mining knowledge for a further analysis.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <resources>
+            <resourcesList xsi:type="resource">
+                <description>PC</description>
+                <resourceType>HARDWARE</resourceType>
+                <cost>650.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <description>Printer</description>
+                        <resourceType>HARDWARE</resourceType>
+                        <cost>150.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                    <requirementsList xsi:type="resource">
+                        <description>Monitor (23&quot;)</description>
+                        <resourceType>HARDWARE</resourceType>
+                        <cost>500.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+        </resources>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>4. Define a mechanism of delivering,  retaining,  accessing,  and utilising the acquired knowledge and its supplement deliveries.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>4. Define a mechanism of delivering,  retaining,  accessing,  and utilising the acquired knowledge and its supplement deliveries.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>STANDARD_RELATED</objectiveType>
+                <presetDescription>6. Knowledge must be based on the requirements and preferences of domain expert (biologist).</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>6. Knowledge must be based on the requirements and preferences of domain expert (biologist).</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>MANAGEMENT_RELATED</objectiveType>
+                <presetDescription>5. Knowledge  deployment  should  take  into  consideration  knowledge  utilisation  and possible future analysis.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>5. Knowledge  deployment  should  take  into  consideration  knowledge  utilisation  and possible future analysis.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>5. Assess the  requirements  and constraints  of implementing  the  deployment  mechanism.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>5. Assess the  requirements  and constraints  of implementing  the  deployment  mechanism.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>STANDARD_RELATED</objectiveType>
+                <presetDescription>6. Knowledge must be based on the requirements and preferences of domain expert (biologist).</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>6. Knowledge must be based on the requirements and preferences of domain expert (biologist).</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>STANDARD_RELATED</objectiveType>
+                <presetDescription>7. Knowledge deployment should be carried out as a joint phase between data miner and domain expert (biologist).</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>7. Knowledge deployment should be carried out as a joint phase between data miner and domain expert (biologist).</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>4. Knowledge deployment must consider the availability and requirements of the possible knowledge delivery techniques, e.g.  software tools, data bases, hardware and expertise, as well as their constraints.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>4. Knowledge deployment must consider the availability and requirements of the possible knowledge delivery techniques, e.g.  software tools, data bases, hardware and expertise, as well as their constraints.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>3. Knowledge deployment should be carried out according to the requirements of domain expert and other stake holders if any.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>3. Knowledge deployment should be carried out according to the requirements of domain expert and other stake holders if any.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>6. Define a mechanism of deploying the acquired knowledge and its supplement deliveries, e.g. DBMS, software, web, based or embedded system (see section 6.2.10).</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>6. Define a mechanism of deploying the acquired knowledge and its supplement deliveries, e.g. DBMS, software, web, based or embedded system (see section 6.2.10).</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Defining a mechanism of delivering, retaining, accessing and utilising the acquired data mining knowledge for a further analysis.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Defining a mechanism of delivering, retaining, accessing and utilising the acquired data mining knowledge for a further analysis.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>7. Deploy the data acquired knowledge and its associated supplementary deliveries.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>7. Deploy the data acquired knowledge and its associated supplementary deliveries.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>2. Deploying the acquired knowledge and its supplement deliveries, either as intermediate results of the process iteration or as final results.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>2. Deploying the acquired knowledge and its supplement deliveries, either as intermediate results of the process iteration or as final results.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+</planning>

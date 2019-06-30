@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<objectives xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>1. Evaluating the data mining model validity using the decided testing data split.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>1. Evaluating the data mining model validity using the decided testing data split.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>2. Evaluate the data mining model achievement of the defined process objectives such as the data-driven objectives (e.g.  discover interesting or hidden patterns, trends, relationships in the data) or hypothesis driven objectives (e.g. classify samples into predefined classes or according to their natural occurrence classes)</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>2. Evaluate the data mining model achievement of the defined process objectives such as the data-driven objectives (e.g.  discover interesting or hidden patterns, trends, relationships in the data) or hypothesis driven objectives (e.g. classify samples into predefined classes or according to their natural occurrence classes)</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>3. Evaluate the data mining modelling success criteria defined in both objectives defi- nition and modelling techniques selection phases.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>3. Evaluate the data mining modelling success criteria defined in both objectives defi- nition and modelling techniques selection phases.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>4. Evaluate the data mining model performance using different measurements.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>4. Evaluate the data mining model performance using different measurements.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>5. Performance measurements must be correct, sufficient,  relevant and applicable to the data mining model.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>5. Performance measurements must be correct, sufficient,  relevant and applicable to the data mining model.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>NON_FUNCTIONAL</objectiveType>
+        <presetDescription>6. The data mining model should be neither over-fitted nor under-fitted.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>6. The data mining model should be neither over-fitted nor under-fitted.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>MANAGEMENT_RELATED</objectiveType>
+        <presetDescription>7. Model evaluation activities and procedures should be correct,  comprehensive and unbiased.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>7. Model evaluation activities and procedures should be correct,  comprehensive and unbiased.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>8. Model evaluation should be repeated each time a new data mining model is built or when the existing model is changed, adjusted or recreated.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>8. Model evaluation should be repeated each time a new data mining model is built or when the existing model is changed, adjusted or recreated.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+</objectives>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<preRequisites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetDescription>1. The data mining model.</presetDescription>
+        <customisedDescription>1. The data mining model.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Model Building] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetDescription>2. The data mining model evaluation.</presetDescription>
+        <customisedDescription>2. The data mining model evaluation.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Model Evaluation] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetDescription>3. The aims of the metabolomics study and its investigation goals,  hypotheses,  and assumptions.</presetDescription>
+        <customisedDescription>3. The aims of the metabolomics study and its investigation goals,  hypotheses,  and assumptions.</customisedDescription>
+        <preRequisiteType>STUDY_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Scott, I. M., C. P. Vermeer, et al. (2010). &quot;Enhancement of Plant Metabolite Fingerprinting by Machine Learning.&quot; Plant Physiology 153(4): 1506-1520.</description>
+                <externalSourceType>JOURNAL</externalSourceType>
+                <url>http://www.plantphysiol.org/content/153/4/1506.abstract</url>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>lynn Presentation about the experimental design of HiMet Project</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Data/Plant_York_LC-MS_TargetAnalisis/Description/lynne.pdf</url>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Maria Likata Presentation about the acquired data in HiMet Project</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Data/Plant_York_LC-MS_TargetAnalisis/Description/maria1.pdf</url>
+            </externalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetDescription>4. The domain expert requirements regarding the presentation knowledge.</presetDescription>
+        <customisedDescription>4. The domain expert requirements regarding the presentation knowledge.</customisedDescription>
+        <preRequisiteType>HUMAN_RELATED</preRequisiteType>
+        <sources/>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetDescription>5. Background knowledge/information regarding knowledge presentation recommended facilities, features, and best practices (see section 4.5).</presetDescription>
+        <customisedDescription>5. Background knowledge/information regarding knowledge presentation recommended facilities, features, and best practices (see section 4.5).</customisedDescription>
+        <preRequisiteType>LITERATURE_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>BaniMustafa, A. (2012). A Knowledge Discovery and Data Mining Process Model for Metabolomics. PhD, University of Wales, Aberystwyth.</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDThesisWriting/PhDThesisLatex/PhDLatex/PhDThesis.pdf</url>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Kantardzic, M. (2003). Data mining: concepts, models, methods, and algorithms. Hoboken, NJ, Wiley-Interscience : IEEE Press.</description>
+                <externalSourceType>BOOK</externalSourceType>
+            </externalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetDescription>6. Background knowledge/information regarding the available knowledge representation methods, techniques and tools (see section 6.2.8).</presetDescription>
+        <customisedDescription>6. Background knowledge/information regarding the available knowledge representation methods, techniques and tools (see section 6.2.8).</customisedDescription>
+        <preRequisiteType>LITERATURE_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>BaniMustafa, A. H. and N. W. Hardy (2012). A Strategy for Selecting Data Mining Techniques in Metabolomics (in press). Plant Metabolomics: Methods and Protocols. N. W. Hardy and R. D. Hall, Springer Science. 860: 317-335.</description>
+                <externalSourceType>BOOK_SECTION</externalSourceType>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Kantardzic, M. (2003). Data mining: concepts, models, methods, and algorithms. Hoboken, NJ, Wiley-Interscience : IEEE Press.</description>
+                <externalSourceType>BOOK</externalSourceType>
+            </externalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetDescription>7. The requirements of knowledge presentation tools, including: software tools, hard- ware and expertise as well as other necessary information regarding the model in- puts, parameters and expected outputs, as well as the constraints of their application.</presetDescription>
+        <customisedDescription>7. The requirements of knowledge presentation tools, including: software tools, hard- ware and expertise as well as other necessary information regarding the model in- puts, parameters and expected outputs, as well as the constraints of their application.</customisedDescription>
+        <preRequisiteType>OTHER</preRequisiteType>
+        <sources/>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetDescription>8. The process standards.</presetDescription>
+        <customisedDescription>8. The process standards.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Standards</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+</preRequisites>

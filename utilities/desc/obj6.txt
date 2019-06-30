@@ -1,0 +1,8 @@
+1. Building a data  mining model  using  the  metabolomics  data  acclimatised  in the previous phase to fulfil the defined process objectives.
+2. Training the model using the acclimatised data to reach its maturity level but at the same time avoiding the over-fitting of the model.
+3. The model must fulfil the defined process objectives.
+4. In the case of hypothesis driven data mining, the model must also be in line with the aims of the metabolomics study experiment hypothesis, assumption and research question.  If not, the model should provide the sufficient justification, reasoning or explanation of its results.
+5. The data mining model must be measurable and testable through model evaluation.
+6. The data mining model must be flexible and adjustable through changing its setting parameters and variables.
+7. The  model must  consider  the  requirements  of the  later  phases, including: model evaluation, knowledge presentation and evaluation, and results deployment.
+8. Training must avoid model over-fitting or under-fitting.

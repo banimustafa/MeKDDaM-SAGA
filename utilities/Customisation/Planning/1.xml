@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<planning xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>1. Review the aims of the study and their relationship with the investigation goals, hypotheses, and assumptions.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>1. Review the aims of the study and their relationship with the investigation goals, hypotheses, and assumptions.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Computer Science Dept,
+ Aberysswtyth  University,  Wales, UK</contactDetails>
+            <name>Nigel Hardy</name>
+            <role>COMPUTER_SCIENTIST</role>
+            <level>POFESSIONAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+                <objectiveType>MANAGEMENT_RELATED</objectiveType>
+                <presetDescription>2. The  objectives  should  be expressed,  either  in a hypothesis-driven  or data- driven fashion.  Hypothesis-driven objectives are derived from the aims of the metabolomics study, while data-driven objectives are derived from the goals of data mining and its subsequent tasks.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>2. The  objectives  should  be expressed,  either  in a hypothesis-driven  or data- driven fashion.  Hypothesis-driven objectives are derived from the aims of the metabolomics study, while data-driven objectives are derived from the goals of data mining and its subsequent tasks.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <resources>
+            <resourcesList xsi:type="resource">
+                <description>PC</description>
+                <resourceType>HARDWARE</resourceType>
+                <cost>650.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <description>Matlab Software License (Standard Edition)</description>
+                        <resourceType>SOFTWARE</resourceType>
+                        <cost>1200.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                    <requirementsList xsi:type="resource">
+                        <description>R (package)</description>
+                        <resourceType>SOFTWARE</resourceType>
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                    <requirementsList xsi:type="resource">
+                        <description>Printer</description>
+                        <resourceType>HARDWARE</resourceType>
+                        <cost>150.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                    <requirementsList xsi:type="resource">
+                        <description>Monitor (23&quot;)</description>
+                        <resourceType>HARDWARE</resourceType>
+                        <cost>500.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                    <requirementsList xsi:type="resource">
+                        <description>Weka</description>
+                        <resourceType>SOFTWARE</resourceType>
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+        </resources>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>2. Verify the general understanding of data mining goals, and tasks as discussed earlier (see section 3.3).</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>2. Verify the general understanding of data mining goals, and tasks as discussed earlier (see section 3.3).</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+                <objectiveType>MANAGEMENT_RELATED</objectiveType>
+                <presetDescription>3. The  objectives  must  be realistic  and achievable  using  data  mining techniques  in general (see section 3.4) and using the targeted metabolomics data, which must be sufficient, adequate, and relevant to the aims of the metabolomics study in order to test an implied hypothesis, or to discover a new knowledge.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>3. The  objectives  must  be realistic  and achievable  using  data  mining techniques  in general (see section 3.4) and using the targeted metabolomics data, which must be sufficient, adequate, and relevant to the aims of the metabolomics study in order to test an implied hypothesis, or to discover a new knowledge.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>3. Decide the type of the intended objectives. The objectives can be either hypothesis- driven, based on the aims of the metabolomics study, or data-driven, based on the general understanding of data mining approaches (see section 3.2).</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>3. Decide the type of the intended objectives. The objectives can be either hypothesis- driven, based on the aims of the metabolomics study, or data-driven, based on the general understanding of data mining approaches (see section 3.2).</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Umist, Manchester, England, UK</contactDetails>
+            <name>Roy Goodacre</name>
+            <role>DOMAIN_EXPERT</role>
+            <level>POFESSIONAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+                <objectiveType>MANAGEMENT_RELATED</objectiveType>
+                <presetDescription>2. The  objectives  should  be expressed,  either  in a hypothesis-driven  or data- driven fashion.  Hypothesis-driven objectives are derived from the aims of the metabolomics study, while data-driven objectives are derived from the goals of data mining and its subsequent tasks.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>2. The  objectives  should  be expressed,  either  in a hypothesis-driven  or data- driven fashion.  Hypothesis-driven objectives are derived from the aims of the metabolomics study, while data-driven objectives are derived from the goals of data mining and its subsequent tasks.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>4. Derive the modelling objectives depending on the type of data mining intended: (a) Hypothesis-driven objectives should be derived from and consistent with the goals of the original investigation, the research hypothesis and assumption, and the aims the metabolomics study. i. Analyse the relationship between the data mining approaches, goals, tasks, and techniques on one hand, and the aims of the metabolomics study on the other hand. Examples from the metabolomics literature are demonstrated in table 6.1 and section 6.2.1; ii.  Translate the aims of the metabolomics study into definable data mining modelling objectives, based on the general understanding of data mining goals and tasks (see section 3.3); (b)  Data-driven objectives should be derived from the general goals of data mining goals and its subsequent tasks (see section 3.2); i. Analyse the potential of the targeted dataset and its associated meta-data (if available) for fulfilling possible data mining goals and tasks as illustrated in figure 3.2 (see section 3.3). A more detailed data exploration can be performed later in phase 3; ii.  Translate the data mining general goals and tasks into narrow and more specific data mining objectives;
+</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>4. Derive the modelling objectives depending on the type of data mining intended:   Data-driven objectives should be derived from the general goals of data mining goals and its subsequent tasks (see section 3.2); i. Analyse the potential of the targeted dataset and its associated meta-data (if available) for fulfilling possible data mining goals and tasks as illustrated in figure 3.2 (see section 3.3). A more detailed data exploration can be performed later in phase 3; ii.  Translate the data mining general goals and tasks into narrow and more specific data mining objectives;</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Umist, Manchester, England, UK</contactDetails>
+            <name>Roy Goodacre</name>
+            <role>DOMAIN_EXPERT</role>
+            <level>POFESSIONAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+                <objectiveType>MANAGEMENT_RELATED</objectiveType>
+                <presetDescription>2. The  objectives  should  be expressed,  either  in a hypothesis-driven  or data- driven fashion.  Hypothesis-driven objectives are derived from the aims of the metabolomics study, while data-driven objectives are derived from the goals of data mining and its subsequent tasks.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>2. The  objectives  should  be expressed,  either  in a hypothesis-driven  or data- driven fashion.  Hypothesis-driven objectives are derived from the aims of the metabolomics study, while data-driven objectives are derived from the goals of data mining and its subsequent tasks.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>5. Assess the  derived  objectives  achievability  using  the  available  data  mining tech- niques (see section 3.4) and the targeted metabolomics data in terms of its suffi- ciency, adequacy, and relevance.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>5. Assess the  derived  objectives  achievability  using  the  available  data  mining tech- niques (see section 3.4) and the targeted metabolomics data in terms of its suffi- ciency, adequacy, and relevance.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+                <objectiveType>MANAGEMENT_RELATED</objectiveType>
+                <presetDescription>3. The  objectives  must  be realistic  and achievable  using  data  mining techniques  in general (see section 3.4) and using the targeted metabolomics data, which must be sufficient, adequate, and relevant to the aims of the metabolomics study in order to test an implied hypothesis, or to discover a new knowledge.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>3. The  objectives  must  be realistic  and achievable  using  data  mining techniques  in general (see section 3.4) and using the targeted metabolomics data, which must be sufficient, adequate, and relevant to the aims of the metabolomics study in order to test an implied hypothesis, or to discover a new knowledge.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>6. Assess the  derived  objectives  feasibility  in light  of the  process  management  and technical constraints.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>6. Assess the  derived  objectives  feasibility  in light  of the  process  management  and technical constraints.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+                <objectiveType>MANAGEMENT_RELATED</objectiveType>
+                <presetDescription>4. The objectives must be feasible.  It must take into consideration the process man- agement constraints, including: time, cost, and expertise as well as the availability of the software and hardware infrastructures.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>4. The objectives must be feasible.  It must take into consideration the process man- agement constraints, including: time, cost, and expertise as well as the availability of the software and hardware infrastructures.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>7. Depending on the results of the assessments in steps 5-6, decide whether to go to step 8, or to consider alternative objectives by going back to step 4.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>7. Depending on the results of the assessments in steps 5-6, decide whether to go to step 8, or to consider alternative objectives by going back to step 4.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+                <objectiveType>MANAGEMENT_RELATED</objectiveType>
+                <presetDescription>4. The objectives must be feasible.  It must take into consideration the process man- agement constraints, including: time, cost, and expertise as well as the availability of the software and hardware infrastructures.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>4. The objectives must be feasible.  It must take into consideration the process man- agement constraints, including: time, cost, and expertise as well as the availability of the software and hardware infrastructures.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+                <objectiveType>HUMAN_RELATED</objectiveType>
+                <presetDescription>5. The fulfilment of the objectives must be measurable and the success of their achiev- ability must be testable.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>5. The fulfilment of the objectives must be measurable and the success of their achiev- ability must be testable.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+                <objectiveType>MANAGEMENT_RELATED</objectiveType>
+                <presetDescription>3. The  objectives  must  be realistic  and achievable  using  data  mining techniques  in general (see section 3.4) and using the targeted metabolomics data, which must be sufficient, adequate, and relevant to the aims of the metabolomics study in order to test an implied hypothesis, or to discover a new knowledge.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>3. The  objectives  must  be realistic  and achievable  using  data  mining techniques  in general (see section 3.4) and using the targeted metabolomics data, which must be sufficient, adequate, and relevant to the aims of the metabolomics study in order to test an implied hypothesis, or to discover a new knowledge.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>8. Define the data mining objectives of the process and their success criteria.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>8. Define the data mining objectives of the process and their success criteria.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Defining the data mining modelling objectives for metabolomics.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Defining the data mining modelling objectives for metabolomics.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+</planning>

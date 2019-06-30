@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<preRequisites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:18 GMT 2012</dateTime>
+        <presetDescription>1. The pre-processed metabolomics dataset and its associated meta-data if available (see section 4.1).</presetDescription>
+        <customisedDescription>1. The pre-processed metabolomics dataset and its associated meta-data if available (see section 4.1).</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Inputs] -&gt; [Metabolomics Data] -&gt; Data Set</sourceElementPath>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:18 GMT 2012</dateTime>
+        <presetDescription>3. The data exploration report including the results of data investigation, understand- ing and prospecting.</presetDescription>
+        <customisedDescription>3. The data exploration report including the results of data investigation, understand- ing and prospecting.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Data Exploration] -&gt; Reporting</sourceElementPath>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:18 GMT 2012</dateTime>
+        <presetDescription>4. The defined process objectives.</presetDescription>
+        <customisedDescription>4. The defined process objectives.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Objectives Definition] -&gt; Reporting</sourceElementPath>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:18 GMT 2012</dateTime>
+        <presetDescription>5. The aims of the study and their relationship with the goals of the metabolomics investigation and its hypotheses and assumptions.</presetDescription>
+        <customisedDescription>5. The aims of the study and their relationship with the goals of the metabolomics investigation and its hypotheses and assumptions.</customisedDescription>
+        <preRequisiteType>STUDY_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Scott, I. M., C. P. Vermeer, et al. (2010). &quot;Enhancement of Plant Metabolite Fingerprinting by Machine Learning.&quot; Plant Physiology 153(4): 1506-1520.</description>
+                <externalSourceType>JOURNAL</externalSourceType>
+                <url>http://www.plantphysiol.org/content/153/4/1506.abstract</url>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>BaniMustafa, A. (2012). A Knowledge Discovery and Data Mining Process Model for Metabolomics. PhD, University of Wales, Aberystwyth.</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDThesisWriting/PhDThesisLatex/PhDLatex/PhDThesis.pdf</url>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>lynn Presentation about the experimental design of HiMet Project</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Data/Plant_York_LC-MS_TargetAnalisis/Description/lynne.pdf</url>
+            </externalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:18 GMT 2012</dateTime>
+        <presetDescription>6. Background information and/or knowledge regarding the data mining, including: its approaches (see section 3.2), goals, tasks (see section 3.3), and techniques (see section 3.4).</presetDescription>
+        <customisedDescription>6. Background information and/or knowledge regarding the data mining, including: its approaches (see section 3.2), goals, tasks (see section 3.3), and techniques (see section 3.4).</customisedDescription>
+        <preRequisiteType>LITERATURE_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>BaniMustafa, A. (2012). A Knowledge Discovery and Data Mining Process Model for Metabolomics. PhD, University of Wales, Aberystwyth.</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDThesisWriting/PhDThesisLatex/PhDLatex/PhDThesis.pdf</url>
+            </externalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:18 GMT 2012</dateTime>
+        <presetDescription>7. Background information regarding the requirements of data mining techniques application, including:  time, cost, and expertise as well as the availability of the software and hardware infrastructure.</presetDescription>
+        <customisedDescription>7. Background information regarding the requirements of data mining techniques application, including:  time, cost, and expertise as well as the availability of the software and hardware infrastructure.</customisedDescription>
+        <preRequisiteType>LITERATURE_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>BaniMustafa, A. (2012). A Knowledge Discovery and Data Mining Process Model for Metabolomics. PhD, University of Wales, Aberystwyth.</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDThesisWriting/PhDThesisLatex/PhDLatex/PhDThesis.pdf</url>
+            </externalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+</preRequisites>

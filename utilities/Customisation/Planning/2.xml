@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<planning xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>1. Review the defined process objectives and their relationship with the aims of the study.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>1. Review the defined process objectives and their relationship with the aims of the study.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+                <presetDescription>2. The data pre-processing must be carried out in light of the modelling objectives and should be consistent with the design and the aims of the metabolomics study and their relationships with the goals of the investigation, hypothesis and assumption.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>2. The data pre-processing must be carried out in light of the modelling objectives and should be consistent with the design and the aims of the metabolomics study and their relationships with the goals of the investigation, hypothesis and assumption.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>2. Identify the required data pre-processing procedures, based on the design of the metabolomics study and assays, including: the metabolic approach, sample preparation protocols, and the data acquisition technique.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>2. Identify the required data pre-processing procedures, based on the design of the metabolomics study and assays, including: the metabolic approach, sample preparation protocols, and the data acquisition technique.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Computer Science Dept,
+ Aberysswtyth  University,  Wales, UK</contactDetails>
+            <name>Nigel Hardy</name>
+            <role>DOMAIN_EXPERT</role>
+            <level>POFESSIONAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+                <presetDescription>5. The data pre-processing procedures must be comprehensive, adequate, and compatible with the requirements of the data acquisition assay, and must take into consideration the pre-processing procedures, which were already performed by the data acquisition technique.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>5. The data pre-processing procedures must be comprehensive, adequate, and compatible with the requirements of the data acquisition assay, and must take into consideration the pre-processing procedures, which were already performed by the data acquisition technique.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>3. Identify the requirements of the data pre-processing procedures.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>3. Identify the requirements of the data pre-processing procedures.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Computer Science Dept,
+ Aberysswtyth  University,  Wales, UK</contactDetails>
+            <name>Nigel Hardy</name>
+            <role>DOMAIN_EXPERT</role>
+            <level>POFESSIONAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+                <presetDescription>4. The requirements of the data pre-processing procedures must be considered including: time, cost, expertise as well as software and hardware infrastructures.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>4. The requirements of the data pre-processing procedures must be considered including: time, cost, expertise as well as software and hardware infrastructures.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>4. Perform the data pre-processing procedures and record their purpose and description.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>4. Perform the data pre-processing procedures and record their purpose and description.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+                <presetDescription>5. The data pre-processing procedures must be comprehensive, adequate, and compatible with the requirements of the data acquisition assay, and must take into consideration the pre-processing procedures, which were already performed by the data acquisition technique.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>5. The data pre-processing procedures must be comprehensive, adequate, and compatible with the requirements of the data acquisition assay, and must take into consideration the pre-processing procedures, which were already performed by the data acquisition technique.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+                <presetDescription>1. Pre-process the metabolomics data.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Pre-process the metabolomics data.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+</planning>

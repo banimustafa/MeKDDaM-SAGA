@@ -1,0 +1,7 @@
+1. Examining the nature of data, e.g. data types, structure, size, files and data format.
+2. Understanding the data by describing the meanings of data attributes and the scope of their values, as well as the relationship between their variables.
+3. Investigating  the  quality  of metabolomics  data,  depending,  either  on the  specific quality assurance standards provided as prerequisites to the phase, or on the general data quality standards defined in data mining, regarding data distribution, and the existence of missing values and outliers.
+4. Prospecting data for interesting distributions,  patterns,  and trends.   This can be carried  out  using  the  available  visualisation  tools,  basic  statistical  measurement, and other technique described in (see section 6.2.3.3), in order to provide a compre- hensive overview of data from different perspectives.
+5. Verifying the sufficiency, adequacy and relevancy of metabolomics data to fulfil the defined modelling by investigating their nature and explaining the meanings of their attributes and values.
+6. All  data exploration procedures must be comprehensive and thorough,  and must cover the entire data, and encompass all their related aspects.
+7. All data exploration must be carried out in light of the defined process objectives, and in the case of hypothesis driven data mining,must also be in line with the aims of metabolomics study and with the goals, hypothesis and assumptions of its research investigation.

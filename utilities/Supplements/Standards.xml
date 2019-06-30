@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<standards xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="">
+    <standardsList xsi:type="standard" version="1">
+        <dateTime>Wed Mar 21 16:53:51 GMT 2012</dateTime>
+        <description>Data Mining Standards</description>
+        <standardType>DATA_MINING</standardType>
+        <specificationURL>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Documents/standards/data mining standards initiative.pdf</specificationURL>
+        <release>1.0</release>
+    </standardsList>
+    <standardsList xsi:type="standard" version="1">
+        <dateTime>Wed Mar 21 16:53:51 GMT 2012</dateTime>
+        <description>standarads for perfroming Metabolomics data analysis</description>
+        <standardType>METABOLOMICS</standardType>
+        <specificationURL>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Documents/standards/Data Analsysis Standards in metabolomics.pdf</specificationURL>
+        <release>1.0</release>
+    </standardsList>
+    <standardsList xsi:type="standard" version="1">
+        <dateTime>Wed Mar 21 16:53:51 GMT 2012</dateTime>
+        <description>Metabolmics standards Initiative</description>
+        <standardType>METABOLOMICS</standardType>
+        <specificationURL>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Documents/standards/MSI Standards Initiative.pdf</specificationURL>
+        <release>1.0</release>
+    </standardsList>
+    <standardsList xsi:type="standard" version="1">
+        <dateTime>Wed Mar 21 16:53:51 GMT 2012</dateTime>
+        <description>An Overview of PMML Version 3.0</description>
+        <standardType>REPORTING</standardType>
+        <specificationURL>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Documents/standards/An Overview of PMML.pdf</specificationURL>
+        <release>3.0</release>
+    </standardsList>
+</standards>

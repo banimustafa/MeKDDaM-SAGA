@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<preRequisites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetDescription>1. The metabolomics dataset and its associated meta-data if available (see section 4.1).</presetDescription>
+        <customisedDescription>1. The metabolomics dataset and its associated meta-data if available (see section 4.1).</customisedDescription>
+        <preRequisiteType>STUDY_RELATED</preRequisiteType>
+        <sources/>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetDescription>2. The aims of the metabolomics study and its investigation goals,  hypotheses,  and assumptions.</presetDescription>
+        <customisedDescription>2. The aims of the metabolomics study and its investigation goals,  hypotheses,  and assumptions.</customisedDescription>
+        <preRequisiteType>STUDY_RELATED</preRequisiteType>
+        <sources>
+            <humanSourcesList xsi:type="humanSource">
+                <sourceType>HumanSource</sourceType>
+                <description>an expert in the field, who worked in several metabolmics studies</description>
+                <humanSource>
+                    <contactDetails> CS, Aberystwyth</contactDetails>
+                    <name>Nigel Hardy</name>
+                    <role>DOMAIN_EXPERT</role>
+                    <level>POFESSIONAL</level>
+                </humanSource>
+            </humanSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetDescription>3. Background knowledge/information regarding data mining including its approaches (see section 3.2), goals, tasks (see section 3.3), and techniques (see section 3.4).</presetDescription>
+        <customisedDescription>3. Background knowledge/information regarding data mining including its approaches (see section 3.2), goals, tasks (see section 3.3), and techniques (see section 3.4).</customisedDescription>
+        <preRequisiteType>LITERATURE_RELATED</preRequisiteType>
+        <sources>
+            <humanSourcesList xsi:type="humanSource">
+                <sourceType>HumanSource</sourceType>
+                <description>Has a degree in computer science and a master in software engineering</description>
+                <humanSource>
+                    <contactDetails> Aberystwyth, Wales</contactDetails>
+                    <name>Ahmed</name>
+                    <role>COMPUTER_SCIENTIST</role>
+                    <level>NORMAL</level>
+                </humanSource>
+            </humanSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetDescription>4. Background knowledge/information regarding project management and plan- ning (see section 4.4.1).
+</presetDescription>
+        <customisedDescription>4. Background knowledge/information regarding project management and plan- ning (see section 4.4.1).</customisedDescription>
+        <preRequisiteType>HUMAN_RELATED</preRequisiteType>
+        <sources>
+            <humanSourcesList xsi:type="humanSource">
+                <sourceType>HumanSource</sourceType>
+                <description>Has a degree in computer science and a master in software engineering</description>
+                <humanSource>
+                    <contactDetails> Aberystwyth, Wales</contactDetails>
+                    <name>Ahmed</name>
+                    <role>COMPUTER_SCIENTIST</role>
+                    <level>NORMAL</level>
+                </humanSource>
+            </humanSourcesList>
+            <humanSourcesList xsi:type="humanSource">
+                <sourceType>HumanSource</sourceType>
+                <description>an expert in the field, who worked in several metabolmics studies</description>
+                <humanSource>
+                    <contactDetails> CS, Aberystwyth</contactDetails>
+                    <name>Nigel Hardy</name>
+                    <role>DOMAIN_EXPERT</role>
+                    <level>POFESSIONAL</level>
+                </humanSource>
+            </humanSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetDescription>5. The process management constraints, including: time, cost, and expertise as well as the availability of the software and hardware infrastructure.
+</presetDescription>
+        <customisedDescription>5. The process management constraints, including: time, cost, and expertise as well as the availability of the software and hardware infrastructure.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> Project Info</sourceElementPath>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetDescription>6. The process quality assurance policy.</presetDescription>
+        <customisedDescription>6. The process quality assurance policy.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Quality Assurance</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <presetDescription>7. The process standards.</presetDescription>
+        <customisedDescription>7. The process standards.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Standards</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+</preRequisites>

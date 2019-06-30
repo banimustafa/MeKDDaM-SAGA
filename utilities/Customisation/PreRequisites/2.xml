@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<preRequisites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>1. The metabolomics dataset and its associated meta-data if available (see section 4.1).</presetDescription>
+        <customisedDescription>1. The metabolomics dataset and its associated meta-data if available (see section 4.1).</customisedDescription>
+        <preRequisiteType>STUDY_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Inputs] -&gt; [Metabolomics Data] -&gt; Data Set</sourceElementPath>
+            </internalSourcesList>
+        </sources>
+        <required>true</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>2. The defined objectives of the process.</presetDescription>
+        <customisedDescription>2. The defined objectives of the process.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Objectives Definition] -&gt; Reporting</sourceElementPath>
+            </internalSourcesList>
+        </sources>
+        <required>true</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>3. The aims of the metabolomics study.</presetDescription>
+        <customisedDescription>3. The aims of the metabolomics study.</customisedDescription>
+        <preRequisiteType>STUDY_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Scott, I. M., C. P. Vermeer, et al. (2010). &quot;Enhancement of Plant Metabolite Fingerprinting by Machine Learning.&quot; Plant Physiology 153(4): 1506-1520.</description>
+                <externalSourceType>JOURNAL</externalSourceType>
+                <url>http://www.plantphysiol.org/content/153/4/1506.abstract</url>
+            </externalSourcesList>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Inputs] -&gt; Aims of Study</sourceElementPath>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>4. The design of the metabolomics study and the assay which was used for acquiring the data. This must includes details regarding the bio-sample and sampling protocols, as well as sample preparation procedures and data acquisition including any pre-processing procedures already performed on the level of the assay.</presetDescription>
+        <customisedDescription>4. The design of the metabolomics study and the assay which was used for acquiring the data. This must includes details regarding the bio-sample and sampling protocols, as well as sample preparation procedures and data acquisition including any pre-processing procedures already performed on the level of the assay.</customisedDescription>
+        <preRequisiteType>STUDY_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Scott, I. M., C. P. Vermeer, et al. (2010). &quot;Enhancement of Plant Metabolite Fingerprinting by Machine Learning.&quot; Plant Physiology 153(4): 1506-1520.</description>
+                <externalSourceType>JOURNAL</externalSourceType>
+                <url>http://www.plantphysiol.org/content/153/4/1506.abstract</url>
+            </externalSourcesList>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Inputs] -&gt; Aims of Study</sourceElementPath>
+            </internalSourcesList>
+        </sources>
+        <required>true</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>5. Background knowledge/Information regarding metabolomics in general (see chapter 2), metabolic approaches (see section 2.5), design of metabolomics study (see section 2.6), data acquisition techniques (see section 2.6.5) and data pre-processing procedures in general (see section 4.1).</presetDescription>
+        <customisedDescription>5. Background knowledge/Information regarding metabolomics in general (see chapter 2), metabolic approaches (see section 2.5), design of metabolomics study (see section 2.6), data acquisition techniques (see section 2.6.5) and data pre-processing procedures in general (see section 4.1).</customisedDescription>
+        <preRequisiteType>LITERATURE_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>BaniMustafa, A. (2012). A Knowledge Discovery and Data Mining Process Model for Metabolomics. PhD, University of Wales, Aberystwyth.</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDThesisWriting/PhDThesisLatex/PhDLatex/PhDThesis.pdf</url>
+            </externalSourcesList>
+        </sources>
+        <required>true</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>6. The process quality assurance policy.</presetDescription>
+        <customisedDescription>6. The process quality assurance policy.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Quality Assurance</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>7. The process standards.</presetDescription>
+        <customisedDescription>7. The process standards.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Standards</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+</preRequisites>

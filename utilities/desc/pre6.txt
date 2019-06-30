@@ -1,0 +1,5 @@
+1. The acclimatised metabolomics dataset allocated for model building and training and its associated meta-data if available.
+2. The selected data mining technique.
+3. The defined process objectives.
+4. The requirements of the selected data mining technique implementation, including: software tools, hardware and expertise as well as other necessary information regarding the model inputs, parameters, and expected outputs, as well as the constraints of their application.
+6. The process standards.

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<preRequisites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <presetDescription>1. The acclimatised metabolomics dataset allocated for model testing and its associated meta-data if available.</presetDescription>
+        <customisedDescription>1. The acclimatised metabolomics dataset allocated for model testing and its associated meta-data if available.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Data Acclimatisation] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <presetDescription>2. The data mining model.</presetDescription>
+        <customisedDescription>2. The data mining model.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Model Building] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <presetDescription>3. The data mining model requirements, including: software tools, hardware and expertise as well as other necessary information regarding the model inputs, parameters, and expected outputs, as well as the constraints of their application.</presetDescription>
+        <customisedDescription>3. The data mining model requirements, including: software tools, hardware and expertise as well as other necessary information regarding the model inputs, parameters, and expected outputs, as well as the constraints of their application.</customisedDescription>
+        <preRequisiteType>OTHER</preRequisiteType>
+        <sources/>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <presetDescription>4. The defined process objectives.</presetDescription>
+        <customisedDescription>4. The defined process objectives.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Objectives Definition] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <presetDescription>5. Background knowledge/information  regarding the model evaluation (see  section 6.2.7).</presetDescription>
+        <customisedDescription>5. Background knowledge/information  regarding the model evaluation (see  section 6.2.7).</customisedDescription>
+        <preRequisiteType>LITERATURE_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>BaniMustafa, A. (2012). A Knowledge Discovery and Data Mining Process Model for Metabolomics. PhD, University of Wales, Aberystwyth.</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDThesisWriting/PhDThesisLatex/PhDLatex/PhDThesis.pdf</url>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Kantardzic, M. (2003). Data mining: concepts, models, methods, and algorithms. Hoboken, NJ, Wiley-Interscience : IEEE Press.</description>
+                <externalSourceType>BOOK</externalSourceType>
+            </externalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <presetDescription>6. The process quality assurance policy.</presetDescription>
+        <customisedDescription>6. The process quality assurance policy</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Quality Assurance</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+</preRequisites>
