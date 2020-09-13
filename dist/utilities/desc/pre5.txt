@@ -1,0 +1,8 @@
+1. The pre-processed metabolomics dataset and its associated meta-data if available (see section 4.1).
+2. The defined process objectives.
+3. The data exploration report, including: the results of data investigation, understanding and prospecting.
+4. The selected data mining technique(s), as chosen and reported in the previous phase.
+5. The requirements of the implementation of the selected technique(s), including: software tools, hardware, and expertise, modelling inputs format, parameters, and expected outputs, as well as their application constraints, including: time, cost, and expertise as well as the availability of the software and hardware infrastructure.
+6. Background knowledge/information regarding the basics concepts of data processing in computing, including: databases, data types, data structures, file, and data format.
+7. The process quality assurance policy.    
+8. The process standards.

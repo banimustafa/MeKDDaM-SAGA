@@ -1,0 +1,6 @@
+1. Defining the data mining modelling objectives for metabolomics.
+2. Modelling  objectives  should  be expressed,  either  in a hypothesis-driven  or data- driven fashion.  Hypothesis-driven objectives are derived from the aims of the metabolomics study, while data-driven objectives are derived from the goals of data mining and its subsequent tasks.
+3. The objectives  must  be realistic  and achievable  using  data  mining techniques  in general (see section 3.4) and using the targeted metabolomics data, which must be sufficient, adequate, and relevant to the aims of the metabolomics study in order to test an implied hypothesis, or to discover a new knowledge.
+4. The objectives must be feasible.  It must take into consideration the process man- agement constraints, including: time, cost, and expertise as well as the availability of the software and hardware infrastructures.
+5. The fulfilment of the objectives must be measurable and the success of their achiev- ability must be testable.
+6. The objectives must be flexible and adjustable in case of altering the process flow as a result a feedback or iteration.

@@ -1,0 +1,10 @@
+1. Background knowledge/information regarding the available deployment options (see section 6.2.10), mechanisms, techniques and implementation requirements, including: software tools, hardware and expertise as well as other necessary information regarding the model inputs, parameters and expected outputs, as well as the constraints of their application.
+2. The aims of the metabolomics study and its investigation goals,  hypotheses,  and assumptions.
+3. The defined process objectives
+4. The justification of data mining technique selection.
+5. The acclimatised data.
+6. The data mining model.
+7. The model evaluation report.
+8. The presented knowledge.
+9. Knowledge evaluation.
+10.The process standards.

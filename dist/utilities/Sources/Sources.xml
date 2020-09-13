@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="">
+    <humanSourcesList xsi:type="humanSource">
+        <sourceType>HumanSource</sourceType>
+        <description>An expert in the field, who worked in several metabolmics studies</description>
+        <humanSource>
+            <contactDetails> CS, Aberystwyth</contactDetails>
+            <name>Nigel Hardy</name>
+            <role>DOMAIN_EXPERT</role>
+            <level>POFESSIONAL</level>
+        </humanSource>
+    </humanSourcesList>
+    <humanSourcesList xsi:type="humanSource">
+        <sourceType>HumanSource</sourceType>
+        <description>Has a degree in computer science and a master in software engineering</description>
+        <humanSource>
+            <contactDetails> Aberystwyth, Wales</contactDetails>
+            <name>Ahmed</name>
+            <role>COMPUTER_SCIENTIST</role>
+            <level>NORMAL</level>
+        </humanSource>
+    </humanSourcesList>
+    <humanSourcesList xsi:type="humanSource">
+        <sourceType>HumanSource</sourceType>
+        <description>A main participant in HiMet project.</description>
+        <humanSource>
+            <contactDetails>Department of Biology, Aberyswtyth</contactDetails>
+            <name>Ian Scott</name>
+            <role>BIOLOGIST</role>
+            <level>POFESSIONAL</level>
+        </humanSource>
+    </humanSourcesList>
+    <humanSourcesList xsi:type="humanSource">
+        <sourceType>HumanSource</sourceType>
+        <description>Data Analyst in HiMet Project.</description>
+        <humanSource>
+            <contactDetails>CS, Aberystwyth University</contactDetails>
+            <name>Maria Liakata</name>
+            <role>STATISTICIAN</role>
+            <level>NORMAL</level>
+        </humanSource>
+    </humanSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Maimon, O. and L. Rokach (2005). Data Mining and Knowledge Discovery Handbook. New York, NY, Springer.</description>
+        <externalSourceType>BOOK</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Metabolmics Data Acquistion Techniques</description>
+        <externalSourceType>MANUAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Metabolmics Study Design</description>
+        <externalSourceType>REPORT</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Scott, I. M., C. P. Vermeer, et al. (2010). &quot;Enhancement of Plant Metabolite Fingerprinting by Machine Learning.&quot; Plant Physiology 153(4): 1506-1520.</description>
+        <externalSourceType>JOURNAL</externalSourceType>
+        <url>http://www.plantphysiol.org/content/153/4/1506.abstract</url>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>lynn Presentation about the experimental design of HiMet Project</description>
+        <externalSourceType>OTHER</externalSourceType>
+        <url>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Data/Plant_York_LC-MS_TargetAnalisis/Description/lynne.pdf</url>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Maria Likata Presentation about the acquired data in HiMet Project</description>
+        <externalSourceType>OTHER</externalSourceType>
+        <url>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Data/Plant_York_LC-MS_TargetAnalisis/Description/maria1.pdf</url>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>BaniMustafa, A. (2012). A Knowledge Discovery and Data Mining Process Model for Metabolomics. PhD, University of Wales, Aberystwyth.</description>
+        <externalSourceType>OTHER</externalSourceType>
+        <url>file:/E:/PhD/PhD/PhDThesis/PhDThesisWriting/PhDThesisLatex/PhDLatex/PhDThesis.pdf</url>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Baumgartner, C. and A. Graber (2008). Data mining and knowledge discovery in metabolomics. Successes and New Directions in Data Mining. P. Poncelet, F. Masseglia and M. Teisseire. Hershey, NY, Information Science Reference - IGI Gloabal: 141–166.</description>
+        <externalSourceType>BOOK</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Witten, I. and E. Frank (2005). Data Mining: Practical machine learning tools and techniques. San Francisco, Morgan Kaufmann.</description>
+        <externalSourceType>BOOK</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Maojo, V. and J. Sanandrés (2000). A Survey of Data Mining Techniques. Medical Data Analysis. G. Goos, J. Hartmanis and J. v. Leeuwen, Springer Berlin / Heidelberg. 1933: 77-92.</description>
+        <externalSourceType>BOOK</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Thearling, K., B. Becker, et al. (2002). Visualizing Data Mining Models. Information visualization in data mining and knowledge discovery. U. M. Fayyad, G. G. Grinstein and A. Wierse. San Francisco, Calif. ; London, Morgan Kaufmann.</description>
+        <externalSourceType>BOOK</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>BaniMustafa, A. H. and N. W. Hardy (2012). A Strategy for Selecting Data Mining Techniques in Metabolomics (in press). Plant Metabolomics: Methods and Protocols. N. W. Hardy and R. D. Hall, Springer Science. 860: 317-335.</description>
+        <externalSourceType>BOOK_SECTION</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Van Den Berg, R., H. Hoefsloot, et al. (2006). &quot;Centering, scaling, and transformations: improving the biological information content of metabolomics data.&quot; BMC Genomics 7(1): 142.</description>
+        <externalSourceType>JOURNAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Burke, S. (2001). &quot;Missing Values, Outliers, Robust statistics &amp; Non-parametric Methods.&quot; LCGC Online Supplement: 19-24.</description>
+        <externalSourceType>JOURNAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Kantardzic, M. (2003). Data mining: concepts, models, methods, and algorithms. Hoboken, NJ, Wiley-Interscience : IEEE Press.</description>
+        <externalSourceType>BOOK</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Boccard, J., J.-L. Veuthey, et al. (2010). &quot;Knowledge discovery in metabolomics: An overview of MS data handling.&quot; Journal of Separation Science 33(3): 290-304.</description>
+        <externalSourceType>BOOK</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Xia, J., N. Psychogios, et al. (2009). &quot;MetaboAnalyst: a web server for metabolomic data analysis and interpretation.&quot; Nucleic Acids Research 37(suppl_2): W652-660.</description>
+        <externalSourceType>JOURNAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Kalogeropoulou, A. (2011). Pre-Processing And Analysis Of High-Dimensional Plant Metabolomics Data. MPhil, University of East Anglia.</description>
+        <externalSourceType>OTHER</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Sonego, P., A. Kocsor, et al. (2008). &quot;ROC analysis: applications to the classification of biological sequences and 3D structures.&quot; Briefings in Bioinformatics 9(3): 198-209.</description>
+        <externalSourceType>JOURNAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Vuk, M. and T. Curk (2006). &quot;ROC Curve, Lift Chart and Calibration Plot.&quot; Metodolo ški zvezki 3(1): 89-108.</description>
+        <externalSourceType>JOURNAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Rakotomalala, R. (2005). &quot;TANAGRA, an Experimental Platform for Data Mining.&quot; Revue MODULAD 32: 70-85.</description>
+        <externalSourceType>JOURNAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Demsar, J., B. Zupan, et al. (2004). Orange: From Experimental Machine Learning to Interactive Data Mining. Knowledge Discovery in Databases: PKDD 2004
+J.-F. Boulicaut, F. Esposito, F. Giannotti and D. Pedreschi, Springer Berlin / Heidelberg. 3202: 537-539.</description>
+        <externalSourceType>JOURNAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Brodsky, L., A. Moussaieff, et al. (2010). &quot;Evaluation of Peak Picking Quality in LC−MS Metabolomics Data.&quot; Analytical Chemistry 82(22): 9177-9187.</description>
+        <externalSourceType>JOURNAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Wishart, D. S. (2007). &quot;Current Progress in computational metabolomics.&quot; Briefings in Bioinformatics 8(5): 279-293.</description>
+        <externalSourceType>JOURNAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Ametaj, B., Q. Zebeli, et al. (2010). &quot;Metabolomics reveals unhealthy alterations in rumen metabolism with increased proportion of cereal grain in the diet of dairy cows.&quot; Metabolomics 6(4): 583-594.</description>
+        <externalSourceType>JOURNAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Raspl, S. (2004). An Overview of PMML Version 3.0. KDD-2004 Workshop on Data Mining Standards, Services and Platforms (DM-SSP 04), Seattle, WA, ACM SIGKDD.</description>
+        <externalSourceType>MANUAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Guazzelli, A., M. Zeller, et al. (2009). &quot;PMML: An Open Standard for Sharing Models.&quot; The R Journal 1(1): 60-65.</description>
+        <externalSourceType>JOURNAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>González-Aranda, P., E. Menasalvas, et al. (2008). Towards a Methodology for Data Mining Project Development: The Importance of Abstraction. Data Mining: Foundations and Practice. T. Y. Lin, Y. Xie, A. Wasilewska and C.-J. Liau. Berlin / Heidelberg, Springer 118/2008: 165-178.</description>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Katajamaa, M. and M. Oresic (2005). &quot;Processing methods for differential analysis of LC/MS profile data.&quot; BMC Bioinformatics 6(1): 179.</description>
+        <externalSourceType>JOURNAL</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Heldman, K. (2005). Project Management Jumpstart. San Francisco, CA, SYBEX Inc.</description>
+        <externalSourceType>BOOK</externalSourceType>
+    </externalSourcesList>
+    <externalSourcesList xsi:type="externalSource">
+        <sourceType>ExternalSource</sourceType>
+        <description>Kerzner, H. (2003). Project management : a systems approach to planning, scheduling, and controlling. New York ; Chichester, Wiley.</description>
+        <externalSourceType>BOOK</externalSourceType>
+    </externalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> Project Info</sourceElementPath>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Inputs] -&gt; [Metabolomics Data] -&gt; Data Set</sourceElementPath>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Inputs] -&gt; [Metabolomics Data] -&gt; Meta Data</sourceElementPath>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Inputs] -&gt; Aims of Study</sourceElementPath>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Objectives Definition] -&gt; Reporting</sourceElementPath>
+        <sourceElementString>Reporting</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Data Pre-Processing] -&gt; Reporting</sourceElementPath>
+        <sourceElementString>Reporting</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Data Exploration] -&gt; Reporting</sourceElementPath>
+        <sourceElementString>Reporting</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Technique Selection] -&gt; Reporting</sourceElementPath>
+        <sourceElementString>Reporting</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Data Acclimatisation] -&gt; Reporting</sourceElementPath>
+        <sourceElementString>Reporting</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Model Building] -&gt; Reporting</sourceElementPath>
+        <sourceElementString>Reporting</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Model Evaluation] -&gt; Reporting</sourceElementPath>
+        <sourceElementString>Reporting</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Knowledge Presentation] -&gt; Reporting</sourceElementPath>
+        <sourceElementString>Reporting</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Knowledge Evaluation] -&gt; Reporting</sourceElementPath>
+        <sourceElementString>Reporting</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Deployment] -&gt; Reporting</sourceElementPath>
+        <sourceElementString>Reporting</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Process Evaluation] -&gt; Reporting</sourceElementPath>
+        <sourceElementString>Reporting</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; results</sourceElementPath>
+        <sourceElementString>String</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Human Interaction</sourceElementPath>
+        <sourceElementString>String</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Process Management</sourceElementPath>
+        <sourceElementString>String</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Quality Assurance</sourceElementPath>
+        <sourceElementString>String</sourceElementString>
+    </internalSourcesList>
+    <internalSourcesList xsi:type="internalSource">
+        <sourceType>InternalSource</sourceType>
+        <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Standards</sourceElementPath>
+        <sourceElementString>String</sourceElementString>
+    </internalSourcesList>
+</sources>

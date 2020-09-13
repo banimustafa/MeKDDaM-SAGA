@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<management xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="">
+    <constraint>
+        <totalFunds>50000.0</totalFunds>
+        <totalDuration>180.0</totalDuration>
+        <usedFunds>25650.0</usedFunds>
+        <elapsedTime>0.0</elapsedTime>
+    </constraint>
+    <resources>
+        <resourcesList xsi:type="resource">
+            <description>PC</description>
+            <resourceType>HARDWARE</resourceType>
+            <cost>650.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <description>Printer</description>
+                    <resourceType>HARDWARE</resourceType>
+                    <cost>150.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+                <requirementsList xsi:type="resource">
+                    <description>Monitor (23&quot;)</description>
+                    <resourceType>HARDWARE</resourceType>
+                    <cost>500.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+        <resourcesList xsi:type="resource">
+            <description>Labtop</description>
+            <resourceType>HARDWARE</resourceType>
+            <cost>750.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <description>R Package</description>
+                    <resourceType>SOFTWARE</resourceType>
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+                <requirementsList xsi:type="resource">
+                    <description>MikeTex</description>
+                    <resourceType>SOFTWARE</resourceType>
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+                <requirementsList xsi:type="resource">
+                    <description>Weka</description>
+                    <resourceType>SOFTWARE</resourceType>
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+        <resourcesList xsi:type="resource">
+            <description>Statistician</description>
+            <resourceType>HUMAN</resourceType>
+            <cost>4000.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <description>PC</description>
+                    <resourceType>HARDWARE</resourceType>
+                    <cost>500.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+                <requirementsList xsi:type="resource">
+                    <description>MatLab</description>
+                    <resourceType>SOFTWARE</resourceType>
+                    <cost>1200.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+        <resourcesList xsi:type="resource">
+            <description>Weka</description>
+            <resourceType>SOFTWARE</resourceType>
+            <cost>0.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+        <resourcesList xsi:type="resource">
+            <description>Orange</description>
+            <resourceType>SOFTWARE</resourceType>
+            <cost>0.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+        <resourcesList xsi:type="resource">
+            <description>TANAGRA</description>
+            <resourceType>SOFTWARE</resourceType>
+            <cost>0.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+        <resourcesList xsi:type="resource">
+            <description>Ms Office</description>
+            <resourceType>SOFTWARE</resourceType>
+            <cost>0.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+        <resourcesList xsi:type="resource">
+            <description>MS Project</description>
+            <resourceType>SOFTWARE</resourceType>
+            <cost>0.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+        <resourcesList xsi:type="resource">
+            <description>R</description>
+            <resourceType>SOFTWARE</resourceType>
+            <cost>0.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+        <resourcesList xsi:type="resource">
+            <description>Matlab Software License (Standard Edition)</description>
+            <resourceType>SOFTWARE</resourceType>
+            <cost>1200.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+        <resourcesList xsi:type="resource">
+            <description>PC</description>
+            <resourceType>HARDWARE</resourceType>
+            <cost>650.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <description>Matlab Software License (Standard Edition)</description>
+                    <resourceType>SOFTWARE</resourceType>
+                    <cost>1200.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+                <requirementsList xsi:type="resource">
+                    <description>R (package)</description>
+                    <resourceType>SOFTWARE</resourceType>
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+                <requirementsList xsi:type="resource">
+                    <description>Printer</description>
+                    <resourceType>HARDWARE</resourceType>
+                    <cost>150.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+                <requirementsList xsi:type="resource">
+                    <description>Monitor (23&quot;)</description>
+                    <resourceType>HARDWARE</resourceType>
+                    <cost>500.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+                <requirementsList xsi:type="resource">
+                    <description>Weka</description>
+                    <resourceType>SOFTWARE</resourceType>
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+        <resourcesList xsi:type="resource">
+            <description>Metabo-Analyst</description>
+            <resourceType>SOFTWARE</resourceType>
+            <cost>0.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+        <resourcesList xsi:type="resource">
+            <description>Oracle DBMS</description>
+            <resourceType>SOFTWARE</resourceType>
+            <cost>5000.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+        <resourcesList xsi:type="resource">
+            <description>MikTex</description>
+            <resourceType>SOFTWARE</resourceType>
+            <cost>0.0</cost>
+            <quantiy>0.0</quantiy>
+            <requirements>
+                <requirementsList xsi:type="resource">
+                    <cost>0.0</cost>
+                    <quantiy>0.0</quantiy>
+                </requirementsList>
+            </requirements>
+        </resourcesList>
+    </resources>
+</management>

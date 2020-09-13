@@ -1,0 +1,7 @@
+1. Defining a mechanism of delivering, retaining, accessing and utilising the acquired data mining knowledge for a further analysis.
+2. Deploy the acquired knowledge and its supplement deliveries, either as intermediate results of the process iteration or as final results.
+3. Knowledge deployment should be carried out according to the requirements of do- main expert and other stake holders if there are any.
+4. Knowledge deployment must consider the availability and requirements of the possible knowledge delivery techniques, e.g.  software tools, data bases, hardware and expertise, as well as their constraints.
+5. Knowledge  deployment  should  take  into  consideration  knowledge  utilisation  and possible future analysis.
+6. Knowledge must be based on the requirements and preferences of domain expert (biologist).
+7. Knowledge deployment should be carried out as a joint phase between data miner and domain expert (biologist).

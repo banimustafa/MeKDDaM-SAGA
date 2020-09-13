@@ -1,0 +1,7 @@
+1. Identify the requirements for the selected data mining technique in terms of the data structure, data types, file format, data size, and quality.
+2. Identify the data acclimatisation procedures, which must be applied to the targeted data, in order to make it suitable for the selected data mining technique. The details of these procedures have been discussed in chapter~\ref{chap:Development} (see section~\ref{subsect:DataAcclimatisation}.   
+3. Identify the requirements of the data acclimatisation procedures.
+4. Perform the identified acclimatisation procedures and record their purpose and description.
+5. In the case of compound modelling, e.g. PCA-ANN, the following steps should be carried out for each of the sub-models involved:(a) The data is acclimatised for the first sub-modelling technique in the sequence, e.g. PCA; (b)  The sub-model is built and evaluated; (c) The output of the sub-modelling are forwarded towards the next phase (model building) after performing the necessary procedure and activities to acclimatise and prepare the data to suit the requirement of the main model and achieve its  objectives  (In the  case  of multiple  sub-modelling,  the  last  model  in the sequence is treated as the main model, and the steps a-c is repeated for each of the sub-models);
+6. Decide the data splitting strategy which will be used to choose the model testing data, e.g. holdout, bootstrap, random sub-sampling, validation and cross-validation.
+7. Split the data according the decided strategy to obtain the data which will be used in model testing.

@@ -1,0 +1,19 @@
+# MekDDaM-SAGA
+
+Requirements:
+=============
+This software works on JDK Java 6.0
+
+Note: You can install different java versions in multiple homes. But you have to change the
+environment path to point to the installation that you want to be set as a default version
+on your system.
+
+
+Note: Regarding the process Images
+==================================
+Utilities directory which includes the image files must be placed inside the home folder MekDDaM to save memory when creating dist jar file and build classes. 
+
+When creating the final jar file it is best to move it to move it inside src folder.
+
+
+

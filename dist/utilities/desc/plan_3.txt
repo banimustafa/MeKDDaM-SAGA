@@ -1,0 +1,6 @@
+1. Examine  the nature  of the  dataset  and its associated  meta-data  if available, e.g: data types, structure, size, and format.
+3. Verify data understanding by explaining the meanings of their attributes and the scope of their values.
+4. Investigate the quality of the data, e.g: missing values, outliers, and distribution.
+5. Prospect the potential of the data based on the defined process objectives and using statistical measurements and other techniques discussed in chapter 4 (see section 4.6) and chapter 6 (see section 6.2.3).   
+6. Gain insight into the data trends, distribution, and relationships between its features.
+7. Confirm the relevance, sufficiency, and adequacy of data to fulfil the defined process objectives.

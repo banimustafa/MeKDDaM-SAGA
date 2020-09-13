@@ -3,253 +3,40 @@
     <constraint>
         <totalFunds>50000.0</totalFunds>
         <totalDuration>180.0</totalDuration>
-        <usedFunds>25650.0</usedFunds>
+        <usedFunds>0.0</usedFunds>
         <elapsedTime>0.0</elapsedTime>
     </constraint>
     <resources>
-        <resourcesList xsi:type="resource">
-            <description>PC</description>
-            <resourceType>HARDWARE</resourceType>
-            <cost>650.0</cost>
-            <quantiy>0.0</quantiy>
+        <resourcesList xsi:type="resource" description="PC" resourceType="HARDWARE" cost="600.0" quantiy="1.0">
             <requirements>
-                <requirementsList xsi:type="resource">
-                    <description>Printer</description>
-                    <resourceType>HARDWARE</resourceType>
-                    <cost>150.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-                <requirementsList xsi:type="resource">
-                    <description>Monitor (23&quot;)</description>
-                    <resourceType>HARDWARE</resourceType>
-                    <cost>500.0</cost>
-                    <quantiy>0.0</quantiy>
+                <requirementsList>
+                    <requirementsList xsi:type="resource" description="Printer" resourceType="HARDWARE" cost="150.0" quantiy="1.0"/>
+                    <requirementsList xsi:type="resource" description="Monitor 23&quot;" resourceType="HARDWARE" cost="500.0" quantiy="1.0"/>
+                    <requirementsList xsi:type="resource" description="MS windows 7.0" resourceType="SOFTWARE" cost="300.0" quantiy="1.0"/>
+                    <requirementsList xsi:type="resource" description="MS Office" resourceType="SOFTWARE" cost="250.0" quantiy="1.0"/>
                 </requirementsList>
             </requirements>
         </resourcesList>
-        <resourcesList xsi:type="resource">
-            <description>Labtop</description>
-            <resourceType>HARDWARE</resourceType>
-            <cost>750.0</cost>
-            <quantiy>0.0</quantiy>
+        <resourcesList xsi:type="resource" description="Labtop" resourceType="HARDWARE" cost="750.0" quantiy="1.0">
             <requirements>
-                <requirementsList xsi:type="resource">
-                    <description>R Package</description>
-                    <resourceType>SOFTWARE</resourceType>
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-                <requirementsList xsi:type="resource">
-                    <description>MikeTex</description>
-                    <resourceType>SOFTWARE</resourceType>
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-                <requirementsList xsi:type="resource">
-                    <description>Weka</description>
-                    <resourceType>SOFTWARE</resourceType>
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
+                <requirementsList>
+                    <requirementsList xsi:type="resource" description="R Package" resourceType="SOFTWARE" cost="250.0" quantiy="1.0"/>
+                    <requirementsList xsi:type="resource" description="MikeTex" resourceType="SOFTWARE" cost="0.0" quantiy="1.0"/>
+                    <requirementsList xsi:type="resource" description="windows 7.0" resourceType="SOFTWARE" cost="300.0" quantiy="1.0"/>
+                    <requirementsList xsi:type="resource" description="MS Office " resourceType="SOFTWARE" cost="250.0" quantiy="1.0"/>
                 </requirementsList>
             </requirements>
         </resourcesList>
-        <resourcesList xsi:type="resource">
-            <description>Statistician</description>
-            <resourceType>HUMAN</resourceType>
-            <cost>4000.0</cost>
-            <quantiy>0.0</quantiy>
-            <requirements>
-                <requirementsList xsi:type="resource">
-                    <description>PC</description>
-                    <resourceType>HARDWARE</resourceType>
-                    <cost>500.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-                <requirementsList xsi:type="resource">
-                    <description>MatLab</description>
-                    <resourceType>SOFTWARE</resourceType>
-                    <cost>1200.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-            </requirements>
-        </resourcesList>
-        <resourcesList xsi:type="resource">
-            <description>Weka</description>
-            <resourceType>SOFTWARE</resourceType>
-            <cost>0.0</cost>
-            <quantiy>0.0</quantiy>
-            <requirements>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-            </requirements>
-        </resourcesList>
-        <resourcesList xsi:type="resource">
-            <description>Orange</description>
-            <resourceType>SOFTWARE</resourceType>
-            <cost>0.0</cost>
-            <quantiy>0.0</quantiy>
-            <requirements>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-            </requirements>
-        </resourcesList>
-        <resourcesList xsi:type="resource">
-            <description>TANAGRA</description>
-            <resourceType>SOFTWARE</resourceType>
-            <cost>0.0</cost>
-            <quantiy>0.0</quantiy>
-            <requirements>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-            </requirements>
-        </resourcesList>
-        <resourcesList xsi:type="resource">
-            <description>Ms Office</description>
-            <resourceType>SOFTWARE</resourceType>
-            <cost>0.0</cost>
-            <quantiy>0.0</quantiy>
-            <requirements>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-            </requirements>
-        </resourcesList>
-        <resourcesList xsi:type="resource">
-            <description>MS Project</description>
-            <resourceType>SOFTWARE</resourceType>
-            <cost>0.0</cost>
-            <quantiy>0.0</quantiy>
-            <requirements>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-            </requirements>
-        </resourcesList>
-        <resourcesList xsi:type="resource">
-            <description>R</description>
-            <resourceType>SOFTWARE</resourceType>
-            <cost>0.0</cost>
-            <quantiy>0.0</quantiy>
-            <requirements>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-            </requirements>
-        </resourcesList>
-        <resourcesList xsi:type="resource">
-            <description>Matlab Software License (Standard Edition)</description>
-            <resourceType>SOFTWARE</resourceType>
-            <cost>1200.0</cost>
-            <quantiy>0.0</quantiy>
-            <requirements>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-            </requirements>
-        </resourcesList>
-        <resourcesList xsi:type="resource">
-            <description>PC</description>
-            <resourceType>HARDWARE</resourceType>
-            <cost>650.0</cost>
-            <quantiy>0.0</quantiy>
-            <requirements>
-                <requirementsList xsi:type="resource">
-                    <description>Matlab Software License (Standard Edition)</description>
-                    <resourceType>SOFTWARE</resourceType>
-                    <cost>1200.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-                <requirementsList xsi:type="resource">
-                    <description>R (package)</description>
-                    <resourceType>SOFTWARE</resourceType>
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-                <requirementsList xsi:type="resource">
-                    <description>Printer</description>
-                    <resourceType>HARDWARE</resourceType>
-                    <cost>150.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-                <requirementsList xsi:type="resource">
-                    <description>Monitor (23&quot;)</description>
-                    <resourceType>HARDWARE</resourceType>
-                    <cost>500.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-                <requirementsList xsi:type="resource">
-                    <description>Weka</description>
-                    <resourceType>SOFTWARE</resourceType>
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-            </requirements>
-        </resourcesList>
-        <resourcesList xsi:type="resource">
-            <description>Metabo-Analyst</description>
-            <resourceType>SOFTWARE</resourceType>
-            <cost>0.0</cost>
-            <quantiy>0.0</quantiy>
-            <requirements>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-            </requirements>
-        </resourcesList>
-        <resourcesList xsi:type="resource">
-            <description>Oracle DBMS</description>
-            <resourceType>SOFTWARE</resourceType>
-            <cost>5000.0</cost>
-            <quantiy>0.0</quantiy>
-            <requirements>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-            </requirements>
-        </resourcesList>
-        <resourcesList xsi:type="resource">
-            <description>MikTex</description>
-            <resourceType>SOFTWARE</resourceType>
-            <cost>0.0</cost>
-            <quantiy>0.0</quantiy>
-            <requirements>
-                <requirementsList xsi:type="resource">
-                    <cost>0.0</cost>
-                    <quantiy>0.0</quantiy>
-                </requirementsList>
-            </requirements>
-        </resourcesList>
+        <resourcesList xsi:type="resource" description="Metabo-Analyst" resourceType="SOFTWARE" cost="0.0" quantiy="1.0"/>
+        <resourcesList xsi:type="resource" description="Ms Office" resourceType="SOFTWARE" cost="250.0" quantiy="1.0"/>
+        <resourcesList xsi:type="resource" description="Statistician" resourceType="HUMAN" cost="4000.0" quantiy="1.0"/>
+        <resourcesList xsi:type="resource" description="weka" resourceType="SOFTWARE" cost="0.0" quantiy="1.0"/>
+        <resourcesList xsi:type="resource" description="Orange" resourceType="SOFTWARE" cost="0.0" quantiy="1.0"/>
+        <resourcesList xsi:type="resource" description="TANAGRA" resourceType="SOFTWARE" cost="0.0" quantiy="1.0"/>
+        <resourcesList xsi:type="resource" description="MS Project" resourceType="SOFTWARE" cost="250.0" quantiy="1.0"/>
+        <resourcesList xsi:type="resource" description="MS Visio" resourceType="SOFTWARE" cost="250.0" quantiy="1.0"/>
+        <resourcesList xsi:type="resource" description="Matlab Software License (Standard Edition" resourceType="SOFTWARE" cost="1200.0" quantiy="1.0"/>
+        <resourcesList xsi:type="resource" description="Oracle DBMS" resourceType="SOFTWARE" cost="5000.0" quantiy="1.0"/>
+        <resourcesList xsi:type="resource" description="MikTex" resourceType="SOFTWARE" cost="0.0" quantiy="1.0"/>
     </resources>
 </management>

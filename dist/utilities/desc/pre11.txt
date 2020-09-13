@@ -1,0 +1,12 @@
+1. The human interaction aspects related to the process execution.
+2. The project management aspects related to the process execution.
+3. The process quality assurance policy.
+4. The process standards.
+5. The process model layout design regarding its phases, inputs, deliveries, flow, iteration, and feedbacks (see section 7.1).
+6. The defined process objectives
+7. The justification of data mining technique selection.
+8. The acclimatised data.
+9. The data mining model.
+10. The model evaluation report.
+11. The presented knowledge.
+

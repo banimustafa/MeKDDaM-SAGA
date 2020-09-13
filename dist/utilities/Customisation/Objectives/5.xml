@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<objectives xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>1. Acclimatising the targeted data to suit the modelling technique(s) and meet its/ their modelling requirements in terms of their input data structure, data types, file format, size and quality.   </presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>1. Acclimatising the targeted data to suit the modelling technique(s) and meet its/ their modelling requirements in terms of their input data structure, data types, file format, size and quality.   </customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>2. Preparing the metabolomics data for model building and training, as well as for model testing and evaluation.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>2. Preparing the metabolomics data for model building and training, as well as for model testing and evaluation.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>3. The data acclimatisation procedures must be carried out in light of the defined process objectives and to fulfil those precise objectives intended by the selected data mining modelling technique(s).</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>3. The data acclimatisation procedures must be carried out in light of the defined process objectives and to fulfil those precise objectives intended by the selected data mining modelling technique(s).</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <objectiveType>HUMAN_RELATED</objectiveType>
+        <presetDescription>4. The requirements of data acclimatisation procedures must be considered including: time, cost, expertise as well as software and hardware infrastructures.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>4. The requirements of data acclimatisation procedures must be considered including: time, cost, expertise as well as software and hardware infrastructures.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>5. The data acclimatisation procedures must be adequate, sufficient and comprehensive to cover all the data required for model building, training and testing.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>5. The data acclimatisation procedures must be adequate, sufficient and comprehensive to cover all the data required for model building, training and testing.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>6. The data acclimatisation procedures must not influence the data through twisting, drifting, or changing their meanings, and must not cause problems, gaps, or loses of information.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>6. The data acclimatisation procedures must not influence the data through twisting, drifting, or changing their meanings, and must not cause problems, gaps, or loses of information.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <objectiveType>MANAGEMENT_RELATED</objectiveType>
+        <presetDescription>7. Acclimatisation must avoid the issues which may lead to model over-fitting or under-fitting.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>7. Acclimatisation must avoid the issues which may lead to model over-fitting or under-fitting.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:19 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>8. Acclimatisation should consider selecting more than one technique (compound modelling) which involves sub-modelling, e.g. PCA-ANN. Sub-modelling should be performed iteratively within the boundaries and context of data acclimatisation.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>8. Acclimatisation should consider selecting more than one technique (compound modelling) which involves sub-modelling, e.g. PCA-ANN. Sub-modelling should be performed iteratively within the boundaries and context of data acclimatisation.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+</objectives>

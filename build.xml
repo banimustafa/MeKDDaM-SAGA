@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<project name="Me-KDDaM " default="default" basedir=".">
+    <description> Metabolomics Knowledge Discovery and Data Mining Process</description>
+    <import file="nbproject/build-impl.xml"/>
+    <!--
+
+    There exist several targets which are by default empty and which can be 
+    used for execution of your tasks. These targets are usually executed 
+    before and after some main targets. They are: 
+
+      -pre-init:                 called before initialization of project properties
+      -post-init:                called after initialization of project properties
+      -pre-compile:              called before javac compilation
+      -post-compile:             called after javac compilation
+      -pre-compile-single:       called before javac compilation of single file
+      -post-compile-single:      called after javac compilation of single file
+      -pre-compile-test:         called before javac compilation of JUnit tests
+      -post-compile-test:        called after javac compilation of JUnit tests
+      -pre-compile-test-single:  called before javac compilation of single JUnit test
+      -post-compile-test-single: called after javac compilation of single JUunit test
+      -pre-jar:                  called before JAR building
+      -post-jar:                 called after JAR building
+      -post-clean:               called after cleaning build products
+
+    (Targets beginning with '-' are not intended to be called on their own.)
+
+    Example of inserting an obfuscator after compilation could look like this:
+
+        <target name="-post-compile">
+            <obfuscate>
+                <fileset dir="${build.classes.dir}"/>
+            </obfuscate>
+        </target>
+
+    For list of available properties check the imported 
+    nbproject/build-impl.xml file. 
+
+
+    Another way to customize the build is by overriding existing main targets.
+    The targets of interest are: 
+
+      -init-macrodef-javac:     defines macro for javac compilation
+      -init-macrodef-junit:     defines macro for junit execution
+      -init-macrodef-debug:     defines macro for class debugging
+      -init-macrodef-java:      defines macro for class execution
+      -do-jar-with-manifest:    JAR building (if you are using a manifest)
+      -do-jar-without-manifest: JAR building (if you are not using a manifest)
+      run:                      execution of project 
+      -javadoc-build:           Javadoc generation
+      test-report:              JUnit report generation
+
+    An example of overriding the target for project execution could look like this:
+
+        <target name="run" depends="BankApp-impl.jar">
+            <exec dir="bin" executable="launcher.exe">
+                <arg file="${dist.jar}"/>
+            </exec>
+        </target>
+
+    Notice that the overridden target depends on the jar target and not only on 
+    the compile target as the regular run target does. Again, for a list of available 
+    properties which you can use, check the target you are overriding in the
+    nbproject/build-impl.xml file. 
+
+-->    
+<target name="-post-jar">
+    <jar jarfile="dist/Me-KDDaM-Final.jar">
+        <zipfileset src="${dist.jar}" excludes="META-INF/*" />
+        <zipfileset src="lib/AbsoluteLayout.jar " excludes="META-INF/*" />
+        <zipfileset src="lib/activation.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/ant-contrib-0.6.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/appframework-1.0.3.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/beansbinding-1.2.1.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/bsh-core-2.0b4.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/eclipselink-javax.persistence-2.0.jar " excludes="META-INF/*" />
+        <zipfileset src="lib/ejb3-persistence.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/fop.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/java-cup.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/javac-api-nb-7.0-b07.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/javaws.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/jaxb-api-2.2-sources.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/jaxb-api.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/jaxb-impl.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/jaxb-xjc.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/jaxb1-impl.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/JFlex.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/jsr173_api.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/junit-3.8.2.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/junit.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/moa.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/ojdbc14.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/org-netbeans-modules-j2me-cdc-project-sjmc.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/org-netbeans-modules-java-j2seproject-copylibstask.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/org-netbeans-modules-javawebstart-anttasks.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/packageManager.jar " excludes="META-INF/*" />
+        <zipfileset src="lib/RCaller.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/remoteExperimentServer.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/sizeofag.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/swing-layout-1.0.4.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/swing-worker-1.1.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/toplink-essentials-agent.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/toplink-essentials.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/weka-src.jar" excludes="META-INF/*" />
+        <zipfileset src="lib/weka.jar" excludes="META-INF/*" />
+        <manifest>
+            <attribute name="Main-Class" value="gui.form.MainMenu"/>
+        </manifest>       
+    </jar>
+
+        <copy todir="dist/utilities/">
+              <fileset dir="utilities/"  includes="*.*"/>
+        </copy>    
+        <copy todir="dist/utilities/desc">
+              <fileset dir="utilities/desc"  includes="*.*"/>
+        </copy>                    
+        <copy todir="dist/utilities/help">          
+              <fileset dir="utilities/help"  includes="*.*"/>
+        </copy>                    
+        <copy todir="dist/utilities/images">          
+              <fileset dir="utilities/images"  includes="*.*"/>          
+        </copy>          
+        <copy todir="dist/utilities/xml">          
+              <fileset dir="utilities/xml"  includes="*.*"/>          
+        </copy>    
+        <copy todir="dist/utilities/xsl">          
+              <fileset dir="utilities/xsl"  includes="*.*"/>                    
+        </copy>     
+        <copy todir="dist/utilities/Supplements">          
+              <fileset dir="utilities/Supplements"  includes="*.*"/>                    
+        </copy>
+        <copy todir="dist/utilities/Sources">          
+              <fileset dir="utilities/Sources"  includes="*.*"/>                    
+        </copy>                
+        <copy todir="dist/utilities/Customisation">          
+              <fileset dir="utilities/Customisation"  includes="*.*"/>                    
+        </copy>           
+        <copy todir="dist/utilities/Customisation/Objectives">          
+              <fileset dir="utilities/Customisation/Objectives"  includes="*.*"/>                    
+        </copy>    
+        <copy todir="dist/utilities/Customisation/PreRequisites">          
+              <fileset dir="utilities/Customisation/PreRequisites"  includes="*.*"/>                    
+        </copy>    
+        <copy todir="dist/utilities/Customisation/Planning">          
+              <fileset dir="utilities/Customisation/Planning"  includes="*.*"/>                    
+        </copy>
+        
+</target>
+</project>

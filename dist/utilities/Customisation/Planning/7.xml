@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<planning xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>1. Test the data mining model, which was built in phase 6 using the data acclimatised in phase 5 and allocated for model testing.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>1. Test the data mining model, which was built in phase 6 using the data acclimatised in phase 5 and allocated for model testing.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Evaluating the data mining model validity using the decided testing data split.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Evaluating the data mining model validity using the decided testing data split.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>4. Evaluate the data mining model performance using different measurements.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>4. Evaluate the data mining model performance using different measurements.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>5. Performance measurements must be correct, sufficient,  relevant and applicable to the data mining model.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>5. Performance measurements must be correct, sufficient,  relevant and applicable to the data mining model.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+                <objectiveType>NON_FUNCTIONAL</objectiveType>
+                <presetDescription>6. The data mining model should be neither over-fitted nor under-fitted.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>6. The data mining model should be neither over-fitted nor under-fitted.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <resources>
+            <resourcesList xsi:type="resource">
+                <description>TANAGRA</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>Orange</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>R</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>Weka</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+        </resources>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>2. Measure the model performance according to the criteria defined in phase 4, e.g. accuracy, sensitivity, specificity, scalability, etc.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>2. Measure the model performance according to the criteria defined in phase 4, e.g. accuracy, sensitivity, specificity, scalability, etc.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>4. Evaluate the data mining model performance using different measurements.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>4. Evaluate the data mining model performance using different measurements.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <resources>
+            <resourcesList xsi:type="resource">
+                <description>TANAGRA</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>Orange</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>Weka</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>R</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+        </resources>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>3. Validate the model fitness (over-fitness or under-fitness).</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>3. Validate the model fitness (over-fitness or under-fitness).</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Evaluating the data mining model validity using the decided testing data split.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Evaluating the data mining model validity using the decided testing data split.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <resources>
+            <resourcesList xsi:type="resource">
+                <description>Weka</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>Orange</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>TANAGRA</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+            <resourcesList xsi:type="resource">
+                <description>R</description>
+                <resourceType>SOFTWARE</resourceType>
+                <cost>0.0</cost>
+                <quantiy>0.0</quantiy>
+                <requirements>
+                    <requirementsList xsi:type="resource">
+                        <cost>0.0</cost>
+                        <quantiy>0.0</quantiy>
+                    </requirementsList>
+                </requirements>
+            </resourcesList>
+        </resources>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>4. Assess the model fulfilment of the defined process objectives.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>4. Assess the model fulfilment of the defined process objectives.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>2. Evaluate the data mining model achievement of the defined process objectives such as the data-driven objectives (e.g.  discover interesting or hidden patterns, trends, relationships in the data) or hypothesis driven objectives (e.g. classify samples into predefined classes or according to their natural occurrence classes)</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>2. Evaluate the data mining model achievement of the defined process objectives such as the data-driven objectives (e.g.  discover interesting or hidden patterns, trends, relationships in the data) or hypothesis driven objectives (e.g. classify samples into predefined classes or according to their natural occurrence classes)</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>5. Assess the model according to the success criteria defined in the process objective, e.g.  classify samples, uncovering interesting/ hidden patterns, trends, or relation- ships in the data.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>5. Assess the model according to the success criteria defined in the process objective, e.g.  classify samples, uncovering interesting/ hidden patterns, trends, or relation- ships in the data.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>3. Evaluate the data mining modelling success criteria defined in both objectives defi- nition and modelling techniques selection phases.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>3. Evaluate the data mining modelling success criteria defined in both objectives defi- nition and modelling techniques selection phases.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>6. Assess the model according to the success criteria defined in the technique selection phase.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>6. Assess the model according to the success criteria defined in the technique selection phase.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>3. Evaluate the data mining modelling success criteria defined in both objectives defi- nition and modelling techniques selection phases.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>3. Evaluate the data mining modelling success criteria defined in both objectives defi- nition and modelling techniques selection phases.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>7. In the case of obtaining unsatisfactory results from the steps 1-6, consider selecting a different  data  mining technique  and building an alternative  model  or a combination of models.  This can be done by performing feedback to technique selection phase, and re-running the data acclimatisation, model building, and model evaluation phases.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>7. In the case of obtaining unsatisfactory results from the steps 1-6, consider selecting a different  data  mining technique  and building an alternative  model  or a combination of models.  This can be done by performing feedback to technique selection phase, and re-running the data acclimatisation, model building, and model evaluation phases.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>8. Model evaluation should be repeated each time a new data mining model is built or when the existing model is changed, adjusted or recreated.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>8. Model evaluation should be repeated each time a new data mining model is built or when the existing model is changed, adjusted or recreated.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+</planning>

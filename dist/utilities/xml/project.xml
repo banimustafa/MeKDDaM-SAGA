@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet href="project.xsl" type="text/xsl"?>
+
+<!DOCTYPE project[
+<!ELEMENT project (name,location,date,description,information+)>
+
+<!ELEMENT name (heading,body)>
+<!ELEMENT date (heading,body)>
+<!ELEMENT loaction (heading,body)>
+<!ELEMENT description (heading,body)>
+<!ELEMENT information (heading,body)>
+
+
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+
+]>
+<project>
+
+  <name>
+	<heading>Project Name:	</heading>
+      <body>Ahmed Project</body>
+  </name>
+
+  <location>
+	<heading>Project Files Location:	</heading>
+      <body>c:\ambtry	</body>
+  </location>
+
+  <date>
+	<heading>Project Creation Date:	</heading>
+      <body>10/10/2008</body>
+  </date>
+
+  <description>
+	<heading>Project Description:		</heading>
+      <body> this is a try project</body>
+  </description>
+
+  <information>
+	<heading>Other Information:	 </heading>
+      <body>lab lab loooooo </body>
+  </information>
+ 
+</project>

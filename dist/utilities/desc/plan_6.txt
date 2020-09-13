@@ -1,0 +1,5 @@
+1. Assign the resources required for model building and training, which was identified in phase 4.
+2. Build a data mining model with the technique selected in phase 4 and using the data split acclimatised in phase 5, which was allocated for model building and training.
+3. Ensure the flexibility of the model by allowing the adjustment of its parameters.
+4. Provide a justification, reasoning, or explanation for the modelling results, in the case of using a white box data mining technique.  However, when using a black box technique such as ANN, these information become harder to provide.
+5. Define a mechanism for delivering the model taking into consideration the bailable modelling standards, e.g.  PMML, as well as the requirements of the process other phases, including: model evaluation, knowledge presentation, knowledge evaluation, and results deployment.

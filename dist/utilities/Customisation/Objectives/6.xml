@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<objectives xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>1. Building a data  mining model  using  the  metabolomics  data  acclimatised  in the previous phase to fulfil the defined process objectives.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>1. Building a data  mining model  using  the  metabolomics  data  acclimatised  in the previous phase to fulfil the defined process objectives.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>2. Training the model using the acclimatised data to reach its maturity level but at the same time avoiding the over-fitting of the model.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>2. Training the model using the acclimatised data to reach its maturity level but at the same time avoiding the over-fitting of the model.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>3. The model must fulfil the defined process objectives.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>3. The model must fulfil the defined process objectives.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>4. In the case of hypothesis driven data mining, the model must also be in line with the aims of the metabolomics study experiment hypothesis, assumption and research question.  If not, the model should provide the sufficient justification, reasoning or explanation of its results.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>4. In the case of hypothesis driven data mining, the model must also be in line with the aims of the metabolomics study experiment hypothesis, assumption and research question.  If not, the model should provide the sufficient justification, reasoning or explanation of its results.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>HUMAN_RELATED</objectiveType>
+        <presetDescription>5. The data mining model must be measurable and testable through model evaluation.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>5. The data mining model must be measurable and testable through model evaluation.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>MANAGEMENT_RELATED</objectiveType>
+        <presetDescription>6. The data mining model must be flexible and adjustable through changing its setting parameters and variables.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>6. The data mining model must be flexible and adjustable through changing its setting parameters and variables.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>7. The  model  must  consider  the  requirements  of the  later  phases, including: model evaluation, knowledge presentation and evaluation, and results deployment.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>7. The  model  must  consider  the  requirements  of the  later  phases, including: model evaluation, knowledge presentation and evaluation, and results deployment.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:20 GMT 2012</dateTime>
+        <objectiveType>MANAGEMENT_RELATED</objectiveType>
+        <presetDescription>8. Training must avoid model over-fitting or under-fitting.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>8. Training must avoid model over-fitting or under-fitting.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+</objectives>

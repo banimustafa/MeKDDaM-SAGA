@@ -1,0 +1,8 @@
+1. Selecting the data mining technique(s) that fulfil the defined process objectives and suit the targeted metabolomics data.
+2. The selected technique performance must be measurable in model evaluation.
+3. The selected technique must have the potential to achieve the defined process ob- jective.
+4. The application of the selected technique must be feasible, and it must consider the process management constraints and available resources.
+5. The selection procedures must be comprehensive and unbiased, and it must cover all possible data mining techniques (see section 3.4).
+6. The selection strategy must be flexible and adjustable and consider the selection of alternative techniques in the case of feedback or iteration.
+7. The selection of white-box data mining techniques must be encouraged over the selection of the black-box ones, as they allow more justification, reasoning, and explanation of the modelling results.
+8. The selection must consider the possibility of using more than one data mining technique.

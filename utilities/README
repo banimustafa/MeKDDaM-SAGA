@@ -1,0 +1,4 @@
+Note: Regarding the process Images
+----------------------------------
+Utilities directory which includes the image files is put inside the home folder MekDaM to save memory when creating dist jar file and build classes. When creating the final jar file it is best to move it to move it inside src folder.
+

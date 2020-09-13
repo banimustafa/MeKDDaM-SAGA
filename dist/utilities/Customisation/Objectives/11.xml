@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<objectives xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>1. Evaluating the execution of the process in terms of its compliance with the defined flow, feedbacks and iteration, as well as the inputs and outputs of the process phase.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>1. Evaluatin the execution of the process in terms of its compliance with the defined flow, feedbacks and iteration, as well as the inputs and outputs of the process phase.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>2. Evaluating the process phases running in terms of their compliance to the process phases objectives, planning, activities, validation and reporting.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>2. Evaluating the process phases running in terms of their compliance to the process phases objectives, planning, activities, validation and reporting.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>3. Evaluating the process cross-deliveries validation as defined  in the process.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>3. Evaluating the process cross-deliveries validation as defined  in the process.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>4. Evaluating the process compliance of management, quality, and human interaction and standardisation issues throughout the process.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>4. Evaluating the process compliance of management, quality, and human interaction and standardisation issues throughout the process.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>5. Deciding process termination, iteration or performing limited feedbacks.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>5. Deciding process termination, iteration or performing limited feedbacks.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+</objectives>

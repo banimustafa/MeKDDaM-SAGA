@@ -1,0 +1,8 @@
+1. The presented knowledge.
+2. The defined process objectives
+3. The aims of the metabolomics study and its investigation goals,  hypotheses,  and assumptions.
+4. Background knowledge/information regarding the data mining approaches, goals and tasks, and their modelling techniques objectives.
+5. Domain expert background knowledge and experience
+6. Metabolomics biochemical principles.
+7. The results reported or published in the metabolomics literature which is relevant to the metabolomics research investigation, study and assay.
+8.The process quality assurance policy.

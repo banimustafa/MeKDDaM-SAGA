@@ -1,0 +1,14 @@
+
+// <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
+// #[regen=yes,id=DCE.047EBBAA-66F8-C4BD-D5FF-0393BA1DE337]
+// </editor-fold> 
+public class MainMenue {
+
+    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
+    // #[regen=yes,id=DCE.7BC1F3CC-2514-CFE8-00D3-13CC5A4091EE]
+    // </editor-fold> 
+    public MainMenue () {
+    }
+
+}
+

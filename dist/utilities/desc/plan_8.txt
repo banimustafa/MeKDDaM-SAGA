@@ -1,0 +1,7 @@
+1. Review the knowledge representation features required for metabolomics data min- ing, which were identified in chapter chap:Requirements(see section 4.5)
+2. Identify the requirements and preferences of the domain expert regarding the knowl- edge representation.
+3. Match the defined knowledge representation features and facilities in step 1 and the identified domain expert requirements in step 2 to the available data mining model representation techniques and tools (see section 6.2.8).
+4. Assess the requirements of the decided representation technique, including: software tools, hardware and expertise as well as inputs, parameters, and expected outputs, and application  constraints,  including:  time,  cost,  and expertise  as  well  as  the availability of the software and hardware infrastructure.
+5. Prototype the data mining model representation iteratively through the steps 3-4 until the desired features are satisfied, the requirements of the domain expert are met, and the phase objectives are achieved.
+6. Evaluate the data mining model representation interpretability as a metabolomics knowledge (to be carried out by domain expert).
+7.Present the successful model representation as a metabolomics knowledge.

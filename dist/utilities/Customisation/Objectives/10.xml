@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<objectives xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>1. Defining a mechanism of delivering, retaining, accessing and utilising the acquired data mining knowledge for a further analysis.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>1. Defining a mechanism of delivering, retaining, accessing and utilising the acquired data mining knowledge for a further analysis.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>2. Deploying the acquired knowledge and its supplement deliveries, either as intermediate results of the process iteration or as final results.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>2. Deploying the acquired knowledge and its supplement deliveries, either as intermediate results of the process iteration or as final results.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>3. Knowledge deployment should be carried out according to the requirements of domain expert and other stake holders if any.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>3. Knowledge deployment should be carried out according to the requirements of domain expert and other stake holders if any.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>4. Knowledge deployment must consider the availability and requirements of the possible knowledge delivery techniques, e.g.  software tools, data bases, hardware and expertise, as well as their constraints.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>4. Knowledge deployment must consider the availability and requirements of the possible knowledge delivery techniques, e.g.  software tools, data bases, hardware and expertise, as well as their constraints.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <objectiveType>MANAGEMENT_RELATED</objectiveType>
+        <presetDescription>5. Knowledge  deployment  should  take  into  consideration  knowledge  utilisation  and possible future analysis.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>5. Knowledge  deployment  should  take  into  consideration  knowledge  utilisation  and possible future analysis.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <objectiveType>STANDARD_RELATED</objectiveType>
+        <presetDescription>6. Knowledge must be based on the requirements and preferences of domain expert (biologist).</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>6. Knowledge must be based on the requirements and preferences of domain expert (biologist).</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <objectiveType>STANDARD_RELATED</objectiveType>
+        <presetDescription>7. Knowledge deployment should be carried out as a joint phase between data miner and domain expert (biologist).</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>7. Knowledge deployment should be carried out as a joint phase between data miner and domain expert (biologist).</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+</objectives>

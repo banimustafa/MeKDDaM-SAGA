@@ -1,0 +1,6 @@
+1. Evaluating the acquired knowledge fulfilment of the defined process objectives and its achievement of the aims of the study, the goals of the metabolomics investigation and its compliance with the research hypothesis and assumption.
+2. Evaluating the acquired knowledge against the results reported or published in the metabolomics literature which is relevant to the metabolomics research investigation, study and assay.
+3. Validating the acquired knowledge according domain expert background experience and knowledge, based on biochemical principles and commonsense.
+4. Identifying possible  investigation  questions  or hypotheses  propagated  by the acquired knowledge.
+5. Knowledge evaluation activities which involve human judgements must be unbiased, traceable and reproducible.  It must be justified and backed with scientific evidences and the literature where possible.
+6. Knowledge evaluation must be performed from metabolomics and biochemical perspectives.

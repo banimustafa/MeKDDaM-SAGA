@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<objectives xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>1. Defining the data mining modelling objectives for metabolomics.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>1. Defining the data mining modelling objectives for metabolomics.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <objectiveType>MANAGEMENT_RELATED</objectiveType>
+        <presetDescription>2. The  objectives  should  be expressed,  either  in a hypothesis-driven  or data- driven fashion.  Hypothesis-driven objectives are derived from the aims of the metabolomics study, while data-driven objectives are derived from the goals of data mining and its subsequent tasks.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>2. The  objectives  should  be expressed,  either  in a hypothesis-driven  or data- driven fashion.  Hypothesis-driven objectives are derived from the aims of the metabolomics study, while data-driven objectives are derived from the goals of data mining and its subsequent tasks.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <objectiveType>MANAGEMENT_RELATED</objectiveType>
+        <presetDescription>3. The  objectives  must  be realistic  and achievable  using  data  mining techniques  in general (see section 3.4) and using the targeted metabolomics data, which must be sufficient, adequate, and relevant to the aims of the metabolomics study in order to test an implied hypothesis, or to discover a new knowledge.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>3. The  objectives  must  be realistic  and achievable  using  data  mining techniques  in general (see section 3.4) and using the targeted metabolomics data, which must be sufficient, adequate, and relevant to the aims of the metabolomics study in order to test an implied hypothesis, or to discover a new knowledge.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <objectiveType>MANAGEMENT_RELATED</objectiveType>
+        <presetDescription>4. The objectives must be feasible.  It must take into consideration the process man- agement constraints, including: time, cost, and expertise as well as the availability of the software and hardware infrastructures.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>4. The objectives must be feasible.  It must take into consideration the process man- agement constraints, including: time, cost, and expertise as well as the availability of the software and hardware infrastructures.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <objectiveType>HUMAN_RELATED</objectiveType>
+        <presetDescription>5. The fulfilment of the objectives must be measurable and the success of their achiev- ability must be testable.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>5. The fulfilment of the objectives must be measurable and the success of their achiev- ability must be testable.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:16 GMT 2012</dateTime>
+        <objectiveType>NON_FUNCTIONAL</objectiveType>
+        <presetDescription>6. The objectives must be flexible and adjustable in case of altering the process flow as a result a feedback or iteration.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>6. The objectives must be flexible and adjustable in case of altering the process flow as a result a feedback or iteration.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+</objectives>

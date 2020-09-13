@@ -1,0 +1,7 @@
+1. The metabolomics dataset and its associated meta-data if available (see section 4.1).
+2. The aims of the metabolomics study and its investigation goals,  hypotheses,  and assumptions.
+3. Background knowledge/information regarding data mining including its approaches (see section 3.2), goals, tasks (see section 3.3), and techniques (see section 3.4).
+4. Background knowledge/information regarding project management and planning (see section 4.4.1).
+5. The process management constraints, including: time, cost, and expertise as well as the availability of the software and hardware infrastructure.
+6. The process quality assurance policy.    
+7. The process standards.

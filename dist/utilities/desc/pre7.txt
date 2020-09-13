@@ -1,0 +1,6 @@
+1. The acclimatised metabolomics dataset allocated for model testing and its associated meta-data if available.
+2. The data mining model.
+3. The data mining model requirements, including: software tools, hardware and expertise as well as other necessary information regarding the model inputs, parameters, and expected outputs, as well as the constraints of their application.
+4. The defined process objectives.
+5. Background knowledge/information  regarding the model evaluation (see  section 6.2.7).
+6. The process quality assurance policy.

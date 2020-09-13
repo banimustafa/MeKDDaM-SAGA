@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<preRequisites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetDescription>1. The human interaction aspects related to the process execution.</presetDescription>
+        <customisedDescription>1. The human interaction aspects related to the process execution.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> Project Info</sourceElementPath>
+            </internalSourcesList>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Human Interaction</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetDescription>2. The project management aspects related to the process execution.</presetDescription>
+        <customisedDescription>2. The project management aspects related to the process execution.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Process Management</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> Project Info</sourceElementPath>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetDescription>3. The process quality assurance policy.</presetDescription>
+        <customisedDescription>3. The process quality assurance policy.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Quality Assurance</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetDescription>4. The process standards.</presetDescription>
+        <customisedDescription>4. The process standards.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Standards</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetDescription>5. The process model layout design regarding its phases, inputs, deliveries, flow, iteration, and feedbacks (see section 7.1).</presetDescription>
+        <customisedDescription>5. The process model layout design regarding its phases, inputs, deliveries, flow, iteration, and feedbacks (see section 7.1).</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources/>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetDescription>6. The defined process objectives</presetDescription>
+        <customisedDescription>6. The defined process objectives</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Objectives Definition] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetDescription>7. The justification of data mining technique selection.</presetDescription>
+        <customisedDescription>7. The justification of data mining technique selection.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Technique Selection] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetDescription>8. The acclimatised data.</presetDescription>
+        <customisedDescription>8. The acclimatised data.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Data Acclimatisation] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetDescription>9. The data mining model.</presetDescription>
+        <customisedDescription>9. The data mining model.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Model Building] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetDescription>10. The model evaluation report.</presetDescription>
+        <customisedDescription>10. The model evaluation report.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Model Evaluation] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:23 GMT 2012</dateTime>
+        <presetDescription>11. The presented knowledge.</presetDescription>
+        <customisedDescription>11. The presented knowledge.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Knowledge Presentation] -&gt; Reporting</sourceElementPath>
+                <sourceElementString>Reporting</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+</preRequisites>

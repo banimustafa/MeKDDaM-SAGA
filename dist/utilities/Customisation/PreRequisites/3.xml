@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<preRequisites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>1. The pre-processed metabolomics dataset and its associated meta-data if available (see section 4.1).</presetDescription>
+        <customisedDescription>1. The pre-processed metabolomics dataset and its associated meta-data if available (see section 4.1).</customisedDescription>
+        <preRequisiteType>STUDY_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Inputs] -&gt; [Metabolomics Data] -&gt; Data Set</sourceElementPath>
+            </internalSourcesList>
+        </sources>
+        <required>true</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>2. The defined objectives of the process.</presetDescription>
+        <customisedDescription>2. The defined objectives of the process.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Phases] -&gt; [Objectives Definition] -&gt; Reporting</sourceElementPath>
+            </internalSourcesList>
+        </sources>
+        <required>true</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>3. The aims of the metabolomics study.</presetDescription>
+        <customisedDescription>3. The aims of the metabolomics study.</customisedDescription>
+        <preRequisiteType>STUDY_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Inputs] -&gt; Aims of Study</sourceElementPath>
+            </internalSourcesList>
+        </sources>
+        <required>true</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>4. Background knowledge/information regarding the assay including its data acquisition technique (see section 2.6.5), metabolic approaches (see section 2.5), and study design (see section 2.6).</presetDescription>
+        <customisedDescription>4. Background knowledge/information regarding the assay including its data acquisition technique (see section 2.6.5), metabolic approaches (see section 2.5), and study design (see section 2.6).</customisedDescription>
+        <preRequisiteType>STUDY_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Scott, I. M., C. P. Vermeer, et al. (2010). &quot;Enhancement of Plant Metabolite Fingerprinting by Machine Learning.&quot; Plant Physiology 153(4): 1506-1520.</description>
+                <externalSourceType>JOURNAL</externalSourceType>
+                <url>http://www.plantphysiol.org/content/153/4/1506.abstract</url>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Maria Likata Presentation about the acquired data in HiMet Project</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Data/Plant_York_LC-MS_TargetAnalisis/Description/maria1.pdf</url>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>lynn Presentation about the experimental design of HiMet Project</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Data/Plant_York_LC-MS_TargetAnalisis/Description/lynne.pdf</url>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>BaniMustafa, A. H. and N. W. Hardy (2012). A Strategy for Selecting Data Mining Techniques in Metabolomics (in press). Plant Metabolomics: Methods and Protocols. N. W. Hardy and R. D. Hall, Springer Science. 860: 317-335.</description>
+                <externalSourceType>BOOK_SECTION</externalSourceType>
+            </externalSourcesList>
+        </sources>
+        <required>true</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>5. Background knowledge/information regarding the basic statistical measures (see section 6.2.3.3) and data visualisation (see section 4.5).</presetDescription>
+        <customisedDescription>5. Background knowledge/information regarding the basic statistical measures (see section 6.2.3.3) and data visualisation (see section 4.5).</customisedDescription>
+        <preRequisiteType>LITERATURE_RELATED</preRequisiteType>
+        <sources>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>BaniMustafa, A. (2012). A Knowledge Discovery and Data Mining Process Model for Metabolomics. PhD, University of Wales, Aberystwyth.</description>
+                <externalSourceType>OTHER</externalSourceType>
+                <url>file:/E:/PhD/PhD/PhDThesis/PhDThesisWriting/PhDThesisLatex/PhDLatex/PhDThesis.pdf</url>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Witten, I. and E. Frank (2005). Data Mining: Practical machine learning tools and techniques. San Francisco, Morgan Kaufmann.</description>
+                <externalSourceType>BOOK</externalSourceType>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Maimon, O. and L. Rokach (2005). Data Mining and Knowledge Discovery Handbook. New York, NY, Springer.</description>
+                <externalSourceType>BOOK</externalSourceType>
+            </externalSourcesList>
+            <externalSourcesList xsi:type="externalSource">
+                <sourceType>ExternalSource</sourceType>
+                <description>Kantardzic, M. (2003). Data mining: concepts, models, methods, and algorithms. Hoboken, NJ, Wiley-Interscience : IEEE Press.</description>
+                <externalSourceType>BOOK</externalSourceType>
+            </externalSourcesList>
+        </sources>
+        <required>true</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>6. The process quality assurance policy.</presetDescription>
+        <customisedDescription>6. The process quality assurance policy.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Quality Assurance</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>true</required>
+        <customised>true</customised>
+    </preRequisitesList>
+    <preRequisitesList xsi:type="preRequisite" version="1">
+        <dateTime>Mon Mar 12 16:49:17 GMT 2012</dateTime>
+        <presetDescription>7. The process stanards.</presetDescription>
+        <customisedDescription>7. The process stanards.</customisedDescription>
+        <preRequisiteType>PROCESS_RELATED</preRequisiteType>
+        <sources>
+            <internalSourcesList xsi:type="internalSource">
+                <sourceType>InternalSource</sourceType>
+                <sourceElementPath> [Process] -&gt; [Process Supplements] -&gt; Standards</sourceElementPath>
+                <sourceElementString>String</sourceElementString>
+            </internalSourcesList>
+        </sources>
+        <required>false</required>
+        <customised>true</customised>
+    </preRequisitesList>
+</preRequisites>

@@ -1,0 +1,6 @@
+1. The pre-processed metabolomics dataset and its associated meta-data if available (see section 4.1).
+3. The data exploration report including the results of data investigation, understand- ing and prospecting.
+4. The defined process objectives.
+5. The aims of the study and their relationship with the goals of the metabolomics investigation and its hypotheses and assumptions.
+6. Background information and/or knowledge regarding the data mining, including: its approaches (see section 3.2), goals, tasks (see section 3.3), and techniques (see section 3.4).
+7. Background information regarding the requirements of data mining techniques application, including:  time, cost, and expertise as well as the availability of the software and hardware infrastructure.

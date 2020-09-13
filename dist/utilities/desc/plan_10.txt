@@ -1,0 +1,7 @@
+1. Decide whether the results to be deployed as intermediates of a process iteration or as final results of a process termination.
+2. Identify the deliveries need to be reported as supplements of the acquired knowledge.
+3. Identify  the  requirements  of delivering;  retaining,  accessing  and utilising  the  acquired knowledge, e.g. file formats, user interfaces, system interfaces, required soft- ware tools, data bases, etc.
+4. Define a mechanism of delivering,  retaining,  accessing,  and utilising the acquired knowledge and its supplement deliveries.
+5. Assess the  requirements  and constraints  of implementing  the  deployment  mechanism.
+6. Define a mechanism of deploying the acquired knowledge and its supplement deliveries, e.g. DBMS, software, web, based or embedded system (see section 6.2.10).
+7. Deploy the data acquired knowledge and its associated supplementary deliveries.

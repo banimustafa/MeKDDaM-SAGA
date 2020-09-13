@@ -1,0 +1,8 @@
+1. Evaluating the data mining model validity using the decided testing data split.
+2. Evaluating the data mining model achievement of the defined process objectives such as the data-driven objectives (e.g.  discover interesting or hidden patterns, trends, relationships in the data) or hypothesis driven objectives (e.g. classify samples into predefined classes or according to their natural occurrence classes)
+3. Evaluating the data mining modelling success criteria defined in both objectives defi- nition and modelling techniques selection phases.
+4. Evaluating the data mining model performance using different measurements.
+5. Performance measurements must be correct, sufficient,  relevant and applicable to the data mining model.
+6. The data mining model should be neither over-fitted nor under-fitted.
+7. Model evaluation activities and procedures should be correct,  comprehensive and unbiased.
+8. Model evaluation should be repeated each time a new data mining model is built or when the existing model is changed, adjusted or recreated.

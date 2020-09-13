@@ -1,0 +1,4480 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/*
+ * PerformingForm.java
+ *
+ * Created on 04-Oct-2010, 12:08:43
+ */
+
+package gui.form.outcome;
+
+//import global.Config;
+import global.Global;
+import gui.form.input.StudyForm;
+import gui.form.supplement.ManagementForm;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import process_model.general.Procedure;
+import process_model.issue.measurement.BooleanMeasure;
+import process_model.issue.measurement.BooleanMeasureResult;
+import process_model.issue.measurement.Measure;
+import process_model.issue.measurement.Measure.MeasureType;
+import process_model.issue.measurement.MeasureResult;
+import process_model.issue.measurement.MeasurmentOutcome;
+import process_model.issue.measurement.MeasurmentOutcomes;
+import process_model.issue.measurement.QualitativeMeasure;
+import process_model.issue.measurement.QualitativeMeasureResult;
+import process_model.issue.measurement.QuantitativeMeasure;
+import process_model.issue.measurement.QuantitativeMeasureResult;
+import process_model.phase.Phase;
+import process_model.phase.delivery.data.AcclimatisedData;
+import process_model.process.result.Result;
+import process_model.phase.delivery.selection.ModelingTechniqueSelection;
+import process_model.phase.delivery.model.Model;
+import process_model.phase.delivery.model.ModelEvaluation;
+import process_model.phase.delivery.model.ValidationTest;
+import process_model.phase.delivery.process_objective.DataMiningObjective;
+import process_model.supplement.management.resource.Resource;
+import process_model.supplement.management.resource.Resources;
+import project.Project;
+import process_model.process.Process;
+import process_model.supplement.standard.Standard;
+import toolbox.Tools;
+import toolbox.filetools.FileTools;
+import toolbox.modeltools.AssociationTools;
+import toolbox.modeltools.ClassificationTools;
+import toolbox.modeltools.ClusteringTools;
+import toolbox.modeltools.DimentionalityReductionTools;
+import toolbox.modeltools.FeatureAnalysisTools;
+import toolbox.modeltools.RegressionTools;
+import toolbox.modeltools.algorithms.MLP;
+import weka.associations.Apriori;
+import weka.associations.AssociatorEvaluation;
+import weka.attributeSelection.PrincipalComponents;
+import weka.classifiers.Classifier;
+import weka.classifiers.Evaluation;
+import weka.classifiers.bayes.BayesNet;
+import weka.classifiers.functions.LinearRegression;
+import weka.classifiers.functions.SMOreg;
+import weka.classifiers.trees.J48;
+import weka.classifiers.trees.RandomForest;
+import weka.clusterers.ClusterEvaluation;
+import weka.clusterers.Clusterer;
+import weka.clusterers.HierarchicalClusterer;
+import weka.core.Instances;
+/**
+ *
+ * @author amb04
+ */
+public class ModelEvaluationForm extends javax.swing.JFrame {
+private Procedure procedure=null;
+private ModelEvaluation modelEvaluation;
+private Resource resource=null;
+//private Phase phase=Global.currentPhase;
+private ModelingTechniqueSelection techniqueSelection=null;
+private QualitativeMeasure qualitativeMeasure=new QualitativeMeasure();
+private Model model=null;
+private Standard standard;
+private String namesArray[];
+private Measure measure=null;
+private MeasurmentOutcome measuredOutcome =null;
+private AcclimatisedData acclimatisedData; 
+
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+private String approaches[]={"",
+    "Hypotheis-Driven",
+    "Data-Driven","Other"};
+
+private String tasks[]={"","Association",    
+    "Classification",
+    "Correlation Aanalysis",
+    "Dimentionality Reduction",
+    "Feature Extraction and Analysis",
+    "Hypotheisis Testing",  
+    "Regression",
+    "Segmentation",    
+    "Other"};
+
+private String goals[]={"","DESCRIPTION",
+    "DISCOVERY",
+    "PREDICTION",
+    "VERIFICATION",
+    "OTHER"};
+
+private String splits[]={"","All","Building Data",
+    "Testing Data",    
+    "Training Data",    
+    "Other"};
+    /** Creates new form PlanningForm */
+//CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+public ModelEvaluationForm() {
+     initComponents();        
+     this.refresh_evaluation();
+     this.populate_evaluation();
+     this.setTitle("Model Evaluation: "+Global.currentPhase.getTitle());     
+     this.Boolean_jCheckBox.setVisible(false);
+     this.Result_jScrollPane.setVisible(false);
+     this.Result_jTextArea1.setVisible(false);
+     this.Scale_jComboBox.setVisible(false);
+     this.Result_jLabel.setVisible(false);
+    }
+
+
+    /** This method is called from within the constructor to
+     * initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is
+     * always regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        Performing_jLayeredPane = new javax.swing.JLayeredPane();
+        Performing_Details_jDesktopPane_jDesktopPane = new javax.swing.JDesktopPane();
+        Performing_Details_TabbedPane = new javax.swing.JTabbedPane();
+        Planning_Planner_jDesktopPane1 = new javax.swing.JDesktopPane();
+        jScrollPane69 = new javax.swing.JScrollPane();
+        ResultSummary_jTextPane = new javax.swing.JTextPane();
+        ModelPerformance_jLabel = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        Model_Selected_Standards_jList = new javax.swing.JList();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        Model_Used_Resources_jList = new javax.swing.JList();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        Expected_Resources_jList = new javax.swing.JList();
+        Planning_Planner_Role_jLabel1 = new javax.swing.JLabel();
+        Approaches_jComboBox = new javax.swing.JComboBox();
+        goal_jLabel = new javax.swing.JLabel();
+        Goals_jComboBox = new javax.swing.JComboBox();
+        task_jLabel = new javax.swing.JLabel();
+        Tasks_jComboBox = new javax.swing.JComboBox();
+        Supervised_jCheckBox = new javax.swing.JCheckBox();
+        Model_URL_jTextField = new javax.swing.JTextField();
+        URL_jLabel = new javax.swing.JLabel();
+        Browse_jButton = new javax.swing.JButton();
+        Technique_jTextField = new javax.swing.JTextField();
+        Algorithm_jTextPane = new javax.swing.JTextField();
+        algorithm_jLabel1 = new javax.swing.JLabel();
+        Planning_CustomisedPlanItem_jLabel1 = new javax.swing.JLabel();
+        ModelView_jButton = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        Expected_MeasurmentOutcomes_jList = new javax.swing.JList();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        Expected_Outcomes_Details_jTextArea = new javax.swing.JTextArea();
+        Planning_Planner_jDesktopPane3 = new javax.swing.JDesktopPane();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        Model_MeasuredOutcomes_jList = new javax.swing.JList();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        Performed_Outcomes_Details_jTextArea = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Objectives_jTextArea = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        Control_jDesktopPane = new javax.swing.JDesktopPane();
+        Delete_jButton = new javax.swing.JButton();
+        Save_jButton = new javax.swing.JButton();
+        Refresh_jButton = new javax.swing.JButton();
+        New_jDesktopPane = new javax.swing.JDesktopPane();
+        New_jButton1 = new javax.swing.JButton();
+        Add_jButton1 = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jDesktopPane8 = new javax.swing.JDesktopPane();
+        ModelPerformanceAcceptable_jCheckBox = new javax.swing.JCheckBox();
+        ModelUnderFit_jCheckBox = new javax.swing.JCheckBox();
+        ModelOverFit_jCheckBox = new javax.swing.JCheckBox();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        Evaluation_Outcomes_Details_jTextArea = new javax.swing.JTextArea();
+        Planning_Objectives_Control_jDesktopPane10 = new javax.swing.JDesktopPane();
+        Outcomes_Select_jButton = new javax.swing.JButton();
+        Outcomes_UnSelect_jButton = new javax.swing.JButton();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        Measurments_jList = new javax.swing.JList();
+        Result_jLabel = new javax.swing.JLabel();
+        Scale_jComboBox = new javax.swing.JComboBox();
+        Boolean_jCheckBox = new javax.swing.JCheckBox();
+        Result_jScrollPane = new javax.swing.JScrollPane();
+        Result_jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Evaluation_Measurment_Outcomes_jList = new javax.swing.JList();
+        Planning_Planner_info_jDesktopPane4 = new javax.swing.JDesktopPane();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        Procedure_jTextArea = new javax.swing.JTextArea();
+        Procedure_Browse_jButton = new javax.swing.JButton();
+        Procedure_URL_jTextField = new javax.swing.JTextField();
+        Planning_Planner_Name_jLabel15 = new javax.swing.JLabel();
+        Planning_Planner_Name_jLabel16 = new javax.swing.JLabel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        Purpose_jTextArea = new javax.swing.JTextArea();
+        Planning_Planner_Name_jLabel22 = new javax.swing.JLabel();
+        Planning_Objectives_Control_jDesktopPane3 = new javax.swing.JDesktopPane();
+        Select_Resource_jButton2 = new javax.swing.JButton();
+        Unselect_Resource_jButton2 = new javax.swing.JButton();
+        Edit_Resource_jButton = new javax.swing.JButton();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        Procedure_Resources_jList = new javax.swing.JList();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        Procedure_Project_Resources_jList = new javax.swing.JList();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        Procedures_jList = new javax.swing.JList();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        Result_jTextArea = new javax.swing.JTextArea();
+        Planning_Planner_Name_jLabel23 = new javax.swing.JLabel();
+        Delete_Procedure_jButton1 = new javax.swing.JButton();
+        Add_Procedure_jButton2 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane70 = new javax.swing.JScrollPane();
+        ResultSummary_jTextPane1 = new javax.swing.JTextPane();
+        Planning_Resource_jDesktopPane = new javax.swing.JDesktopPane();
+        Planning_Objectives_Control_jDesktopPane1 = new javax.swing.JDesktopPane();
+        Resource_Edit_jButton = new javax.swing.JButton();
+        Resources_Select_jButton1 = new javax.swing.JButton();
+        Resources_UnSelect_jButton1 = new javax.swing.JButton();
+        Reporting_Customised_jDesktopPane3 = new javax.swing.JDesktopPane();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        Resources_jList = new javax.swing.JList();
+        Reporting_Customised_jDesktopPane5 = new javax.swing.JDesktopPane();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        Evaluation_Used_Resources_jList = new javax.swing.JList();
+        Resource_jDesktopPane1 = new javax.swing.JDesktopPane();
+        ConsumedTime_jLabel1 = new javax.swing.JLabel();
+        ConsumedTimeDuration_jTextField = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        Planning_Planner_Name_jLabel12 = new javax.swing.JLabel();
+        Split_jComboBox = new javax.swing.JComboBox();
+        Prerequisite_Source_ExternalSource_URL_jLabel4 = new javax.swing.JLabel();
+        Data_URL_jTextField = new javax.swing.JTextField();
+        AcclimatizedData_View_jButton = new javax.swing.JButton();
+        Data_Previous_jButton = new javax.swing.JButton();
+        Data_Next_jButton = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        ViewEvaluation_jButton = new javax.swing.JButton();
+        BrowseEvaluation_jButton = new javax.swing.JButton();
+        ModelEvaluation_URL_jTextField = new javax.swing.JTextField();
+        Build_Model_Evaluation_jButton = new javax.swing.JButton();
+        menuBar = new javax.swing.JMenuBar();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+            public void windowDeactivated(java.awt.event.WindowEvent evt) {
+                formWindowDeactivated(evt);
+            }
+        });
+
+        Performing_jLayeredPane.setBackground(new java.awt.Color(255, 255, 204));
+        Performing_jLayeredPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        Performing_Details_jDesktopPane_jDesktopPane.setBackground(new java.awt.Color(255, 255, 204));
+        Performing_Details_jDesktopPane_jDesktopPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        Planning_Planner_jDesktopPane1.setBackground(new java.awt.Color(255, 255, 153));
+        Planning_Planner_jDesktopPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        ResultSummary_jTextPane.setBackground(new java.awt.Color(255, 255, 204));
+        ResultSummary_jTextPane.setEditable(false);
+        jScrollPane69.setViewportView(ResultSummary_jTextPane);
+
+        jScrollPane69.setBounds(540, 30, 400, 70);
+        Planning_Planner_jDesktopPane1.add(jScrollPane69, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        ModelPerformance_jLabel.setText("Performance Result Summary");
+        ModelPerformance_jLabel.setBounds(540, 10, 390, 20);
+        Planning_Planner_jDesktopPane1.add(ModelPerformance_jLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Model_Selected_Standards_jList.setBackground(new java.awt.Color(255, 255, 204));
+        Model_Selected_Standards_jList.setBorder(javax.swing.BorderFactory.createTitledBorder("Selected Standards"));
+        Model_Selected_Standards_jList.setModel(this.getModelSelectedStandardsModel());
+        Model_Selected_Standards_jList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Model_Selected_Standards_jList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Model_Selected_Standards_jListValueChanged(evt);
+            }
+        });
+        jScrollPane4.setViewportView(Model_Selected_Standards_jList);
+
+        jScrollPane9.setViewportView(jScrollPane4);
+
+        jScrollPane9.setBounds(630, 150, 310, 110);
+        Planning_Planner_jDesktopPane1.add(jScrollPane9, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Model_Used_Resources_jList.setBackground(new java.awt.Color(255, 255, 204));
+        Model_Used_Resources_jList.setBorder(javax.swing.BorderFactory.createTitledBorder("Model Required Resources"));
+        Model_Used_Resources_jList.setModel(this.getModelUsedResourcesModel());
+        Model_Used_Resources_jList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Model_Used_Resources_jList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Model_Used_Resources_jListValueChanged(evt);
+            }
+        });
+        jScrollPane8.setViewportView(Model_Used_Resources_jList);
+
+        jScrollPane14.setViewportView(jScrollPane8);
+
+        jScrollPane14.setBounds(330, 150, 290, 110);
+        Planning_Planner_jDesktopPane1.add(jScrollPane14, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Expected_Resources_jList.setBorder(javax.swing.BorderFactory.createTitledBorder("Allocated Resources"));
+        Expected_Resources_jList.setModel(this.getExpectedResourcesModel());
+        Expected_Resources_jList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Expected_Resources_jList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Expected_Resources_jListValueChanged(evt);
+            }
+        });
+        jScrollPane15.setViewportView(Expected_Resources_jList);
+
+        jScrollPane15.setBounds(10, 150, 310, 110);
+        Planning_Planner_jDesktopPane1.add(jScrollPane15, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Planning_Planner_Role_jLabel1.setText(" Approach");
+        Planning_Planner_Role_jLabel1.setBounds(20, 20, 110, 20);
+        Planning_Planner_jDesktopPane1.add(Planning_Planner_Role_jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Approaches_jComboBox.setBackground(new java.awt.Color(255, 255, 204));
+        Approaches_jComboBox.setModel(new DefaultComboBoxModel(this.approaches));
+        Approaches_jComboBox.setEnabled(false);
+        Approaches_jComboBox.setBounds(80, 20, 180, 20);
+        Planning_Planner_jDesktopPane1.add(Approaches_jComboBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        goal_jLabel.setText(" Goal");
+        goal_jLabel.setBounds(280, 20, 80, 20);
+        Planning_Planner_jDesktopPane1.add(goal_jLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Goals_jComboBox.setBackground(new java.awt.Color(255, 255, 204));
+        Goals_jComboBox.setModel(new DefaultComboBoxModel(this.goals));
+        Goals_jComboBox.setEnabled(false);
+        Goals_jComboBox.setBounds(330, 20, 180, 20);
+        Planning_Planner_jDesktopPane1.add(Goals_jComboBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        task_jLabel.setText(" Task");
+        task_jLabel.setBounds(290, 50, 50, 20);
+        Planning_Planner_jDesktopPane1.add(task_jLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Tasks_jComboBox.setBackground(new java.awt.Color(255, 255, 204));
+        Tasks_jComboBox.setModel(new DefaultComboBoxModel(this.tasks));
+        Tasks_jComboBox.setEnabled(false);
+        Tasks_jComboBox.setBounds(330, 50, 180, 20);
+        Planning_Planner_jDesktopPane1.add(Tasks_jComboBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Supervised_jCheckBox.setBackground(new java.awt.Color(255, 255, 153));
+        Supervised_jCheckBox.setText("Supervised");
+        Supervised_jCheckBox.setEnabled(false);
+        Supervised_jCheckBox.setBounds(410, 80, 120, 20);
+        Planning_Planner_jDesktopPane1.add(Supervised_jCheckBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Model_URL_jTextField.setBackground(new java.awt.Color(255, 255, 204));
+        Model_URL_jTextField.setEditable(false);
+        Model_URL_jTextField.setBounds(80, 110, 700, 25);
+        Planning_Planner_jDesktopPane1.add(Model_URL_jTextField, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        URL_jLabel.setText("Model");
+        URL_jLabel.setBounds(20, 110, 50, 25);
+        Planning_Planner_jDesktopPane1.add(URL_jLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Browse_jButton.setText("Open");
+        Browse_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Browse_jButtonActionPerformed(evt);
+            }
+        });
+        Browse_jButton.setBounds(790, 110, 80, 25);
+        Planning_Planner_jDesktopPane1.add(Browse_jButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Technique_jTextField.setEditable(false);
+        Technique_jTextField.setBounds(80, 50, 180, 20);
+        Planning_Planner_jDesktopPane1.add(Technique_jTextField, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Algorithm_jTextPane.setBounds(80, 80, 310, 20);
+        Planning_Planner_jDesktopPane1.add(Algorithm_jTextPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        algorithm_jLabel1.setText("Algoritm");
+        algorithm_jLabel1.setBounds(20, 80, 90, 20);
+        Planning_Planner_jDesktopPane1.add(algorithm_jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Planning_CustomisedPlanItem_jLabel1.setText(" Technique");
+        Planning_CustomisedPlanItem_jLabel1.setBounds(20, 50, 80, 20);
+        Planning_Planner_jDesktopPane1.add(Planning_CustomisedPlanItem_jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        ModelView_jButton.setText("View");
+        ModelView_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModelView_jButtonActionPerformed(evt);
+            }
+        });
+        ModelView_jButton.setBounds(870, 110, 70, 25);
+        Planning_Planner_jDesktopPane1.add(ModelView_jButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Performing_Details_TabbedPane.addTab(" Model", Planning_Planner_jDesktopPane1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel2.setLayout(null);
+
+        jPanel4.setLayout(null);
+        jPanel2.add(jPanel4);
+        jPanel4.setBounds(10, 11, 0, 270);
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 153));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel5);
+        jPanel5.setBounds(17, 11, 0, 0);
+
+        Expected_MeasurmentOutcomes_jList.setBackground(new java.awt.Color(255, 255, 204));
+        Expected_MeasurmentOutcomes_jList.setBorder(javax.swing.BorderFactory.createTitledBorder("Expected Outcomes"));
+        Expected_MeasurmentOutcomes_jList.setModel(getExpectedOutcomes());
+        Expected_MeasurmentOutcomes_jList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Expected_MeasurmentOutcomes_jListValueChanged(evt);
+            }
+        });
+        jScrollPane21.setViewportView(Expected_MeasurmentOutcomes_jList);
+
+        jPanel2.add(jScrollPane21);
+        jScrollPane21.setBounds(10, 10, 430, 240);
+
+        Expected_Outcomes_Details_jTextArea.setBackground(new java.awt.Color(255, 255, 204));
+        Expected_Outcomes_Details_jTextArea.setColumns(20);
+        Expected_Outcomes_Details_jTextArea.setRows(5);
+        jScrollPane22.setViewportView(Expected_Outcomes_Details_jTextArea);
+
+        jPanel2.add(jScrollPane22);
+        jScrollPane22.setBounds(450, 10, 490, 240);
+
+        Performing_Details_TabbedPane.addTab("Expected  Otcomes", jPanel2);
+
+        Planning_Planner_jDesktopPane3.setBackground(new java.awt.Color(255, 255, 153));
+
+        Model_MeasuredOutcomes_jList.setBackground(new java.awt.Color(255, 255, 204));
+        Model_MeasuredOutcomes_jList.setBorder(javax.swing.BorderFactory.createTitledBorder("Measured Outcomes"));
+        Model_MeasuredOutcomes_jList.setModel(this.getModelOutcomes());
+        Model_MeasuredOutcomes_jList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Model_MeasuredOutcomes_jListValueChanged(evt);
+            }
+        });
+        jScrollPane24.setViewportView(Model_MeasuredOutcomes_jList);
+
+        jScrollPane24.setBounds(10, 10, 430, 240);
+        Planning_Planner_jDesktopPane3.add(jScrollPane24, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Performed_Outcomes_Details_jTextArea.setBackground(new java.awt.Color(255, 255, 204));
+        Performed_Outcomes_Details_jTextArea.setColumns(20);
+        Performed_Outcomes_Details_jTextArea.setRows(5);
+        jScrollPane25.setViewportView(Performed_Outcomes_Details_jTextArea);
+
+        jScrollPane25.setBounds(450, 10, 500, 240);
+        Planning_Planner_jDesktopPane3.add(jScrollPane25, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Performing_Details_TabbedPane.addTab("Model Performance", Planning_Planner_jDesktopPane3);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Process Data Mining Objectives"));
+        jPanel1.setLayout(null);
+
+        Objectives_jTextArea.setColumns(20);
+        Objectives_jTextArea.setRows(5);
+        jScrollPane2.setViewportView(Objectives_jTextArea);
+
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(10, 20, 930, 210);
+
+        jButton1.setText("Aims of Study");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(12, 230, 930, 23);
+
+        Performing_Details_TabbedPane.addTab("Objectives", jPanel1);
+
+        Performing_Details_TabbedPane.setBounds(10, 450, 960, 300);
+        Performing_Details_jDesktopPane_jDesktopPane.add(Performing_Details_TabbedPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Control_jDesktopPane.setBackground(new java.awt.Color(255, 255, 153));
+        Control_jDesktopPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        Delete_jButton.setText("Delete");
+        Delete_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Delete_jButtonActionPerformed(evt);
+            }
+        });
+        Delete_jButton.setBounds(180, 5, 80, 23);
+        Control_jDesktopPane.add(Delete_jButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Save_jButton.setText("Save");
+        Save_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Save_jButtonActionPerformed(evt);
+            }
+        });
+        Save_jButton.setBounds(100, 5, 80, 23);
+        Control_jDesktopPane.add(Save_jButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Refresh_jButton.setText("Refresh");
+        Refresh_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Refresh_jButtonActionPerformed(evt);
+            }
+        });
+        Refresh_jButton.setBounds(10, 5, 90, 23);
+        Control_jDesktopPane.add(Refresh_jButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Control_jDesktopPane.setBounds(500, 760, 270, 35);
+        Performing_Details_jDesktopPane_jDesktopPane.add(Control_jDesktopPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        New_jDesktopPane.setBackground(new java.awt.Color(255, 255, 153));
+        New_jDesktopPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        New_jButton1.setText("New");
+        New_jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                New_jButton1ActionPerformed(evt);
+            }
+        });
+        New_jButton1.setBounds(10, 5, 80, 23);
+        New_jDesktopPane.add(New_jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Add_jButton1.setText("Add +");
+        Add_jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Add_jButton1ActionPerformed(evt);
+            }
+        });
+        Add_jButton1.setBounds(90, 5, 90, 23);
+        New_jDesktopPane.add(Add_jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        New_jDesktopPane.setBounds(780, 760, 190, 35);
+        Performing_Details_jDesktopPane_jDesktopPane.add(New_jDesktopPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jDesktopPane8.setBackground(new java.awt.Color(255, 255, 153));
+        jDesktopPane8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        ModelPerformanceAcceptable_jCheckBox.setBackground(new java.awt.Color(255, 255, 153));
+        ModelPerformanceAcceptable_jCheckBox.setText("Match Expectations");
+        ModelPerformanceAcceptable_jCheckBox.setBounds(480, 10, 140, 30);
+        jDesktopPane8.add(ModelPerformanceAcceptable_jCheckBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        ModelUnderFit_jCheckBox.setBackground(new java.awt.Color(255, 255, 153));
+        ModelUnderFit_jCheckBox.setText("Model Underfit");
+        ModelUnderFit_jCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModelUnderFit_jCheckBoxActionPerformed(evt);
+            }
+        });
+        ModelUnderFit_jCheckBox.setBounds(790, 10, 150, 30);
+        jDesktopPane8.add(ModelUnderFit_jCheckBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        ModelOverFit_jCheckBox.setBackground(new java.awt.Color(255, 255, 153));
+        ModelOverFit_jCheckBox.setText(" Model Overfit");
+        ModelOverFit_jCheckBox.setBounds(650, 10, 130, 30);
+        jDesktopPane8.add(ModelOverFit_jCheckBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Evaluation_Outcomes_Details_jTextArea.setBackground(new java.awt.Color(255, 255, 204));
+        Evaluation_Outcomes_Details_jTextArea.setColumns(20);
+        Evaluation_Outcomes_Details_jTextArea.setRows(5);
+        Evaluation_Outcomes_Details_jTextArea.setBorder(null);
+        jScrollPane5.setViewportView(Evaluation_Outcomes_Details_jTextArea);
+
+        jScrollPane5.setBounds(460, 170, 490, 90);
+        jDesktopPane8.add(jScrollPane5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Planning_Objectives_Control_jDesktopPane10.setBackground(new java.awt.Color(255, 255, 153));
+
+        Outcomes_Select_jButton.setText("+>");
+        Outcomes_Select_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Outcomes_Select_jButtonActionPerformed(evt);
+            }
+        });
+        Outcomes_Select_jButton.setBounds(0, 0, 60, 20);
+        Planning_Objectives_Control_jDesktopPane10.add(Outcomes_Select_jButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Outcomes_UnSelect_jButton.setText("<-");
+        Outcomes_UnSelect_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Outcomes_UnSelect_jButtonActionPerformed(evt);
+            }
+        });
+        Outcomes_UnSelect_jButton.setBounds(0, 20, 60, 20);
+        Planning_Objectives_Control_jDesktopPane10.add(Outcomes_UnSelect_jButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Planning_Objectives_Control_jDesktopPane10.setBounds(400, 40, 60, 50);
+        jDesktopPane8.add(Planning_Objectives_Control_jDesktopPane10, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Measurments_jList.setBackground(new java.awt.Color(255, 255, 204));
+        Measurments_jList.setBorder(javax.swing.BorderFactory.createTitledBorder("Model Measures"));
+        Measurments_jList.setModel(this.getSelectedMeasuresModel());
+        Measurments_jList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Measurments_jListValueChanged(evt);
+            }
+        });
+        jScrollPane16.setViewportView(Measurments_jList);
+
+        jScrollPane16.setBounds(10, 40, 390, 120);
+        jDesktopPane8.add(jScrollPane16, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Result_jLabel.setText("Expected Result");
+        Result_jLabel.setBounds(10, 160, 230, 20);
+        jDesktopPane8.add(Result_jLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Scale_jComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   " }));
+        Scale_jComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Scale_jComboBoxActionPerformed(evt);
+            }
+        });
+        Scale_jComboBox.setBounds(20, 190, 210, 22);
+        jDesktopPane8.add(Scale_jComboBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Boolean_jCheckBox.setBackground(new java.awt.Color(255, 255, 153));
+        Boolean_jCheckBox.setText("True");
+        Boolean_jCheckBox.setBounds(10, 190, 90, 22);
+        jDesktopPane8.add(Boolean_jCheckBox, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Result_jTextArea1.setColumns(20);
+        Result_jTextArea1.setRows(5);
+        Result_jScrollPane.setViewportView(Result_jTextArea1);
+
+        Result_jScrollPane.setBounds(10, 180, 390, 80);
+        jDesktopPane8.add(Result_jScrollPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Evaluation_Measurment_Outcomes_jList.setBackground(new java.awt.Color(255, 255, 204));
+        Evaluation_Measurment_Outcomes_jList.setBorder(javax.swing.BorderFactory.createTitledBorder("Model Evaluation Measured Outcomes"));
+        Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());
+        Evaluation_Measurment_Outcomes_jList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Evaluation_Measurment_Outcomes_jListValueChanged(evt);
+            }
+        });
+        jScrollPane1.setViewportView(Evaluation_Measurment_Outcomes_jList);
+
+        jScrollPane1.setBounds(460, 40, 490, 120);
+        jDesktopPane8.add(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jTabbedPane1.addTab("Model Evaluation", jDesktopPane8);
+
+        Planning_Planner_info_jDesktopPane4.setBackground(new java.awt.Color(255, 255, 153));
+        Planning_Planner_info_jDesktopPane4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Validation Test Procedures", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+
+        Procedure_jTextArea.setColumns(20);
+        Procedure_jTextArea.setRows(5);
+        jScrollPane6.setViewportView(Procedure_jTextArea);
+
+        jScrollPane6.setBounds(10, 40, 170, 70);
+        Planning_Planner_info_jDesktopPane4.add(jScrollPane6, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Procedure_Browse_jButton.setText("Browse");
+        Procedure_Browse_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Procedure_Browse_jButtonActionPerformed(evt);
+            }
+        });
+        Procedure_Browse_jButton.setBounds(430, 230, 110, 23);
+        Planning_Planner_info_jDesktopPane4.add(Procedure_Browse_jButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Procedure_URL_jTextField.setBounds(50, 230, 370, 22);
+        Planning_Planner_info_jDesktopPane4.add(Procedure_URL_jTextField, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Planning_Planner_Name_jLabel15.setText("URL");
+        Planning_Planner_Name_jLabel15.setBounds(10, 230, 60, 20);
+        Planning_Planner_info_jDesktopPane4.add(Planning_Planner_Name_jLabel15, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Planning_Planner_Name_jLabel16.setText("Validation Test");
+        Planning_Planner_Name_jLabel16.setBounds(10, 20, 180, 20);
+        Planning_Planner_info_jDesktopPane4.add(Planning_Planner_Name_jLabel16, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Purpose_jTextArea.setColumns(20);
+        Purpose_jTextArea.setRows(5);
+        jScrollPane10.setViewportView(Purpose_jTextArea);
+
+        jScrollPane10.setBounds(190, 40, 160, 70);
+        Planning_Planner_info_jDesktopPane4.add(jScrollPane10, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Planning_Planner_Name_jLabel22.setText("Purpose");
+        Planning_Planner_Name_jLabel22.setBounds(190, 20, 150, 20);
+        Planning_Planner_info_jDesktopPane4.add(Planning_Planner_Name_jLabel22, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Planning_Objectives_Control_jDesktopPane3.setBackground(new java.awt.Color(255, 255, 153));
+
+        Select_Resource_jButton2.setText("+>");
+        Select_Resource_jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Select_Resource_jButton2ActionPerformed(evt);
+            }
+        });
+        Select_Resource_jButton2.setBounds(0, 0, 60, 20);
+        Planning_Objectives_Control_jDesktopPane3.add(Select_Resource_jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Unselect_Resource_jButton2.setText("<-");
+        Unselect_Resource_jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Unselect_Resource_jButton2ActionPerformed(evt);
+            }
+        });
+        Unselect_Resource_jButton2.setBounds(0, 20, 60, 20);
+        Planning_Objectives_Control_jDesktopPane3.add(Unselect_Resource_jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Edit_Resource_jButton.setText("Edit");
+        Edit_Resource_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Edit_Resource_jButtonActionPerformed(evt);
+            }
+        });
+        Edit_Resource_jButton.setBounds(0, 40, 60, 20);
+        Planning_Objectives_Control_jDesktopPane3.add(Edit_Resource_jButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Planning_Objectives_Control_jDesktopPane3.setBounds(240, 120, 60, 70);
+        Planning_Planner_info_jDesktopPane4.add(Planning_Objectives_Control_jDesktopPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Procedure_Resources_jList.setBorder(javax.swing.BorderFactory.createTitledBorder("Validation Resources"));
+        Procedure_Resources_jList.setModel(this.getEvaluationProcedureResourcesModel());
+        Procedure_Resources_jList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Procedure_Resources_jList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Procedure_Resources_jListValueChanged(evt);
+            }
+        });
+        jScrollPane17.setViewportView(Procedure_Resources_jList);
+
+        jScrollPane17.setBounds(300, 120, 240, 100);
+        Planning_Planner_info_jDesktopPane4.add(jScrollPane17, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Procedure_Project_Resources_jList.setBorder(javax.swing.BorderFactory.createTitledBorder("Available Resources"));
+        Procedure_Project_Resources_jList.setModel(this.getProjectResourcesModel());
+        Procedure_Project_Resources_jList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Procedure_Project_Resources_jList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Procedure_Project_Resources_jListValueChanged(evt);
+            }
+        });
+        jScrollPane18.setViewportView(Procedure_Project_Resources_jList);
+
+        jScrollPane18.setBounds(10, 120, 230, 100);
+        Planning_Planner_info_jDesktopPane4.add(jScrollPane18, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Procedures_jList.setBackground(new java.awt.Color(255, 255, 204));
+        Procedures_jList.setBorder(javax.swing.BorderFactory.createTitledBorder("Applied Procedures"));
+        Procedures_jList.setModel(this.getEvaluationProcedures());
+        Procedures_jList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Procedures_jListValueChanged(evt);
+            }
+        });
+        jScrollPane19.setViewportView(Procedures_jList);
+
+        jScrollPane19.setBounds(640, 40, 290, 190);
+        Planning_Planner_info_jDesktopPane4.add(jScrollPane19, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Result_jTextArea.setColumns(20);
+        Result_jTextArea.setRows(5);
+        jScrollPane20.setViewportView(Result_jTextArea);
+
+        jScrollPane20.setBounds(360, 40, 180, 70);
+        Planning_Planner_info_jDesktopPane4.add(jScrollPane20, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Planning_Planner_Name_jLabel23.setText("Result Summary");
+        Planning_Planner_Name_jLabel23.setBounds(360, 20, 200, 20);
+        Planning_Planner_info_jDesktopPane4.add(Planning_Planner_Name_jLabel23, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Delete_Procedure_jButton1.setText("Delete -");
+        Delete_Procedure_jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Delete_Procedure_jButton1ActionPerformed(evt);
+            }
+        });
+        Delete_Procedure_jButton1.setBounds(640, 230, 290, 20);
+        Planning_Planner_info_jDesktopPane4.add(Delete_Procedure_jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Add_Procedure_jButton2.setText("Save +>");
+        Add_Procedure_jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Add_Procedure_jButton2ActionPerformed(evt);
+            }
+        });
+        Add_Procedure_jButton2.setBounds(540, 40, 100, 25);
+        Planning_Planner_info_jDesktopPane4.add(Add_Procedure_jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jTabbedPane1.addTab("Model Validation Tets", Planning_Planner_info_jDesktopPane4);
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Model Evaluation Summary"));
+        jPanel7.setLayout(null);
+
+        jScrollPane70.setBorder(null);
+
+        ResultSummary_jTextPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane70.setViewportView(ResultSummary_jTextPane1);
+
+        jPanel7.add(jScrollPane70);
+        jScrollPane70.setBounds(10, 20, 930, 240);
+
+        jTabbedPane1.addTab("Model Evaluation Summary", jPanel7);
+
+        Planning_Resource_jDesktopPane.setBackground(new java.awt.Color(255, 255, 153));
+        Planning_Resource_jDesktopPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Planning_Resource_jDesktopPane.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Planning_Resource_jDesktopPaneFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Planning_Resource_jDesktopPaneFocusLost(evt);
+            }
+        });
+
+        Planning_Objectives_Control_jDesktopPane1.setBackground(new java.awt.Color(255, 255, 153));
+
+        Resource_Edit_jButton.setText("Edit");
+        Resource_Edit_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Resource_Edit_jButtonActionPerformed(evt);
+            }
+        });
+        Resource_Edit_jButton.setBounds(0, 50, 70, 20);
+        Planning_Objectives_Control_jDesktopPane1.add(Resource_Edit_jButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Resources_Select_jButton1.setText("+>");
+        Resources_Select_jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Resources_Select_jButton1ActionPerformed(evt);
+            }
+        });
+        Resources_Select_jButton1.setBounds(0, 0, 70, 20);
+        Planning_Objectives_Control_jDesktopPane1.add(Resources_Select_jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Resources_UnSelect_jButton1.setText("<-");
+        Resources_UnSelect_jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Resources_UnSelect_jButton1ActionPerformed(evt);
+            }
+        });
+        Resources_UnSelect_jButton1.setBounds(0, 20, 70, 20);
+        Planning_Objectives_Control_jDesktopPane1.add(Resources_UnSelect_jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Planning_Objectives_Control_jDesktopPane1.setBounds(350, 10, 70, 80);
+        Planning_Resource_jDesktopPane.add(Planning_Objectives_Control_jDesktopPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Reporting_Customised_jDesktopPane3.setBackground(new java.awt.Color(255, 255, 204));
+        Reporting_Customised_jDesktopPane3.setBorder(javax.swing.BorderFactory.createTitledBorder("Available Resources"));
+
+        Resources_jList.setBorder(javax.swing.BorderFactory.createTitledBorder("Project Resources"));
+        Resources_jList.setModel(this.getProjectResourcesModel());
+        Resources_jList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Resources_jList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Resources_jListValueChanged(evt);
+            }
+        });
+        jScrollPane7.setViewportView(Resources_jList);
+
+        jScrollPane7.setBounds(10, 20, 320, 220);
+        Reporting_Customised_jDesktopPane3.add(jScrollPane7, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Reporting_Customised_jDesktopPane3.setBounds(10, 10, 340, 250);
+        Planning_Resource_jDesktopPane.add(Reporting_Customised_jDesktopPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Reporting_Customised_jDesktopPane5.setBackground(new java.awt.Color(255, 255, 204));
+        Reporting_Customised_jDesktopPane5.setBorder(javax.swing.BorderFactory.createTitledBorder("Required Resources"));
+
+        Evaluation_Used_Resources_jList.setBorder(javax.swing.BorderFactory.createTitledBorder("EvaluationRequired Resources"));
+        Evaluation_Used_Resources_jList.setModel(this.getEvaluationUsedResourcesModel());
+        Evaluation_Used_Resources_jList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Evaluation_Used_Resources_jList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Evaluation_Used_Resources_jListValueChanged(evt);
+            }
+        });
+        jScrollPane11.setViewportView(Evaluation_Used_Resources_jList);
+
+        jScrollPane11.setBounds(20, 20, 480, 170);
+        Reporting_Customised_jDesktopPane5.add(jScrollPane11, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Resource_jDesktopPane1.setBackground(new java.awt.Color(255, 255, 153));
+        Resource_jDesktopPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Resource_jDesktopPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Resource_jDesktopPane1MouseClicked(evt);
+            }
+        });
+
+        ConsumedTime_jLabel1.setText("Required Time");
+        ConsumedTime_jLabel1.setBounds(10, 10, 90, 22);
+        Resource_jDesktopPane1.add(ConsumedTime_jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        ConsumedTimeDuration_jTextField.setBounds(110, 10, 90, 22);
+        Resource_jDesktopPane1.add(ConsumedTimeDuration_jTextField, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Resource_jDesktopPane1.setBounds(20, 200, 210, 40);
+        Reporting_Customised_jDesktopPane5.add(Resource_jDesktopPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Reporting_Customised_jDesktopPane5.setBounds(420, 10, 520, 250);
+        Planning_Resource_jDesktopPane.add(Reporting_Customised_jDesktopPane5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jTabbedPane1.addTab("Model Evaluation Resources", Planning_Resource_jDesktopPane);
+
+        jTabbedPane1.setBounds(10, 140, 960, 300);
+        Performing_Details_jDesktopPane_jDesktopPane.add(jTabbedPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Model Data Evaluation Data"));
+        jPanel3.setLayout(null);
+
+        Planning_Planner_Name_jLabel12.setText(" Data Split");
+        jPanel3.add(Planning_Planner_Name_jLabel12);
+        Planning_Planner_Name_jLabel12.setBounds(10, 20, 100, 20);
+
+        Split_jComboBox.setBackground(new java.awt.Color(255, 255, 204));
+        Split_jComboBox.setMaximumRowCount(10);
+        Split_jComboBox.setModel(new DefaultComboBoxModel(this.splits));
+        jPanel3.add(Split_jComboBox);
+        Split_jComboBox.setBounds(80, 20, 150, 20);
+
+        Prerequisite_Source_ExternalSource_URL_jLabel4.setText("URL");
+        jPanel3.add(Prerequisite_Source_ExternalSource_URL_jLabel4);
+        Prerequisite_Source_ExternalSource_URL_jLabel4.setBounds(250, 20, 70, 20);
+
+        Data_URL_jTextField.setEditable(false);
+        jPanel3.add(Data_URL_jTextField);
+        Data_URL_jTextField.setBounds(290, 20, 410, 20);
+
+        AcclimatizedData_View_jButton.setText("View");
+        AcclimatizedData_View_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AcclimatizedData_View_jButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(AcclimatizedData_View_jButton);
+        AcclimatizedData_View_jButton.setBounds(700, 20, 90, 20);
+
+        Data_Previous_jButton.setText("<");
+        Data_Previous_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Data_Previous_jButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(Data_Previous_jButton);
+        Data_Previous_jButton.setBounds(800, 20, 60, 20);
+
+        Data_Next_jButton.setText(">");
+        Data_Next_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Data_Next_jButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(Data_Next_jButton);
+        Data_Next_jButton.setBounds(860, 20, 60, 20);
+
+        jPanel3.setBounds(10, 10, 960, 50);
+        Performing_Details_jDesktopPane_jDesktopPane.add(jPanel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "External Model Evaluation URL", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.black));
+
+        ViewEvaluation_jButton.setText("View");
+        ViewEvaluation_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewEvaluation_jButtonActionPerformed(evt);
+            }
+        });
+
+        BrowseEvaluation_jButton.setText("Browse");
+        BrowseEvaluation_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BrowseEvaluation_jButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ModelEvaluation_URL_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BrowseEvaluation_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ViewEvaluation_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ModelEvaluation_URL_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BrowseEvaluation_jButton)
+                    .addComponent(ViewEvaluation_jButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel6.setBounds(10, 70, 620, 53);
+        Performing_Details_jDesktopPane_jDesktopPane.add(jPanel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Build_Model_Evaluation_jButton.setText("<< Generate Internal Model Evaluation >>");
+        Build_Model_Evaluation_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Build_Model_Evaluation_jButtonActionPerformed(evt);
+            }
+        });
+        Build_Model_Evaluation_jButton.setBounds(640, 70, 330, 50);
+        Performing_Details_jDesktopPane_jDesktopPane.add(Build_Model_Evaluation_jButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Performing_Details_jDesktopPane_jDesktopPane.setBounds(10, 10, 990, 810);
+        Performing_jLayeredPane.add(Performing_Details_jDesktopPane_jDesktopPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        setJMenuBar(menuBar);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Performing_jLayeredPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1010, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Performing_jLayeredPane, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void Resources_jListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Resources_jListValueChanged
+
+   if (Global.project!=null&&Global.project.getSupplements()!=null && 
+       Global.project.getSupplements().getManagement()!=null &&
+       Global.project.getSupplements().getManagement().getResources()!=null )
+       if (this.Resources_jList.getSelectedIndex()>=0)
+            this.resource=Global.project.getSupplements().getManagement().
+            getResources().getResource(this.Resources_jList.getSelectedIndex());
+
+        this.populateForm();
+
+
+    }//GEN-LAST:event_Resources_jListValueChanged
+
+    private void Sources_UnSelect_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sources_UnSelect_jButtonActionPerformed
+
+    }//GEN-LAST:event_Sources_UnSelect_jButtonActionPerformed
+
+//DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+//****************************************************************************
+//                              Delete Resource
+//DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+//****************************************************************************
+ private void delete_resource()
+{
+if (this.modelEvaluation!=null &&
+//    this.evaluation.getFeasibility()!=null &&
+    this.modelEvaluation.getResources()!=null &&
+    this.modelEvaluation.getResources().getResourcesList().size()>0)
+    {
+        int index= this.modelEvaluation.getResources().getResourcesList().indexOf(this.resource);
+        if (this.modelEvaluation.getResources().delete(this.resource)==0);
+        {
+            if (this.modelEvaluation.getResources().getResourcesList().size()>0)
+            {
+                if (index==0)
+                    this.resource = this.modelEvaluation.getResources().getResource(index);
+                else if(index>0)
+                    this.resource = this.modelEvaluation.getResources().getResource(index-1);
+            }
+        }
+        // setResult process objective
+ }
+}
+
+ //DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+//****************************************************************************
+//                              Delete Resource
+//DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+//****************************************************************************
+ private void delete_procedure_resource()
+{
+if (this.procedure!=null &&
+//    this.procedure.getFeasibility()!=null &&
+    this.procedure.getResources()!=null &&
+    this.procedure.getResources().getResourcesList().size()>0)
+    {
+        int index= this.procedure.getResources().getResourcesList()
+                                                                            .indexOf(this.resource);
+        if (this.procedure.getResources().delete(this.resource)==0);
+        {
+            if (this.procedure.getResources().getResourcesList().size()>0)
+            {
+                if (index==0)
+                    this.resource = this.procedure.getResources().getResource(index);
+                else if(index>0)
+                    this.resource = this.procedure.getResources().getResource(index-1);
+            }
+        }
+        // setResult process objective
+ }
+}
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+this.Resources_jList.setModel(this.getProjectResourcesModel());
+this.Evaluation_Used_Resources_jList.setModel(this.getEvaluationUsedResourcesModel());
+//
+this.Procedure_Project_Resources_jList.setModel(this.getProjectResourcesModel());
+this.Procedures_jList.setModel(this.getEvaluationProcedures());
+this.Procedure_Resources_jList.setModel(this.getEvaluationProcedureResourcesModel());
+//
+//
+this.Model_Used_Resources_jList.setModel(this.getModelUsedResourcesModel());
+this.Model_Selected_Standards_jList.setModel(this.getModelSelectedStandardsModel());
+//
+this.Expected_MeasurmentOutcomes_jList.setModel(this.getExpectedOutcomes());
+this.Expected_Resources_jList.setModel(this.getExpectedResourcesModel());
+//
+this.Measurments_jList.setModel(this.getSelectedMeasuresModel());
+this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());
+this.Model_MeasuredOutcomes_jList.setModel(this.getModelOutcomes());
+this.Expected_MeasurmentOutcomes_jList.setModel(this.getExpectedOutcomes());
+
+
+
+    }//GEN-LAST:event_formWindowActivated
+
+    private void formWindowDeactivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowDeactivated
+//this.save_model();
+    }//GEN-LAST:event_formWindowDeactivated
+
+    private void Evaluation_Used_Resources_jListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Evaluation_Used_Resources_jListValueChanged
+
+        if (this.model!=null &&
+//            this.model.getFeasibility()!=null &&
+            this.model.getRequirements()!=null)
+
+         if (this.model.getRequirements().getResourcesList().size()>=0
+            && this.Model_Used_Resources_jList.getSelectedIndex()>=0)
+
+             this.resource= (Resource) this.model.getRequirements().getResourcesList().get(this.Model_Used_Resources_jList.getSelectedIndex());
+    }//GEN-LAST:event_Evaluation_Used_Resources_jListValueChanged
+
+    private void Resource_Edit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Resource_Edit_jButtonActionPerformed
+    new ManagementForm(this.resource).setVisible(true);
+    }//GEN-LAST:event_Resource_Edit_jButtonActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+   System.gc();
+   //System.runFinalization();
+   
+    }//GEN-LAST:event_formWindowClosed
+
+
+
+    private void Analysts_jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Analysts_jList1ValueChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Analysts_jList1ValueChanged
+
+    private void Analysts_jList2ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Analysts_jList2ValueChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Analysts_jList2ValueChanged
+
+    private void Planning_Resource_jDesktopPaneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Planning_Resource_jDesktopPaneFocusGained
+    //------------------------------------------------------------------------
+  /*
+    if (this.model!=null && this.model.getFeasibility()!=null)
+         {
+            this.Duration_jTextField.setText(this.model.getFeasibility().getRequiredTime()+"");
+            this.Feasible_jCheckBox.setSelected(this.model.getFeasibility().isFeasible());
+         }
+*/
+
+    }//GEN-LAST:event_Planning_Resource_jDesktopPaneFocusGained
+
+    private void Planning_Resource_jDesktopPaneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Planning_Resource_jDesktopPaneFocusLost
+/*
+   if (this.model!=null && this.model.getFeasibility()!=null
+       && !this.Duration_jTextField.getText().equals(""))
+    {
+       this.model.getFeasibility().setRequiredTime(Double.parseDouble(this.Duration_jTextField.getText()));
+       this.model.getFeasibility().setFeasible(this.Feasible_jCheckBox.isSelected());
+     }
+ *
+ */
+    }//GEN-LAST:event_Planning_Resource_jDesktopPaneFocusLost
+
+    private void New_jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_jButton1ActionPerformed
+        this.clear_evaluation();
+}//GEN-LAST:event_New_jButton1ActionPerformed
+
+    private void Refresh_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Refresh_jButtonActionPerformed
+        this.refresh_evaluation();
+        this.populate_evaluation();
+    }//GEN-LAST:event_Refresh_jButtonActionPerformed
+
+    private void Save_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_jButtonActionPerformed
+        this.save_evaluation();
+}//GEN-LAST:event_Save_jButtonActionPerformed
+
+    private void Delete_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_jButtonActionPerformed
+
+if (this.modelEvaluation!=null)
+{
+
+    this.modelEvaluation.UnDeliver();
+    //this.delete_evaluation();
+    this.clear_evaluation();
+    this.populate_evaluation();
+    this.populateForm();
+}
+
+}//GEN-LAST:event_Delete_jButtonActionPerformed
+
+    private void Add_jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_jButton1ActionPerformed
+        this.save_evaluation();
+        this.clear_evaluation();
+}//GEN-LAST:event_Add_jButton1ActionPerformed
+
+    private void Resources_Select_jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Resources_Select_jButton1ActionPerformed
+
+ this.save_evaluation();
+ if (this.modelEvaluation!=null)
+ {
+        if (this.resource!=null )
+        {
+            if (this.modelEvaluation.getResources()==null)
+                this.modelEvaluation.setResources(new Resources());
+            this.addResourceFunds();
+            this.modelEvaluation.getResources().save(this.resource);
+        }        
+  }
+ else
+  JOptionPane.showMessageDialog(null, "No Objective added yet ...!!!");
+ 
+ this.save_evaluation();
+ this.populate_evaluation();
+
+    }//GEN-LAST:event_Resources_Select_jButton1ActionPerformed
+
+    private void Resources_UnSelect_jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Resources_UnSelect_jButton1ActionPerformed
+
+        if (this.modelEvaluation!=null)
+        {
+            this.deductResourceFunds();
+            this.delete_resource();
+        }
+        //
+        this.Evaluation_Used_Resources_jList.setModel(this.getEvaluationUsedResourcesModel());
+        //
+        this.Evaluation_Used_Resources_jList.setSelectedIndex(this.model.getRequirements().
+                getResourcesList().indexOf(this.resource));
+
+        this.populateForm();
+
+    }//GEN-LAST:event_Resources_UnSelect_jButton1ActionPerformed
+
+    private void Model_Selected_Standards_jListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Model_Selected_Standards_jListValueChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Model_Selected_Standards_jListValueChanged
+
+    private void Model_Used_Resources_jListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Model_Used_Resources_jListValueChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Model_Used_Resources_jListValueChanged
+
+    private void Resource_jDesktopPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Resource_jDesktopPane1MouseClicked
+        // TODO add your handling code here:
+}//GEN-LAST:event_Resource_jDesktopPane1MouseClicked
+
+    private void Browse_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Browse_jButtonActionPerformed
+
+if (!this.Model_URL_jTextField.getText().equals(""))
+   {
+       String fileName=Model_URL_jTextField.getText().substring(6, this.Model_URL_jTextField.getText().length());
+//       System.out.println(fileName);
+       Tools.viewAnyFile(new File(fileName));
+   }
+    }//GEN-LAST:event_Browse_jButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+new StudyForm().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void Add_Procedure_jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_Procedure_jButton2ActionPerformed
+        this.save_procedure();
+}//GEN-LAST:event_Add_Procedure_jButton2ActionPerformed
+
+    private void Delete_Procedure_jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_Procedure_jButton1ActionPerformed
+        if (this.procedure!=null)
+            this.delete_procedure();
+        this.Procedures_jList.setModel(this.getEvaluationProcedures());
+        this.populateForm();
+}//GEN-LAST:event_Delete_Procedure_jButton1ActionPerformed
+
+    private void Procedure_Browse_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Procedure_Browse_jButtonActionPerformed
+
+        File file =null;    
+        if (!this.Model_URL_jTextField.getText().equals("")) 
+        {        
+            try {            
+                URL thisURL=new URL(this.Model_URL_jTextField.getText());        
+                String homeDirectory=Tools.toFile(thisURL).getParent();
+                file= Tools.chooseFile("Choose Model Testing Results", null, homeDirectory, false);
+                } 
+
+            catch (MalformedURLException ex) 
+            {              
+                  file = Tools.chooseFile("Choose Model Testing Results",null, Global.project.getLocation(), false);
+            }
+        }
+        else       
+            file = Tools.chooseFile("Choose Model Testing Results",null, Global.project.getLocation(), false);
+                
+        //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        if (file!=null) 
+        {
+            // Tools.viewAnyFile(file);                                   
+            this.Procedure_URL_jTextField.setText(Tools.toURL(file).toString());
+            this.populateForm();
+        }
+    }//GEN-LAST:event_Procedure_Browse_jButtonActionPerformed
+
+    private void Select_Resource_jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Select_Resource_jButton2ActionPerformed
+
+        if (this.procedure==null)
+            this.procedure=new Procedure();
+
+        if (this.resource!=null )
+        {
+            if (this.procedure.getResources()==null)
+                this.procedure.setResources(new Resources());
+
+            this.procedure.getResources().save(this.resource);
+        }
+        this.Procedure_Resources_jList.setModel(this.getEvaluationProcedureResourcesModel());        
+        this.populate_evaluation();
+}//GEN-LAST:event_Select_Resource_jButton2ActionPerformed
+
+    private void Unselect_Resource_jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Unselect_Resource_jButton2ActionPerformed
+        if (this.procedure!=null)
+            this.delete_procedure_resource();
+        this.Procedure_Resources_jList.setModel(this.getEvaluationProcedureResourcesModel());
+        this.populate_evaluation();
+}//GEN-LAST:event_Unselect_Resource_jButton2ActionPerformed
+
+    private void Edit_Resource_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Edit_Resource_jButtonActionPerformed
+        new ManagementForm(this.resource).setVisible(true);
+}//GEN-LAST:event_Edit_Resource_jButtonActionPerformed
+
+    private void Procedure_Resources_jListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Procedure_Resources_jListValueChanged
+
+        if (this.procedure!=null && this.procedure.getResources()!=null )
+
+            if (this.procedure.getResources().getResourcesList().size()>=0
+            && this.Procedure_Resources_jList.getSelectedIndex()>=0)
+
+                this.resource= (Resource) this.procedure.getResources().getResourcesList().
+                        get(this.Procedure_Resources_jList.getSelectedIndex());
+}//GEN-LAST:event_Procedure_Resources_jListValueChanged
+
+    private void Procedure_Project_Resources_jListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Procedure_Project_Resources_jListValueChanged
+
+   if (Global.project!=null&&Global.project.getSupplements()!=null &&
+       Global.project.getSupplements().getManagement()!=null &&
+       Global.project.getSupplements().getManagement().getResources()!=null )
+       if (this.Procedure_Project_Resources_jList.getSelectedIndex()>=0)
+            this.resource=Global.project.getSupplements().getManagement().
+            getResources().getResource(this.Procedure_Project_Resources_jList.getSelectedIndex());
+
+        this.populateForm();
+}//GEN-LAST:event_Procedure_Project_Resources_jListValueChanged
+
+    private void Procedures_jListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Procedures_jListValueChanged
+
+        if (this.modelEvaluation!=null && this.procedure!=null &&
+                this.modelEvaluation.getValidationTest()!=null)
+
+            if (this.modelEvaluation.getValidationTest().getProceduresList().size()>=0
+            && this.Procedures_jList.getSelectedIndex()>=0)
+
+                this.procedure= this.modelEvaluation.getValidationTest().
+                        getProcedure(this.Procedures_jList.getSelectedIndex());
+    }//GEN-LAST:event_Procedures_jListValueChanged
+
+    private void Expected_Resources_jListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Expected_Resources_jListValueChanged
+
+        if (this.techniqueSelection!=null &&
+                this.techniqueSelection.getFeasibility()!=null &&
+                this.techniqueSelection.getFeasibility().getRequiredResources()!=null)
+
+            if (this.techniqueSelection.getFeasibility().getRequiredResources().getResourcesList().size()>=0
+            && this.Procedure_Resources_jList.getSelectedIndex()>=0)
+
+                this.resource= (Resource) this.techniqueSelection.getFeasibility().
+                        getRequiredResources().getResourcesList().get(this.Procedure_Resources_jList.getSelectedIndex());
+    }//GEN-LAST:event_Expected_Resources_jListValueChanged
+
+    private void Expected_MeasurmentOutcomes_jListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Expected_MeasurmentOutcomes_jListValueChanged
+
+        if (this.techniqueSelection!=null && 
+            this.techniqueSelection.getSuccessCriteria()!=null &&
+            this.techniqueSelection.getSuccessCriteria().getExpectedOutcomes()!=null &&
+            this.techniqueSelection.getSuccessCriteria().getExpectedOutcomes().getOutcomesList().size()>0  &&
+            this.Expected_MeasurmentOutcomes_jList.getSelectedIndex()>=0 )
+        {
+                 this.measuredOutcome=  this.techniqueSelection.getSuccessCriteria(). getExpectedOutcomes().
+                                                                getOutcomesList().get(Expected_MeasurmentOutcomes_jList.getSelectedIndex());
+                 
+                 if (measuredOutcome!=null && measuredOutcome.getOutcome()!=null && measuredOutcome.getOutcome().getResult()!=null)
+                     Expected_Outcomes_Details_jTextArea.setText(measuredOutcome.getOutcome().getResult());
+                 else 
+                     Expected_Outcomes_Details_jTextArea.setText("");
+        }
+        
+    }//GEN-LAST:event_Expected_MeasurmentOutcomes_jListValueChanged
+
+    private void AcclimatizedData_View_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcclimatizedData_View_jButtonActionPerformed
+        
+        if (Data_URL_jTextField.getText()!=null && !Data_URL_jTextField.getText().equals("")) {
+            FileTools.viewData(Data_URL_jTextField.getText().substring(6));
+        }
+}//GEN-LAST:event_AcclimatizedData_View_jButtonActionPerformed
+
+    private void Data_Previous_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Data_Previous_jButtonActionPerformed
+        this.previous_acclimatisedData();
+}//GEN-LAST:event_Data_Previous_jButtonActionPerformed
+
+    private void Data_Next_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Data_Next_jButtonActionPerformed
+        this.next_acclimatisedData();
+}//GEN-LAST:event_Data_Next_jButtonActionPerformed
+/*
+ private void importModel(File file)
+    {
+    
+   //-------------------------------------------------------------------------
+   int decision=JOptionPane.showConfirmDialog(null, "Would you like to import the model as a local copy ?");
+   if (decision==0)
+      {
+          try {
+              URL selectedUrl = new URL(this.Model_URL_jTextField.getText());
+              URL newUrl = Tools.copyFileToTemp(selectedUrl);
+
+              if (newUrl!=null)
+                  this.Model_URL_jTextField.setText(newUrl.toString());
+            }
+            catch (MalformedURLException ex) {
+               Logger.getLogger(DataExplorationForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       }
+   //-------------------------------------------------------------------------
+    try {
+            this.model.setOutcomeURL(new URL(this.Model_URL_jTextField.getText()));
+            
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(ModelBuildingForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    //-------------------------------------------------------------------------
+    this.save_evaluation();
+    this.refresh_evaluation();
+    this.populate_evaluation();
+    }
+       
+    */
+ 
+ 
+
+//-----------------------------------------------------------------------------    
+private void add_boolean_outcome(Measure measure,boolean outcome )
+{
+        this.measuredOutcome=new MeasurmentOutcome();
+        BooleanMeasureResult  booleanMeasureResult= new BooleanMeasureResult();
+        booleanMeasureResult.setOutcome(outcome);
+        this.measuredOutcome.setMeasure((BooleanMeasure)measure);
+        this.measuredOutcome.setOutcome(booleanMeasureResult);
+        
+
+        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        if (this.modelEvaluation==null)
+            this.modelEvaluation=new ModelEvaluation();
+
+        if (this.modelEvaluation.getEvaluatedPerformance()==null)
+            this.modelEvaluation.setEvaluatedPerformance(new MeasurmentOutcomes());                        
+
+        if (this.measuredOutcome!=null && this.modelEvaluation.getEvaluatedPerformance()!=null)
+            this.modelEvaluation.getEvaluatedPerformance().save(measuredOutcome);
+       
+       
+       
+}
+
+//-----------------------------------------------------------------------------
+private void add_quantitative_outcome(Measure measure,String outcome )
+{
+    this.measuredOutcome=new MeasurmentOutcome();    
+    try {
+        QuantitativeMeasureResult  quantitativeMeasureResult= new QuantitativeMeasureResult();
+
+        double  result=Double.parseDouble(outcome);            
+
+        quantitativeMeasureResult.setValue(result);
+        this.measuredOutcome.setMeasure((QuantitativeMeasure)measure);
+        this.measuredOutcome.setOutcome(quantitativeMeasureResult);
+
+
+        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        if (this.modelEvaluation==null)
+            this.modelEvaluation=new ModelEvaluation();
+
+        if (this.modelEvaluation.getEvaluatedPerformance()==null)
+            this.modelEvaluation.setEvaluatedPerformance(new MeasurmentOutcomes());                        
+
+        if (this.measuredOutcome!=null && this.modelEvaluation.getEvaluatedPerformance()!=null)
+            this.modelEvaluation.getEvaluatedPerformance().save(measuredOutcome);
+        
+    }
+        catch(NumberFormatException nfx){
+        JOptionPane.showMessageDialog(null, "Value must be a number ...!!!"); 
+    }
+
+}
+
+//-----------------------------------------------------------------------------
+private void add_qualitative_outcome(Measure measure,int rankedOutcome )
+{
+    this.measuredOutcome=new MeasurmentOutcome();
+    QualitativeMeasureResult qualitativeMeasureResult = new QualitativeMeasureResult();
+    QualitativeMeasure qualMeasure = (QualitativeMeasure) measure;
+    if (this.Scale_jComboBox.getSelectedIndex() >= 0) 
+    {
+        String rank = qualMeasure.getScaleCategory(rankedOutcome);
+        qualitativeMeasureResult.setRank(rank);
+    }
+    this.measuredOutcome.setMeasure(qualMeasure.clone());
+    this.measuredOutcome.setOutcome(qualitativeMeasureResult.clone());          
+
+   //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        if (this.modelEvaluation==null)
+            this.modelEvaluation=new ModelEvaluation();
+
+        if (this.modelEvaluation.getEvaluatedPerformance()==null)
+            this.modelEvaluation.setEvaluatedPerformance(new MeasurmentOutcomes());                        
+
+        if (this.measuredOutcome!=null && this.modelEvaluation.getEvaluatedPerformance()!=null)
+            this.modelEvaluation.getEvaluatedPerformance().save(measuredOutcome);
+      
+}
+
+//-----------------------------------------------------------------------------
+private void add_other_outcome(Measure measure,String outcome )
+{
+    this.measuredOutcome=new MeasurmentOutcome();
+    MeasureResult  measureResult= new MeasureResult();
+    String result=outcome;
+
+    measureResult.setResult(result);
+    this.measuredOutcome.setMeasure(measure);
+    this.measuredOutcome.setOutcome(measureResult);          
+
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    if (this.modelEvaluation==null)
+        this.modelEvaluation=new ModelEvaluation();
+
+    if (this.modelEvaluation.getEvaluatedPerformance()==null)
+        this.modelEvaluation.setEvaluatedPerformance(new MeasurmentOutcomes());                        
+
+    if (this.measuredOutcome!=null && this.modelEvaluation.getEvaluatedPerformance()!=null)
+        this.modelEvaluation.getEvaluatedPerformance().save(measuredOutcome);
+   
+}        
+
+//-----------------------------------------------------------------------------
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//-----------------------------------------------------------------------------
+private void evaluate_association(Apriori apriori,Instances testingInstances)
+{            
+   
+    if (this.modelEvaluation==null)
+        this.modelEvaluation=new ModelEvaluation();
+
+    //if (this.modelEvaluation.getEvaluatedPerformance()==null)
+    this.modelEvaluation.setEvaluatedPerformance(new MeasurmentOutcomes());
+    
+   
+   AssociatorEvaluation evalAss=AssociationTools.evaluateAssociationRules(apriori, testingInstances, 10);
+   String evalString = evalAss.toString();
+     
+   if ( this.techniqueSelection !=null && 
+         this.techniqueSelection.getMeasurability() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList().size()>0)
+   
+   for(Object o:this.techniqueSelection.getMeasurability().getMeasuresList()) 
+   {
+       Measure thisMeasuer=(Measure) o;     
+       this.add_other_outcome(thisMeasuer,evalString);             
+   }
+   
+  this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());            
+  this.populateForm();    
+}
+
+
+
+//-----------------------------------------------------------------------------
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//-----------------------------------------------------------------------------
+private void evaluate_classification(Classifier cls,Instances testingInstances)
+{             
+    
+    if (this.modelEvaluation==null)
+        this.modelEvaluation=new ModelEvaluation();
+
+//    if (this.modelEvaluation.getEvaluatedPerformance()==null)
+        this.modelEvaluation.setEvaluatedPerformance(new MeasurmentOutcomes());                        
+  
+   Evaluation eval=null;   
+   if (cls.getClass().getSimpleName().equals("J48"))
+   {
+       J48 j48= (J48) cls;
+       eval=ClassificationTools.evaluateTree(j48, testingInstances, 10);  
+   }
+   
+   else  if (cls.getClass().getSimpleName().equals("BayesNet"))
+   {
+       BayesNet bayesNet=(BayesNet) cls;
+       eval=ClassificationTools.evaluateBayesNet(bayesNet, testingInstances, 10);              
+   }
+   
+   else  if (cls.getClass().getSimpleName().equals("MLP"))
+   {
+       MLP mlp=(MLP) cls;
+       eval=ClassificationTools.evaluateMLP(mlp, testingInstances, 10);              
+   }
+   
+   //**************************************************************************
+   if ( this.techniqueSelection !=null && 
+         this.techniqueSelection.getMeasurability() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList().size()>0)         
+              
+   for(Object o:this.techniqueSelection.getMeasurability().getMeasuresList()) 
+   {
+       Measure thisMeasure=(Measure) o;
+           
+       try {
+           if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Correctly Classified Count".toLowerCase()))
+            {
+                double correctCount = Math.round(eval.correct());
+                String result=Double.toString(correctCount);                
+                this.add_quantitative_outcome(thisMeasure,result);            
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Correctly Classified Percentage".toLowerCase()))
+            {
+                double correctPercentage = Math.round(eval.pctCorrect());
+                String result=Double.toString(correctPercentage);                
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Incorrectly Classified Count".toLowerCase()))
+            {
+                double incorrectCount = Math.round(eval.incorrect());
+                String result=Double.toString(incorrectCount);
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Incorrectly Classified Percentage".toLowerCase()))
+            {
+                double incorrectPercentage = Math.round(eval.pctIncorrect());
+                String result=Double.toString(incorrectPercentage);
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Kappa".toLowerCase()))           
+            {
+                double kappa = Tools.Round(eval.kappa(),3);   
+                String result=Double.toString(kappa);
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+            //
+            //----------------------------------------------------------------            
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Confusion Matrix".toLowerCase()))           
+            {
+                String confusionMatrix = eval.toMatrixString();                            
+                this.add_other_outcome(thisMeasure,confusionMatrix);    
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Classification Details".toLowerCase()))           
+            {
+                String classDetails = eval.toClassDetailsString();
+                this.add_other_outcome(thisMeasure,classDetails);             
+            }
+
+
+             // errors
+             //----------------------------------------------------------------
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Error Rate".toLowerCase()))       
+            {
+                double errorRate = Tools.Round(eval.errorRate(),3);
+                String result=Double.toString(errorRate);
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Mean Absolute Error".toLowerCase()))
+            {
+                double meanAbsoluteError = Tools.Round(eval.meanAbsoluteError(),3);
+                String result=Double.toString(meanAbsoluteError);                
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Mean Prior Absolute Error".toLowerCase()))
+            {
+             double meanPriorAbsoluteError = Tools.Round(eval.meanPriorAbsoluteError(),3);    
+             String result=Double.toString(meanPriorAbsoluteError);             
+             this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Relative Absolute Error".toLowerCase()))
+            {
+             double relativeAbsoluteError = Tools.Round(eval.relativeAbsoluteError(),3);  
+             String result=Double.toString(relativeAbsoluteError);             
+             this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Root Mean Squared Error".toLowerCase()))
+            {
+             double rootMeanSquaredError = Tools.Round(eval.rootMeanSquaredError(),3);
+             String result=Double.toString(rootMeanSquaredError);             
+             this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Root Mean Prior Squared Error".toLowerCase())) 
+            {
+             double rootMeanPriorSquaredError = Tools.Round(eval.rootMeanPriorSquaredError(),3);
+             String result=Double.toString(rootMeanPriorSquaredError);             
+             this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Root Relative Squared Error".toLowerCase()))           
+            {
+             double rootRelativeSquaredError = Tools.Round(eval.rootRelativeSquaredError(),3);
+             String result=Double.toString(rootRelativeSquaredError);             
+             this.add_quantitative_outcome(thisMeasure,result);             
+            }
+
+    } catch (Exception ex) {
+        Logger.getLogger(ModelBuildingForm.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());            
+this.populateForm();     
+}
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+private void evaluate_clustering(HierarchicalClusterer hca,Instances testingInstances)
+{
+    if (this.modelEvaluation==null)
+        this.modelEvaluation=new ModelEvaluation();
+
+//    if (this.modelEvaluation.getEvaluatedPerformance()==null)
+        this.modelEvaluation.setEvaluatedPerformance(new MeasurmentOutcomes());                        
+
+    ClusterEvaluation eval=ClusteringTools.evaluateHCA(hca,testingInstances, 10);
+    String evalClusteringString=eval.clusterResultsToString();
+    String incorrectlyClusteredInstances=evalClusteringString.substring(evalClusteringString.indexOf("Incorrectly clustered instances :")+"Incorrectly clustered instances :".length(), evalClusteringString.indexOf(" %")+2).trim();     
+            
+    if ( this.techniqueSelection !=null && 
+         this.techniqueSelection.getMeasurability() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList().size()>0)
+        {
+             for(Object o:this.techniqueSelection.getMeasurability().getMeasuresList()) 
+              {
+                Measure thisMeasure=(Measure) o;
+
+                if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Clustered Instances".toLowerCase()))     
+                {
+                    String clusteredInstances=evalClusteringString.substring(evalClusteringString.indexOf("Clustered Instances")+"Clustered Instances :".length(), evalClusteringString.indexOf("Classes to Clusters")-1).trim();
+                    this.add_other_outcome(thisMeasure,clusteredInstances);
+                }
+
+                else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Classes To Clusteres".toLowerCase()))
+                {
+                    String classesToClusteres=evalClusteringString.substring(evalClusteringString.indexOf("Classes to Clusters")+"Classes to Clusters :".length(), evalClusteringString.indexOf("Incorrectly clustered instances")-1);
+                    this.add_other_outcome(thisMeasure,classesToClusteres);
+                }
+
+                // just to get the right string   
+
+                else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Incorrectly Clustered Instances Count".toLowerCase()))
+                {    
+                    String incorrectlyClusteredInstancesCount=incorrectlyClusteredInstances.substring(0, incorrectlyClusteredInstances.indexOf("\t")).trim();
+                    this.add_quantitative_outcome(thisMeasure,incorrectlyClusteredInstancesCount);
+                }
+
+                else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Incorrectly Clustered Instances Percentage".toLowerCase()))
+                {    
+                    String incorrectlyClusteredInstancesPercentage=incorrectlyClusteredInstances.substring(incorrectlyClusteredInstances.indexOf("\t"),incorrectlyClusteredInstances.indexOf("%")).trim();
+                    this.add_quantitative_outcome(thisMeasure,incorrectlyClusteredInstancesPercentage);
+                }
+             }
+       }
+    this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());
+    this.populateForm();    
+}
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+private void evaluate_hca_clustering(Clusterer cls,Instances testingInstances)
+{
+    if (this.modelEvaluation==null)
+        this.modelEvaluation=new ModelEvaluation();
+
+//    if (this.modelEvaluation.getEvaluatedPerformance()==null)
+        this.modelEvaluation.setEvaluatedPerformance(new MeasurmentOutcomes());                        
+
+    ClusterEvaluation eval=ClusteringTools.evaluateClusterer(cls,"",testingInstances, 10);
+    String evalClusteringString=eval.clusterResultsToString();
+    String incorrectlyClusteredInstances=evalClusteringString.substring(evalClusteringString.indexOf("Incorrectly clustered instances :")+"Incorrectly clustered instances :".length(), evalClusteringString.indexOf(" %")+2).trim();     
+            
+    if ( this.techniqueSelection !=null && 
+         this.techniqueSelection.getMeasurability() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList().size()>0)
+        {
+             for(Object o:this.techniqueSelection.getMeasurability().getMeasuresList()) 
+              {
+                Measure thisMeasure=(Measure) o;
+
+                if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Clustered Instances".toLowerCase()))     
+                {
+                    String clusteredInstances=evalClusteringString.substring(evalClusteringString.indexOf("Clustered Instances")+"Clustered Instances :".length(), evalClusteringString.indexOf("Classes to Clusters")-1).trim();
+                    this.add_other_outcome(thisMeasure,clusteredInstances);
+                }
+
+                else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Classes To Clusteres".toLowerCase()))
+                {
+                    String classesToClusteres=evalClusteringString.substring(evalClusteringString.indexOf("Classes to Clusters")+"Classes to Clusters :".length(), evalClusteringString.indexOf("Incorrectly clustered instances")-1);
+                    this.add_other_outcome(thisMeasure,classesToClusteres);
+                }
+
+                // just to get the right string   
+
+                else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Incorrectly Clustered Instances Count".toLowerCase()))
+                {    
+                    String incorrectlyClusteredInstancesCount=incorrectlyClusteredInstances.substring(0, incorrectlyClusteredInstances.indexOf("\t")).trim();
+                    this.add_quantitative_outcome(thisMeasure,incorrectlyClusteredInstancesCount);
+                }
+
+                else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Incorrectly Clustered Instances Percentage".toLowerCase()))
+                {    
+                    String incorrectlyClusteredInstancesPercentage=incorrectlyClusteredInstances.substring(incorrectlyClusteredInstances.indexOf("\t"),incorrectlyClusteredInstances.indexOf("%")).trim();
+                    this.add_quantitative_outcome(thisMeasure,incorrectlyClusteredInstancesPercentage);
+                }
+             }
+       }
+    this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());
+    this.populateForm();    
+}
+
+
+
+//-----------------------------------------------------------------------------
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//-----------------------------------------------------------------------------
+private void evaluate_pca(PrincipalComponents pca,Instances testingInstances)
+{            
+    
+     PrincipalComponents evaluatedPCA = DimentionalityReductionTools.evaluatePCA(pca, testingInstances);
+     String evalString = evaluatedPCA.getVarianceCovered()+"";
+     
+   if ( this.techniqueSelection !=null && 
+         this.techniqueSelection.getMeasurability() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList().size()>0)
+   
+   for(Object o:this.techniqueSelection.getMeasurability().getMeasuresList()) 
+   {
+       Measure thisMeasuer=(Measure) o;     
+       this.add_other_outcome(thisMeasuer,evalString);             
+   }
+   
+   this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());
+   this.populateForm();    
+}
+
+
+//-----------------------------------------------------------------------------
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//-----------------------------------------------------------------------------
+private void evaluate_smo(SMOreg cls,Instances testingInstances)
+{            
+    
+     Evaluation eval=RegressionTools.evaluateSMORegression(cls, testingInstances,10);     
+     
+   if ( this.techniqueSelection !=null && 
+         this.techniqueSelection.getMeasurability() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList().size()>0)
+   
+   for(Object o:this.techniqueSelection.getMeasurability().getMeasuresList()) 
+   {
+       Measure thisMeasure=(Measure) o;
+           
+       try {
+           /*
+           if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Correctly Classified Count".toLowerCase()))
+            {
+                double correctCount = Math.round(eval.correct());
+                String result=Double.toString(correctCount);                
+                this.add_quantitative_outcome(thisMeasure,result);            
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Correctly Classified Percentage".toLowerCase()))
+            {
+                double correctPercentage = Math.round(eval.pctCorrect());
+                String result=Double.toString(correctPercentage);                
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Incorrectly Classified Count".toLowerCase()))
+            {
+                double incorrectCount = Math.round(eval.incorrect());
+                String result=Double.toString(incorrectCount);
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Incorrectly Classified Percentage".toLowerCase()))
+            {
+                double incorrectPercentage = Math.round(eval.pctIncorrect());
+                String result=Double.toString(incorrectPercentage);
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Kappa".toLowerCase()))           
+            {
+                double kappa = Tools.Round(eval.kappa(),3);   
+                String result=Double.toString(kappa);
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+            //
+            //----------------------------------------------------------------            
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Confusion Matrix".toLowerCase()))           
+            {
+                String confusionMatrix = eval.toMatrixString();                            
+                this.add_other_outcome(thisMeasure,confusionMatrix);    
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Classification Details".toLowerCase()))           
+            {
+                String classDetails = eval.toClassDetailsString();
+                this.add_other_outcome(thisMeasure,classDetails);             
+            }else
+            */
+
+             // errors
+             //----------------------------------------------------------------
+            if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Error Rate".toLowerCase()))       
+            {
+                double errorRate = Tools.Round(eval.errorRate(),3);
+                String result=Double.toString(errorRate);
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Mean Absolute Error".toLowerCase()))
+            {
+                double meanAbsoluteError = Tools.Round(eval.meanAbsoluteError(),3);
+                String result=Double.toString(meanAbsoluteError);                
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Mean Prior Absolute Error".toLowerCase()))
+            {
+             double meanPriorAbsoluteError = Tools.Round(eval.meanPriorAbsoluteError(),3);    
+             String result=Double.toString(meanPriorAbsoluteError);             
+             this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Relative Absolute Error".toLowerCase()))
+            {
+             double relativeAbsoluteError = Tools.Round(eval.relativeAbsoluteError(),3);  
+             String result=Double.toString(relativeAbsoluteError);             
+             this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Root Mean Squared Error".toLowerCase()))
+            {
+             double rootMeanSquaredError = Tools.Round(eval.rootMeanSquaredError(),3);
+             String result=Double.toString(rootMeanSquaredError);             
+             this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Root Mean Prior Squared Error".toLowerCase())) 
+            {
+             double rootMeanPriorSquaredError = Tools.Round(eval.rootMeanPriorSquaredError(),3);
+             String result=Double.toString(rootMeanPriorSquaredError);             
+             this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Root Relative Squared Error".toLowerCase()))           
+            {
+             double rootRelativeSquaredError = Tools.Round(eval.rootRelativeSquaredError(),3);
+             String result=Double.toString(rootRelativeSquaredError);             
+             this.add_quantitative_outcome(thisMeasure,result);             
+            }
+
+    } catch (Exception ex) {
+        Logger.getLogger(ModelBuildingForm.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+   
+   this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());     
+   this.populateForm();    
+}
+
+//-----------------------------------------------------------------------------
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//-----------------------------------------------------------------------------
+private void evaluate_randomForest(RandomForest cls,Instances testingInstances)
+{            
+   Evaluation eval=FeatureAnalysisTools.evaluateRandomForest(cls, testingInstances, 10);
+     
+   if ( this.techniqueSelection !=null && 
+         this.techniqueSelection.getMeasurability() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList().size()>0)
+   
+   for(Object o:this.techniqueSelection.getMeasurability().getMeasuresList()) 
+   {
+       Measure thisMeasure=(Measure) o;
+           
+       try {
+           if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Correctly Classified Count".toLowerCase()))
+            {
+                double correctCount = Math.round(eval.correct());
+                String result=Double.toString(correctCount);                
+                this.add_quantitative_outcome(thisMeasure,result);            
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Correctly Classified Percentage".toLowerCase()))
+            {
+                double correctPercentage = Math.round(eval.pctCorrect());
+                String result=Double.toString(correctPercentage);                
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Incorrectly Classified Count".toLowerCase()))
+            {
+                double incorrectCount = Math.round(eval.incorrect());
+                String result=Double.toString(incorrectCount);
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Incorrectly Classified Percentage".toLowerCase()))
+            {
+                double incorrectPercentage = Math.round(eval.pctIncorrect());
+                String result=Double.toString(incorrectPercentage);
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Kappa".toLowerCase()))           
+            {
+                double kappa = Tools.Round(eval.kappa(),3);   
+                String result=Double.toString(kappa);
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+            //
+            //----------------------------------------------------------------            
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Confusion Matrix".toLowerCase()))           
+            {
+                String confusionMatrix = eval.toMatrixString();                            
+                this.add_other_outcome(thisMeasure,confusionMatrix);    
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Classification Details".toLowerCase()))           
+            {
+                String classDetails = eval.toClassDetailsString();
+                this.add_other_outcome(thisMeasure,classDetails);             
+            }
+
+
+             // errors
+             //----------------------------------------------------------------
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Error Rate".toLowerCase()))       
+            {
+                double errorRate = Tools.Round(eval.errorRate(),3);
+                String result=Double.toString(errorRate);
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Mean Absolute Error".toLowerCase()))
+            {
+                double meanAbsoluteError = Tools.Round(eval.meanAbsoluteError(),3);
+                String result=Double.toString(meanAbsoluteError);                
+                this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Mean Prior Absolute Error".toLowerCase()))
+            {
+             double meanPriorAbsoluteError = Tools.Round(eval.meanPriorAbsoluteError(),3);    
+             String result=Double.toString(meanPriorAbsoluteError);             
+             this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+            else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Relative Absolute Error".toLowerCase()))
+            {
+             double relativeAbsoluteError = Tools.Round(eval.relativeAbsoluteError(),3);  
+             String result=Double.toString(relativeAbsoluteError);             
+             this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Root Mean Squared Error".toLowerCase()))
+            {
+             double rootMeanSquaredError = Tools.Round(eval.rootMeanSquaredError(),3);
+             String result=Double.toString(rootMeanSquaredError);             
+             this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Root Mean Prior Squared Error".toLowerCase())) 
+            {
+             double rootMeanPriorSquaredError = Tools.Round(eval.rootMeanPriorSquaredError(),3);
+             String result=Double.toString(rootMeanPriorSquaredError);             
+             this.add_quantitative_outcome(thisMeasure,result);
+            }
+
+           else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Root Relative Squared Error".toLowerCase()))           
+            {
+             double rootRelativeSquaredError = Tools.Round(eval.rootRelativeSquaredError(),3);
+             String result=Double.toString(rootRelativeSquaredError);             
+             this.add_quantitative_outcome(thisMeasure,result);             
+            }
+
+    } catch (Exception ex) {
+        Logger.getLogger(ModelBuildingForm.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+   
+   this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());     
+   this.populateForm(); 
+}
+
+
+//-----------------------------------------------------------------------------
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//-----------------------------------------------------------------------------
+private void evaluate_clustering(Clusterer cls,Instances testingInstances)
+{            
+     ClusterEvaluation eval=ClusteringTools.evaluateClusterer(cls,testingInstances);
+     String evalString = eval.clusterResultsToString();
+     
+   if ( this.techniqueSelection !=null && 
+         this.techniqueSelection.getMeasurability() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList().size()>0)
+   
+   for(Object o:this.techniqueSelection.getMeasurability().getMeasuresList()) 
+   {
+       Measure thisMeasuer=(Measure) o;     
+     this.add_other_outcome(thisMeasuer,evalString);             
+   }
+   
+   this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());
+   this.populateForm();    
+}
+
+
+//-----------------------------------------------------------------------------
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//-----------------------------------------------------------------------------
+private void evaluate_regression(LinearRegression lr,Instances testingInstances )
+{
+    
+    if (this.modelEvaluation==null)
+        this.modelEvaluation=new ModelEvaluation();
+
+//    if (this.modelEvaluation.getEvaluatedPerformance()==null)
+        this.modelEvaluation.setEvaluatedPerformance(new MeasurmentOutcomes());   
+    
+    Evaluation evalLR=RegressionTools.evaluateLinearRegression(lr, testingInstances, 10);
+    String regEvalString=evalLR.toSummaryString();
+
+    if ( this.techniqueSelection !=null && 
+         this.techniqueSelection.getMeasurability() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList() !=null && 
+         this.techniqueSelection.getMeasurability().getMeasuresList().size()>0)
+    
+    for(Object o:this.techniqueSelection.getMeasurability().getMeasuresList()) 
+    {
+        Measure thisMeasure=(Measure) o;
+        if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Correlation Coefficient".toLowerCase()))
+        {    
+            String correlationCoefficient=regEvalString.substring(regEvalString.indexOf("Correlation coefficient")+"Correlation coefficient".length(), regEvalString.indexOf("Mean absolute error")-1).trim();
+            this.add_quantitative_outcome(thisMeasure,correlationCoefficient);
+        }
+        
+        else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Mean Absolute Error".toLowerCase()))
+        {            
+            String meanAbsoluteError=regEvalString.substring(regEvalString.indexOf("Mean absolute error")+"Mean absolute error".length(), regEvalString.indexOf("Root mean squared error")-1).trim();
+            this.add_quantitative_outcome(thisMeasure,meanAbsoluteError);
+        }
+        
+        else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Relative Absolute Error".toLowerCase()))
+        {            
+            String rootMeanSquaredError=regEvalString.substring(regEvalString.indexOf("Root mean squared error")+"Root mean squared error".length(), regEvalString.indexOf("Relative absolute error")-1).trim();
+            this.add_quantitative_outcome(thisMeasure,rootMeanSquaredError);
+        }
+        else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Root Mean Squared Error".toLowerCase()))
+        {            
+            String relativeAbsoluteError=regEvalString.substring(regEvalString.indexOf("Relative absolute error")+"Relative absolute error".length(), regEvalString.indexOf("Root relative squared error")-2).trim();
+            this.add_quantitative_outcome(thisMeasure,relativeAbsoluteError);
+        }
+        else if (thisMeasure !=null && thisMeasure.getName()!=null && thisMeasure.getName().toLowerCase().equals("Root Relative Squared Error".toLowerCase()))
+        {        
+            String rootRelativeSquaredError=regEvalString.substring(regEvalString.indexOf("Root relative squared error")+"Root relative squared error".length(), regEvalString.indexOf("Total Number of Instances")-2).trim();
+            this.add_quantitative_outcome(thisMeasure,rootRelativeSquaredError);
+        }
+    }
+    this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());            
+    this.populateForm();
+}
+
+//-----------------------------------------------------------------------------
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//-----------------------------------------------------------------------------
+private void evaluate_rulesInduction()
+{
+    
+}
+
+//-----------------------------------------------------------------------------
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//-----------------------------------------------------------------------------
+private void evaluate_featureExtraction()
+{
+    
+}
+
+//-----------------------------------------------------------------------------
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//-----------------------------------------------------------------------------
+private void evaluate_dimentionalityReduction()
+{
+    
+}
+
+//-----------------------------------------------------------------------------
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//-----------------------------------------------------------------------------
+
+private void evaluate_correlation()
+{
+    
+}     
+    
+    private void Build_Model_Evaluation_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Build_Model_Evaluation_jButtonActionPerformed
+                                      
+        File dataSetFile=null;
+        Instances instances=null;
+        //-------------------------------------------------------------------------
+        try {
+            
+            if (!Data_URL_jTextField.getText().equals(""))
+                dataSetFile = Tools.toFile(new URL(Data_URL_jTextField.getText()));               
+            
+            if (dataSetFile!=null)
+                instances = FileTools.LoadData(dataSetFile.toString());
+            
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(ModelBuildingForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+               
+        if (instances!=null)
+        {
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            if (Technique_jTextField.getText().toLowerCase().equals(Global.techniques[1].toLowerCase())) 
+            {
+                AssociatorEvaluation evaluation=null;                                
+                if (model!=null && model.getOutcomeURL()!=null)
+                {
+                    Apriori apriori = (Apriori) Tools.readObjectFromFile(Tools.toFile(model.getOutcomeURL()).getPath());
+                    if (apriori !=null && instances !=null)     
+                    {
+                        evaluation=AssociationTools.evaluateAssociationRules(apriori, instances, 10);
+                        
+                        this.modelEvaluation=new ModelEvaluation();
+
+                        this.evaluate_association(apriori, instances);
+
+                        if (this.modelEvaluation!=null && acclimatisedData!=null)
+                            this.modelEvaluation.setEvaluationData(this.acclimatisedData);
+                    }
+                }
+            }
+
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++        
+            else if (Technique_jTextField.getText().toLowerCase().equals(Global.techniques[2].toLowerCase())) 
+            {  
+                Evaluation evaluation=null;
+                if (model!=null && model.getOutcomeURL()!=null)
+                {            
+                    BayesNet bayesNet = (BayesNet) Tools.readObjectFromFile(Tools.toFile(model.getOutcomeURL()).getPath());
+
+                    if (bayesNet !=null && instances !=null)
+                    {
+                      
+                      evaluation=ClassificationTools.evaluateBayesNet(bayesNet, instances, 10);             
+                      
+                      this.modelEvaluation=new ModelEvaluation();                                
+
+                      this.evaluate_classification(bayesNet, instances);
+
+                      if (this.modelEvaluation!=null && acclimatisedData!=null)
+                          this.modelEvaluation.setEvaluationData(this.acclimatisedData);
+                    }
+                }
+            }
+
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            else if (Technique_jTextField.getText().toLowerCase().equals(Global.techniques[3].toLowerCase())) 
+            {   
+                Evaluation evaluation=null;   
+                if (model!=null && model.getOutcomeURL()!=null)
+                {
+                    J48 j48= (J48) Tools.readObjectFromFile(Tools.toFile(model.getOutcomeURL()).getPath());
+                    
+                    if (j48 !=null && instances !=null)
+                        evaluation=ClassificationTools.evaluateTree(j48, instances,10);
+
+                    //if (evaluation!=null)
+                        this.modelEvaluation=new ModelEvaluation();
+                    
+                    this.evaluate_classification(j48, instances);
+
+                    if (this.modelEvaluation!=null && acclimatisedData!=null)
+                        this.modelEvaluation.setEvaluationData(this.acclimatisedData);                
+                }            
+            }
+
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            else if (Technique_jTextField.getText().toLowerCase().equals(Global.techniques[4].toLowerCase())) 
+            {
+                //HierarchicalClusterer hca=ClusteringTools.generateHCA(" ",instances);
+                ClusterEvaluation evaluation=null;
+                if (model!=null && model.getOutcomeURL()!=null)
+                {            
+                    HierarchicalClusterer hca= (HierarchicalClusterer) Tools.readObjectFromFile(Tools.toFile(model.getOutcomeURL()).getPath());
+
+                    if (hca !=null && instances !=null)
+                    {
+                        evaluation=ClusteringTools.evaluateHCA(hca, instances,10);
+
+                        //if (evaluation!=null)
+                            this.modelEvaluation=new ModelEvaluation();
+
+                        this.modelEvaluation.setDescription(evaluation.clusterResultsToString());
+
+                        this.evaluate_hca_clustering(hca, instances);
+
+                        if (this.modelEvaluation!=null && acclimatisedData!=null)
+                            this.modelEvaluation.setEvaluationData(this.acclimatisedData);                   
+                    }
+                }
+            }
+
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            else if (Technique_jTextField.getText().toLowerCase().equals(Global.techniques[5].toLowerCase())) 
+            {
+              Evaluation evaluation=null;
+              if (model!=null && model.getOutcomeURL()!=null)
+                {
+                    LinearRegression lr= (LinearRegression) Tools.readObjectFromFile(Tools.toFile(model.getOutcomeURL()).getPath());
+
+                    if (lr !=null && instances !=null)
+                    {
+                        evaluation=RegressionTools.evaluateLinearRegression(lr, instances, 10);
+
+                        //if (evaluation!=null)
+                            this.modelEvaluation=new ModelEvaluation();
+
+                        this.evaluate_regression(lr, instances);
+
+                        if (this.modelEvaluation!=null && acclimatisedData!=null)
+                            this.modelEvaluation.setEvaluationData(this.acclimatisedData);
+                    }
+                }
+            }
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            else if (Technique_jTextField.getText().toLowerCase().equals(Global.techniques[6].toLowerCase())) 
+            {
+                Evaluation evaluation=null;
+                if (model!=null && model.getOutcomeURL()!=null)
+                {            
+                    MLP mlp= (MLP) Tools.readObjectFromFile(Tools.toFile(model.getOutcomeURL()).getPath());
+                    if (mlp !=null && instances !=null)                
+                    {
+                        evaluation=ClassificationTools.evaluateMLP(mlp, instances, 10);
+
+                        //if (evaluation!=null)
+                            this.modelEvaluation=new ModelEvaluation();
+
+                        this.evaluate_classification(mlp, instances);                
+
+                       if (this.modelEvaluation!=null && acclimatisedData!=null)
+                            this.modelEvaluation.setEvaluationData(this.acclimatisedData);
+                    }
+                }
+            }  
+        
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            else if (Technique_jTextField.getText().toLowerCase().equals(Global.techniques[7].toLowerCase())) 
+            {
+                ClusterEvaluation evaluation=null;
+                instances = FileTools.LoadData(dataSetFile, false);
+                if (model!=null && model.getOutcomeURL()!=null)
+                {            
+                    Clusterer cls= (Clusterer) Tools.readObjectFromFile(Tools.toFile(model.getOutcomeURL()).getPath());
+
+                    if (cls !=null && instances !=null)
+                    {
+                        evaluation=ClusteringTools.evaluateClusterer(cls,"",instances,10);
+
+                        //if (evaluation!=null)
+                            this.modelEvaluation=new ModelEvaluation();
+
+                        this.modelEvaluation.setDescription(evaluation.clusterResultsToString());
+
+                        this.evaluate_clustering(cls, instances);
+
+                        if (this.modelEvaluation!=null && acclimatisedData!=null)
+                            this.modelEvaluation.setEvaluationData(this.acclimatisedData);                   
+                    }
+                }
+            }
+            
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            else if (Technique_jTextField.getText().toLowerCase().equals(Global.techniques[8].toLowerCase())) 
+            {                
+                PrincipalComponents pcaEvaluation=null;
+                if (model!=null && model.getOutcomeURL()!=null)
+                {            
+                    PrincipalComponents pca= (PrincipalComponents) Tools.readObjectFromFile(Tools.toFile(model.getOutcomeURL()).getPath());
+
+                   //if (pcaEvaluation!=null)
+                    this.modelEvaluation=new ModelEvaluation();
+                    
+                    if (pca !=null && instances !=null)
+                    {
+                       
+                        this.evaluate_pca(pca, instances);
+                        
+                        pcaEvaluation=DimentionalityReductionTools.evaluatePCA(pca, instances);
+                                
+                        
+                        this.modelEvaluation.setDescription(pcaEvaluation.toString());
+
+                        if (this.modelEvaluation!=null && acclimatisedData!=null)
+                            this.modelEvaluation.setEvaluationData(this.acclimatisedData);                   
+                    }
+                }
+            }
+
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            else if (Technique_jTextField.getText().toLowerCase().equals(Global.techniques[9].toLowerCase())) 
+            {                
+                Evaluation evaluation=null;
+                if (model!=null && model.getOutcomeURL()!=null)
+                {            
+                    RandomForest randomForest= (RandomForest) Tools.readObjectFromFile(Tools.toFile(model.getOutcomeURL()).getPath());
+
+                    if (randomForest !=null && instances !=null)
+                    {
+                        evaluation=FeatureAnalysisTools.evaluateRandomForest(randomForest, instances, 10);
+
+//                        if (evaluation!=null)
+                            this.modelEvaluation=new ModelEvaluation();
+
+                        this.modelEvaluation.setDescription(evaluation.toSummaryString());
+
+                        this.evaluate_randomForest(randomForest, instances);
+
+                        if (this.modelEvaluation!=null && acclimatisedData!=null)
+                            this.modelEvaluation.setEvaluationData(this.acclimatisedData);                   
+                    }
+                }
+            }
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            else if (Technique_jTextField.getText().toLowerCase().equals(Global.techniques[10].toLowerCase())) 
+            {
+                
+                Evaluation evaluation=null;
+                if (model!=null && model.getOutcomeURL()!=null)
+                {            
+                    SMOreg smo= (SMOreg) Tools.readObjectFromFile(Tools.toFile(model.getOutcomeURL()).getPath());
+
+                    if (smo !=null && instances !=null)
+                    {
+                        evaluation=RegressionTools.evaluateSMORegression(smo, instances,10);
+
+//                        if (evaluation!=null)
+                            this.modelEvaluation=new ModelEvaluation();
+
+                        this.modelEvaluation.setDescription(evaluation.toString());
+
+                        this.evaluate_smo(smo, instances);
+
+                        if (this.modelEvaluation!=null && acclimatisedData!=null)
+                            this.modelEvaluation.setEvaluationData(this.acclimatisedData);                   
+                    }
+                }
+            }
+                                    
+          }
+            else
+                JOptionPane.showMessageDialog(null, "Data is not available to evaluate the model!");
+
+if (this.modelEvaluation!=null && acclimatisedData!=null)
+    this.modelEvaluation.setEvaluationData(this.acclimatisedData);
+
+if (this.model!=null && modelEvaluation!=null)
+    this.model.setModelEvaluation(modelEvaluation);  
+
+
+//*****************************************************************************
+ if (  Global.project.getProcess()!=null &&
+       Global.project.getProcess().getResults()!=null &&
+       Global.project.getProcess().getResults().getResult(6)!=null && model!=null)
+    {
+        Global.project.getProcess().getResults().getModelBuildingResult().setMainDelivery(model);
+   }                
+        //this.modelEvaluation.deliverAsMain();
+        this.save_evaluation();
+        this.refresh_evaluation();
+        this.populate_evaluation();  
+        
+                        
+    }//GEN-LAST:event_Build_Model_Evaluation_jButtonActionPerformed
+
+    private void ModelView_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModelView_jButtonActionPerformed
+  
+    if (this.model!=null && this.model.getOutcomeURL()!=null && this.model.getOutcomeURL().toString().contains("Model.obj"))
+    {            
+        String modelDescriptionFileName=model.getLocation()+"/"+"Model.txt";
+        File modelDescriptionFile=new File(modelDescriptionFileName);
+
+        if (modelDescriptionFile.exists())
+            modelDescriptionFile.delete();         
+
+        if (model!=null && model.getDescription()!=null)
+         {
+            Tools.writeStringToFile(model.getDescription(), modelDescriptionFile.getPath());         
+            Tools.viewAnyFile(modelDescriptionFile);
+         }
+
+        if (modelDescriptionFile.exists())
+            modelDescriptionFile.deleteOnExit();             
+    }
+    else            
+    {
+        
+        if (!Model_URL_jTextField.getText().equals(""))        
+          try {                
+                URL modelUrl=new URL(Model_URL_jTextField.getText());                
+                Tools.viewAnyFile(Tools.toFile(modelUrl));
+                
+          } catch (MalformedURLException ex) {
+                JOptionPane.showMessageDialog(null, "File URL is invalid ");
+                Logger.getLogger(ModelEvaluationForm.class.getName()).log(Level.SEVERE, null, ex);
+          }
+        
+    }                            
+        
+}//GEN-LAST:event_ModelView_jButtonActionPerformed
+
+    private void Scale_jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Scale_jComboBoxActionPerformed
+        // this code is very weired since it is a solution fo a big problem where the selection of the combo box changes itself for a reason
+        // with this code it is working
+        int index=this.Scale_jComboBox.getSelectedIndex();
+        
+        this.Measurments_jList.setModel(this.getSelectedMeasuresModel());
+        this.Scale_jComboBox.setModel(this.getSelectedScaleModel());
+        
+        this.Scale_jComboBox.setSelectedIndex(index);
+}//GEN-LAST:event_Scale_jComboBoxActionPerformed
+
+    private void Measurments_jListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Measurments_jListValueChanged
+             
+        if (this.techniqueSelection!=null && this.techniqueSelection.getMeasurability()!=null &&this.Measurments_jList.getSelectedIndex()>=0)
+        {            
+            this.measure= (Measure) this.techniqueSelection.getMeasurability().getMeasuresList().get(this.Measurments_jList.getSelectedIndex());
+        }
+        
+        //---------------------------------------------------------------------------
+        if ( this.measure!=null && this.measure.getMeasureType()!=null && this.measure.getMeasureType().equals(MeasureType.BOOLEAN)) {
+            this.Result_jLabel.setVisible(true);
+            this.Boolean_jCheckBox.setVisible(true);
+            this.Boolean_jCheckBox.setSelected(false);
+            this.Scale_jComboBox.setVisible(false);           
+            this.Result_jTextArea1.setVisible(false);
+            this.Result_jScrollPane.setVisible(false);
+        }
+        
+        //---------------------------------------------------------------------------
+        else if ( this.measure!=null && this.measure.getMeasureType()!=null && this.measure.getMeasureType().equals(MeasureType.QUALITATIVE)) 
+        {
+            qualitativeMeasure=(QualitativeMeasure) this.measure;            
+            int i=0;            
+            //------------------------------------------------------------------                        
+            namesArray=new String[qualitativeMeasure.getScale().size()];
+            for ( Object o:qualitativeMeasure.getScale()) {
+                if (o!=null)
+                    namesArray[i]=(String)o;
+                i++;
+            }
+            //------------------------------------------------------------------
+            if (namesArray!=null)
+                this.Scale_jComboBox.setModel(new DefaultComboBoxModel(namesArray));
+            
+            //------------------------------------------------------------------
+            this.Boolean_jCheckBox.setVisible(false);
+            this.Result_jLabel.setVisible(true);
+            this.Result_jScrollPane.setVisible(false);
+            this.Result_jTextArea1.setVisible(false);            
+            this.Scale_jComboBox.setVisible(true);
+            this.Scale_jComboBox.setModel(this.getSelectedScaleModel());      
+
+        }
+        
+        //---------------------------------------------------------------------------
+        else if ( this.measure!=null && this.measure.getMeasureType()!=null && this.measure.getMeasureType().equals(MeasureType.QUANTITATIVE)) 
+        {
+            this.Boolean_jCheckBox.setVisible(false);
+            this.Scale_jComboBox.setVisible(false);
+            this.Result_jLabel.setVisible(true);
+            this.Result_jScrollPane.setVisible(true);
+            this.Result_jTextArea1.setVisible(true);            
+            this.Result_jTextArea1.setText("");
+
+        }
+        
+        //---------------------------------------------------------------------------
+        else if ( this.measure!=null && this.measure.getMeasureType()!=null && this.measure.getMeasureType().equals(MeasureType.OTHER)) {
+            this.Boolean_jCheckBox.setVisible(false);
+            this.Scale_jComboBox.setVisible(false);
+            this.Result_jLabel.setVisible(true);
+            this.Result_jScrollPane.setVisible(true);
+            this.Result_jTextArea1.setVisible(true);            
+            this.Result_jTextArea1.setText("");
+        }
+
+        //this.populateForm();
+}//GEN-LAST:event_Measurments_jListValueChanged
+
+    private void Outcomes_Select_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Outcomes_Select_jButtonActionPerformed
+
+       this.save_evaluation();        
+        if (this.model!=null) 
+        {
+          try {
+            this.measuredOutcome=new MeasurmentOutcome();            
+            if ( this.measure!=null && this.measure.getMeasureType().equals(MeasureType.BOOLEAN)) 
+            {
+                BooleanMeasureResult  booleanMeasureResult= new BooleanMeasureResult();
+                booleanMeasureResult.setOutcome(this.Boolean_jCheckBox.isSelected());
+                
+                this.measuredOutcome.setMeasure((BooleanMeasure)this.measure);
+                this.measuredOutcome.setOutcome(booleanMeasureResult);
+            } 
+                    
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++                    
+            else if ( this.measure!=null && this.measure.getMeasureType().equals(MeasureType.QUANTITATIVE)) 
+            {                
+                    QuantitativeMeasureResult  quantitativeMeasureResult= new QuantitativeMeasureResult();
+                    //
+                    double result=0.0;
+                    //
+                    if (!this.Result_jTextArea1.getText().equals(""))
+                        result=Double.parseDouble(this.Result_jTextArea1.getText());
+                    //
+                    quantitativeMeasureResult.setValue(result);
+                    //
+                    this.measuredOutcome.setMeasure((QuantitativeMeasure)this.measure);                    
+                    this.measuredOutcome.setOutcome(quantitativeMeasureResult);          
+            } 
+                    
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++                                    
+            else if ( this.measure!=null && this.measure.getMeasureType().equals(MeasureType.QUALITATIVE)) 
+            {
+                
+                QualitativeMeasureResult qualitativeMeasureResult = new QualitativeMeasureResult();
+                QualitativeMeasure qualMeasure = (QualitativeMeasure) this.measure;
+                if (this.Scale_jComboBox.getSelectedIndex() >= 0) {
+                    String rank = qualMeasure.getScaleCategory(this.Scale_jComboBox.getSelectedIndex());
+                    qualitativeMeasureResult.setRank(rank);
+                }
+                this.measuredOutcome.setMeasure(qualMeasure.clone());
+                this.measuredOutcome.setOutcome(qualitativeMeasureResult.clone());                
+            }
+                    
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            else if ( this.measure!=null && this.measure.getMeasureType().equals(MeasureType.OTHER)) 
+            {
+                MeasureResult  measureResult= new MeasureResult();
+                String result=null;
+                
+                if (!this.Result_jTextArea1.getText().equals(""))
+                    result=this.Result_jTextArea1.getText();
+                
+                measureResult.setResult(result);
+                this.measuredOutcome.setMeasure(this.measure);
+                this.measuredOutcome.setOutcome(measureResult);
+            }
+                                
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++            
+            else if ( this.measure!=null ) 
+            {
+                MeasureResult  measureResult= new MeasureResult();
+                String result=null;
+                
+                if (!this.Result_jTextArea1.getText().equals(""))
+                    result=this.Result_jTextArea1.getText();
+                
+                measureResult.setResult(result);
+                
+                this.measuredOutcome.setMeasure(this.measure);
+                this.measuredOutcome.setOutcome(measureResult);
+            }
+
+            //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                        
+            if (this.modelEvaluation==null)
+                this.modelEvaluation=new ModelEvaluation();                                                
+                
+            if (this.modelEvaluation.getEvaluatedPerformance()==null)
+                this.modelEvaluation.setEvaluatedPerformance(new MeasurmentOutcomes());                        
+                                              
+//            if (this.measuredOutcome!=null && this.model.getModelEvaluation().getEvaluatedPerformance()!=null)
+            if (this.measuredOutcome!=null && this.modelEvaluation.getEvaluatedPerformance()!=null)            
+                this.modelEvaluation.getEvaluatedPerformance().save(this.measuredOutcome);    
+            
+            //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                   
+            this.save_evaluation();            
+            this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());            
+            this.populateForm();
+        
+            } catch(NumberFormatException nfx){
+                    JOptionPane.showMessageDialog(null, "Value must be a number ...!!!");
+            }   
+            
+            
+        } else
+            JOptionPane.showMessageDialog(null, "No model added yet ...!!!");
+                        
+        
+    }//GEN-LAST:event_Outcomes_Select_jButtonActionPerformed
+
+    private void Outcomes_UnSelect_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Outcomes_UnSelect_jButtonActionPerformed
+        
+//        if (this.model!=null && this.model.getPerformance()!=null )
+       this.delete_expected_outcome();
+        
+        this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());        
+        this.populateForm();
+    }//GEN-LAST:event_Outcomes_UnSelect_jButtonActionPerformed
+
+    private void Model_MeasuredOutcomes_jListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Model_MeasuredOutcomes_jListValueChanged
+       
+    if (this.model!=null && 
+        this.model.getPerformance()!=null && 
+        this.model.getPerformance().getOutcomesList().size()>0  &&            
+        this.Model_MeasuredOutcomes_jList.getSelectedIndex()>=0)
+        {
+            this.measuredOutcome =  this.model.getPerformance().getOutcomesList().get(Model_MeasuredOutcomes_jList.getSelectedIndex());
+                                         
+             if (measuredOutcome!=null && measuredOutcome.getOutcome()!=null && measuredOutcome.getOutcome().getResult()!=null)
+                 Performed_Outcomes_Details_jTextArea.setText(measuredOutcome.getOutcome().getResult());
+             else 
+                 Performed_Outcomes_Details_jTextArea.setText("");        
+            }
+        
+    }//GEN-LAST:event_Model_MeasuredOutcomes_jListValueChanged
+
+    private void Evaluation_Measurment_Outcomes_jListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Evaluation_Measurment_Outcomes_jListValueChanged
+    if (
+        this.modelEvaluation!=null && 
+        this.modelEvaluation.getEvaluatedPerformance() !=null && 
+        this.modelEvaluation.getEvaluatedPerformance().getOutcomesList()!=null &&
+        this.modelEvaluation.getEvaluatedPerformance().getOutcomesList().size()>0 &&
+        this.Evaluation_Measurment_Outcomes_jList.getSelectedIndex()>=0) 
+       {                        
+            this.measuredOutcome =  this.modelEvaluation.getEvaluatedPerformance().getOutcomesList().get(this.Evaluation_Measurment_Outcomes_jList.getSelectedIndex());            
+            
+            if (measuredOutcome!=null && measuredOutcome.getOutcome()!=null && measuredOutcome.getOutcome().getResult()!=null)                
+                Evaluation_Outcomes_Details_jTextArea.setText(measuredOutcome.getOutcome().getResult());
+            else
+                Evaluation_Outcomes_Details_jTextArea.setText(""); 
+            
+      }
+}//GEN-LAST:event_Evaluation_Measurment_Outcomes_jListValueChanged
+
+    private void ModelUnderFit_jCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModelUnderFit_jCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ModelUnderFit_jCheckBoxActionPerformed
+
+    private void BrowseEvaluation_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrowseEvaluation_jButtonActionPerformed
+        File file = null;
+        if (!this.ModelEvaluation_URL_jTextField.getText().equals("")) 
+        {
+           try {
+              URL thisURL = new URL(this.ModelEvaluation_URL_jTextField.getText());
+              String homeDirectory = Tools.toFile(thisURL).getParent();
+              file = Tools.chooseFile("Choose Model File", null, homeDirectory, false);
+            } catch (MalformedURLException ex) {
+              file = Tools.chooseFile("Choose Model File", null, Global.project.getLocation(), false);
+            }
+        } else {
+                file = Tools.chooseFile("Choose Model File", null, Global.project.getLocation(), false);
+        }
+
+        /*
+        if (file!=null)
+        importModel(file);
+         */
+        if (file != null) 
+        {        
+            this.modelEvaluation = new ModelEvaluation();
+
+            int decision1 = JOptionPane.showConfirmDialog(null, "Would you like to reset current model evaluation delivery?");        
+            if (decision1 == 0)                               
+                this.Delete_jButtonActionPerformed(evt);
+
+            this.ModelEvaluation_URL_jTextField.setText(Tools.toURL(file).toString());
+            this.save_evaluation();
+
+            int decision2 = JOptionPane.showConfirmDialog(null, "Would you like to import the file to the Temp folder as a local copy ?");
+            if (decision2 == 0) 
+            {
+                try {
+                   URL selectedUrl = new URL(this.ModelEvaluation_URL_jTextField.getText());
+                   URL newUrl = Tools.copyFileToTemp(selectedUrl);
+
+                  if (newUrl != null)
+                      this.ModelEvaluation_URL_jTextField.setText(newUrl.toString());
+
+                  } 
+                   catch (MalformedURLException ex) {
+                   Logger.getLogger(ModelEvaluationForm.class.getName()).log(Level.SEVERE, null, ex);
+                   }
+              }
+              this.save_evaluation();
+              this.refresh_evaluation();
+              this.populate_evaluation();        
+          }
+
+    }//GEN-LAST:event_BrowseEvaluation_jButtonActionPerformed
+
+    private void ViewEvaluation_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewEvaluation_jButtonActionPerformed
+
+        if (!ModelEvaluation_URL_jTextField.getText().equals(""))
+        try {
+            Tools.viewAnyFile(Tools.toFile(new URL(ModelEvaluation_URL_jTextField.getText())));
+         // TODO add your handling code here:
+        } catch (MalformedURLException ex) {
+            JOptionPane.showMessageDialog(null, "File URL is invalid ");
+            Logger.getLogger(ModelEvaluationForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_ViewEvaluation_jButtonActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+//if (this.modelEvaluation!=null)
+    this.save_evaluation();
+    }//GEN-LAST:event_formWindowClosing
+
+//DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+//****************************************************************************
+//                           Delete Solution Evidence
+//DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+//****************************************************************************
+  private void delete_expected_outcome() 
+  {
+
+      /*
+    if (this.model!=null && 
+        
+            this.model.getModelEvaluation()!=null && 
+        this.model.getModelEvaluation().getEvaluatedPerformance()!=null && 
+        this.model.getModelEvaluation().getEvaluatedPerformance().getOutcomesList().size()>0)
+
+        
+  {
+        int index= this.model.getModelEvaluation().getEvaluatedPerformance().getOutcomesList().indexOf(this.measuredOutcome);
+        if (this.model.getModelEvaluation().getEvaluatedPerformance().delete(this.measuredOutcome)==0);
+        {
+            if (this.model.getModelEvaluation().getEvaluatedPerformance().getOutcomesList().size()>0)
+            {
+                if (index==0)
+                    this.measuredOutcome = this.model.getModelEvaluation().getEvaluatedPerformance().getOutcomesList().get(index);
+                else if (index>0)
+                     this.measuredOutcome = this.model.getModelEvaluation().getEvaluatedPerformance().getOutcomesList().get(index-1);
+            }
+        }
+ }
+    */
+    
+    if (this.modelEvaluation !=null &&
+        this.modelEvaluation.getEvaluatedPerformance()!=null && 
+        this.modelEvaluation.getEvaluatedPerformance().getOutcomesList().size()>0)
+
+        
+  {
+        int index= this.modelEvaluation.getEvaluatedPerformance().getOutcomesList().indexOf(this.measuredOutcome);
+        if (this.modelEvaluation.getEvaluatedPerformance().delete(this.measuredOutcome)==0);
+        {
+            if (this.modelEvaluation.getEvaluatedPerformance().getOutcomesList().size()>0)
+            {
+                if (index==0)
+                    this.measuredOutcome = this.modelEvaluation.getEvaluatedPerformance().getOutcomesList().get(index);
+                else if (index>0)
+                     this.measuredOutcome = this.modelEvaluation.getEvaluatedPerformance().getOutcomesList().get(index-1);
+            }
+        }
+ }
+  
+    
+    
+    
+}
+
+//NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+//****************************************************************************
+//                                Next Plan
+//****************************************************************************
+//NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+ private void next_acclimatisedData()
+    {
+
+       if (this.acclimatisedData!=null &&
+                Global.project.getProcess()!=null &&
+                Global.project.getProcess().getResults()!=null &&
+                Global.project.getProcess().getResults().getResult(5)!=null &&
+                Global.project.getProcess().getResults().getResult(5).getSupplementDeliveries()!=null)
+            {
+                if (Global.project.getProcess().getResults().getResult(5).getSupplementDeliveries().getNext(this.acclimatisedData)!=null)
+                {
+                    this.acclimatisedData= (AcclimatisedData) Global.project.getProcess().getResults().getResult(5).getSupplementDeliveries().getNext(this.acclimatisedData);
+                    this.populate_acclimatisedData();
+                }
+        }
+    }
+
+//PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+//****************************************************************************
+//                     Previous Plan& Resource
+//****************************************************************************
+//PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+ private void previous_acclimatisedData()
+    {
+
+       if (this.acclimatisedData!=null &&
+                Global.project.getProcess()!=null &&
+                Global.project.getProcess().getResults()!=null &&
+                Global.project.getProcess().getResults().getResult(5)!=null &&
+                Global.project.getProcess().getResults().getResult(5).getSupplementDeliveries()!=null)
+            {
+                if (Global.project.getProcess().getResults().getResult(5).getSupplementDeliveries().getPrevious(this.acclimatisedData)!=null)
+                {                    
+                    this.acclimatisedData= (AcclimatisedData) Global.project.getProcess().getResults().getResult(5).getSupplementDeliveries().getPrevious(this.acclimatisedData);
+                    this.populate_acclimatisedData();
+                }
+
+        }
+    }
+
+
+//PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+//****************************************************************************
+//                          Populate Acclimatised Data
+//****************************************************************************
+//PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+
+    private void populate_acclimatisedData()
+    {
+
+     this.Resources_jList.setModel(this.getProjectResourcesModel());
+     this.Expected_Resources_jList.setModel(this.getExpectedResourcesModel());
+
+        if ( this.acclimatisedData !=null && this.acclimatisedData.getSplitType()!=null)
+           this.Split_jComboBox.setSelectedIndex(this.acclimatisedData.getSplitType().ordinal()+1);
+        else
+            this.Split_jComboBox.setSelectedIndex(0);
+
+       if ( this.acclimatisedData !=null && this.acclimatisedData.getOutcomeURL()!=null)
+            this.Data_URL_jTextField.setText(this.acclimatisedData.getOutcomeURL().toString());
+       else
+            this.Data_URL_jTextField.setText("");
+
+
+     this.populateForm();
+
+    }
+
+    
+    
+    
+//-----------------------------------------------------------------------------
+//*****************************************************************************
+//                     Resources Funds Calculations
+//*****************************************************************************
+//-----------------------------------------------------------------------------
+private void addResourceFunds()
+{
+if (Global.project!=null &&
+                Global.project.getSupplements()!=null &&
+                Global.project.getSupplements().getManagement()!=null &&
+                Global.project.getSupplements().getManagement().getConstraint()!=null)
+                {
+                      Double curruntUsedFunds=Global.project.getSupplements().getManagement().getConstraint().getUsedFunds();
+                      Double totalFunds=Global.project.getSupplements().getManagement().getConstraint().getTotalFunds();
+
+                      Double resourceCost=0.0;
+
+                      if (this.resource!=null)
+                              resourceCost= this.resource.getCost();
+
+                      Double newUsedFunds=curruntUsedFunds+resourceCost;
+
+                      if (newUsedFunds>totalFunds)
+                          JOptionPane.showMessageDialog(null, "Exceeded the project Total Funds,"
+                                                           +" Used Funds = "+newUsedFunds
+                                                           +" Project Planned Total Funds = "+totalFunds);
+
+                     Global.project.getSupplements().getManagement().getConstraint().setUsedFunds(newUsedFunds);
+
+                }
+}
+
+//*****************************************************************************
+private void deductResourceFunds()
+{
+ //------------------------------------------------------------------
+            if (Global.project!=null &&
+                Global.project.getSupplements()!=null &&
+                Global.project.getSupplements().getManagement()!=null &&
+                Global.project.getSupplements().getManagement().getConstraint()!=null)
+                {
+                      Double curruntUsedFunds=Global.project.getSupplements().getManagement().getConstraint().getUsedFunds();
+                      Double totalFunds=Global.project.getSupplements().getManagement().getConstraint().getTotalFunds();
+
+                      Double resourceCost=0.0;
+
+                      if (this.resource!=null)
+                              resourceCost= this.resource.getCost();
+
+                      Double newUsedFunds=curruntUsedFunds-resourceCost;
+
+                      if (newUsedFunds>totalFunds)
+                          JOptionPane.showMessageDialog(null, "Exceeded the project Total Funds,"
+                                                           +" Used Funds = "+newUsedFunds
+                                                           +" Project Planned Total Funds = "+totalFunds);
+
+                     Global.project.getSupplements().getManagement().getConstraint().setUsedFunds(newUsedFunds);
+
+                }
+}
+
+
+//SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+//****************************************************************************
+//                              Save Plan
+//****************************************************************************
+//SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+ private void save_evaluation()
+ {   
+    //-----------------------------------------------------------------------
+    if (this.modelEvaluation==null)
+        this.modelEvaluation=new ModelEvaluation();
+    
+    if (!ResultSummary_jTextPane1.getText().equals(""))
+         this.modelEvaluation.setDescription(ResultSummary_jTextPane1.getText());
+    else        
+        this.modelEvaluation.setDescription(null);
+
+    if (!ModelEvaluation_URL_jTextField.getText().equals(""))
+         try {
+            this.modelEvaluation.setOutcomeURL(new URL(ModelEvaluation_URL_jTextField.getText()));
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(ModelEvaluationForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    else        
+        this.modelEvaluation.setOutcomeURL(null);
+        
+    this.modelEvaluation.setModelOverFit(this.ModelOverFit_jCheckBox.isSelected());
+    this.modelEvaluation.setModelUnderFit(this.ModelUnderFit_jCheckBox.isSelected());
+    this.modelEvaluation.setModelPerformanceAcceptable(this.ModelPerformanceAcceptable_jCheckBox.isSelected());
+    this.modelEvaluation.setEvaluationData(this.acclimatisedData);          
+    this.modelEvaluation.deliverAsMain();    
+        
+    if (this.model!=null && this.model.getModelEvaluation()==null)
+        this.model.setModelEvaluation(this.modelEvaluation);   
+    
+    this.Procedures_jList.setModel(this.getEvaluationProcedures());
+    this.Evaluation_Used_Resources_jList.setModel(this.getEvaluationUsedResourcesModel());            
+ }
+ 
+ 
+//PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+//                         Populate Plan Form
+//PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+ private void populate_evaluation()
+{
+
+if (this.modelEvaluation!=null)
+{
+    this.ModelOverFit_jCheckBox.setSelected(this.modelEvaluation.isModelOverFit());
+
+    this.ModelUnderFit_jCheckBox.setSelected(this.modelEvaluation.isModelUnderFit());
+
+    this.ModelPerformanceAcceptable_jCheckBox.setSelected(this.modelEvaluation.isModelPerformanceAcceptable());
+    
+    
+    if (this.modelEvaluation.getDescription()!=null)
+        this.ResultSummary_jTextPane1.setText(this.modelEvaluation.getDescription());         
+    else
+        this.ResultSummary_jTextPane1.setText("");      
+    
+
+    if (this.modelEvaluation.getOutcomeURL()!=null)
+        this.ModelEvaluation_URL_jTextField.setText(this.modelEvaluation.getOutcomeURL().toString());         
+    else
+        this.ModelEvaluation_URL_jTextField.setText("");
+    
+    
+    
+    this.populate_acclimatisedData();             
+ }
+
+//-----------------------------------------------------------------------------
+if (this.model!=null)
+     {
+         if (this.model.getTechnique()!=null)
+            this.Technique_jTextField.setText(this.model.getTechnique());
+         else
+           this.Technique_jTextField.setText("");
+
+         if (this.model.getOutcomeURL()!=null)
+            this.Model_URL_jTextField.setText(this.model.getOutcomeURL().toString());
+         else
+           this.Model_URL_jTextField.setText("");
+         
+        if (this.model.getAlgorithm()!=null)
+            this.Algorithm_jTextPane.setText(this.model.getAlgorithm());
+         else
+           this.Algorithm_jTextPane.setText("");
+
+         //--------------------------------------------------------------------
+         if (this.model!=null&& this.model.getDataMiningApproach()!=null)
+             this.Approaches_jComboBox.setSelectedIndex(this.model.getDataMiningApproach().ordinal()+1);
+         else
+             this.Approaches_jComboBox.setSelectedIndex(0);
+
+         if (this.model!=null&& this.model.getDataMiningGoal()!=null)
+             this.Goals_jComboBox.setSelectedIndex(this.model.getDataMiningGoal().ordinal()+1);
+         else
+             this.Goals_jComboBox.setSelectedIndex(0);
+
+         if (this.model!=null&& this.model.getDataMiningTask()!=null)
+             this.Tasks_jComboBox.setSelectedIndex(this.model.getDataMiningTask().ordinal()+1);
+         else
+             this.Tasks_jComboBox.setSelectedIndex(0);
+
+
+        this.Supervised_jCheckBox.setSelected(this.model.isSupervised());
+        
+         //--------------------------------------------------------------------
+        
+        if ( this.model.getPerformance()!=null
+          && this.model.getPerformance().getResultSummary()!=null)
+            this.ResultSummary_jTextPane.setText(this.model.getPerformance().getResultSummary());
+        else
+            this.ResultSummary_jTextPane.setText("");
+
+        
+         if (this.model!=null && this.model.getRequirements()!=null)
+         {
+            this.ConsumedTimeDuration_jTextField.setText(this.model.getBuildDuration()+"");
+         }
+                
+
+        this.refresh_evaluation_details();
+     }
+ //else
+ //   //System.out.print(" No Planned Activity found to populate");
+
+this.Resources_jList.setModel(this.getProjectResourcesModel());
+this.Evaluation_Used_Resources_jList.setModel(this.getEvaluationUsedResourcesModel());
+//
+this.Model_Used_Resources_jList.setModel(this.getModelUsedResourcesModel());
+this.Model_Selected_Standards_jList.setModel(this.getModelSelectedStandardsModel());
+//
+this.Procedure_Project_Resources_jList.setModel(this.getProjectResourcesModel());
+this.Procedures_jList.setModel(this.getEvaluationProcedures());
+//
+this.Procedure_Resources_jList.setModel(this.getEvaluationProcedureResourcesModel());
+this.Expected_Resources_jList.setModel(this.getExpectedResourcesModel());
+//
+this.Measurments_jList.setModel(this.getSelectedMeasuresModel());
+this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());
+this.Model_MeasuredOutcomes_jList.setModel(this.getModelOutcomes());
+this.Expected_MeasurmentOutcomes_jList.setModel(this.getExpectedOutcomes());
+
+
+this.populateForm();
+
+}
+
+
+ //RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+//****************************************************************************
+//                              Refresh
+//****************************************************************************
+//RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+
+ private void refresh_evaluation()
+ {
+
+Result<ModelEvaluation> modelEvaluationResult=new Result<ModelEvaluation>();
+
+//*****************************************************************************
+if (Global.currentPhase!=null &&
+    Global.currentPhase.getResult()!=null)
+{
+    try {        
+      modelEvaluationResult=Global.currentPhase.getResult();
+      if (modelEvaluationResult.getMainDelivery()!=null)        
+          this.modelEvaluation= (ModelEvaluation) modelEvaluationResult.getMainDelivery();      
+        }
+    catch(ClassCastException ex)
+    {
+        JOptionPane.showMessageDialog(null, "Cast Exception ... and solveed by reseting the delivery");        
+        this.model=new Model();        
+    }
+}
+
+else
+ this.modelEvaluation=new ModelEvaluation();
+
+ //*****************************************************************************
+ if (  Global.project.getProcess()!=null &&
+    Global.project.getProcess().getResults()!=null &&    
+    Global.project.getProcess().getResults().getResult(1)!=null)
+{
+     DataMiningObjective processObjective=null;
+       if (Global.project.getProcess().getResults().getResult(1).getMainDelivery()!=null)
+            processObjective = (DataMiningObjective) Global.project.getProcess().getResults().getResult(1).getMainDelivery();
+       else  if (Global.project.getProcess().getResults().getResult(1).getSupplementDeliveries()!=null
+              && Global.project.getProcess().getResults().getResult(1).getSupplementDeliveries().getFirst()!=null)
+                    processObjective= (DataMiningObjective) Global.project.getProcess().getResults().getResult(1).getSupplementDeliveries().getFirst();
+     if (processObjective!=null)
+         this.Objectives_jTextArea.setText(processObjective.toMyString());    
+}
+
+//*****************************************************************************
+//*****************************************************************************
+if (this.modelEvaluation!=null && this.modelEvaluation.getEvaluationData()!=null)
+    this.acclimatisedData=this.modelEvaluation.getEvaluationData();
+else
+if (Global.project.getProcess()!=null &&
+    Global.project.getProcess().getResults() !=null &&
+    Global.project.getProcess().getResults().getResult(5)!=null)
+    {
+
+    if (Global.project.getProcess().getResults().getResult(5).getMainDelivery()!=null)
+        this.acclimatisedData=  (AcclimatisedData) Global.project.getProcess().getResults().getResult(5).getMainDelivery();
+
+    else if (Global.project.getProcess().getResults().getResult(5).getSupplementDeliveries()!=null &&
+             Global.project.getProcess().getResults().getResult(5).getSupplementDeliveries().getFirst()!=null)
+        this.acclimatisedData=  (AcclimatisedData) Global.project.getProcess().getResults().getResult(5).getSupplementDeliveries().getFirst();
+    }
+
+//***************************************************************************** 
+//*****************************************************************************
+ if (  Global.project.getProcess()!=null &&
+       Global.project.getProcess().getResults()!=null &&
+       Global.project.getProcess().getResults().getResult(6)!=null)
+{
+    if (Global.project.getProcess().getResults().getResult(6).getMainDelivery()!=null)
+          this.model=(Model) Global.project.getProcess().getResults().getResult(6).getMainDelivery();
+    else  if (Global.project.getProcess().getResults().getResult(6).getSupplementDeliveries()!=null
+          && Global.project.getProcess().getResults().getResult(6).getSupplementDeliveries().getFirst()!=null)
+          this.model=(Model) Global.project.getProcess().getResults().getResult(6).getSupplementDeliveries().getFirst();
+}
+//*****************************************************************************
+//*****************************************************************************
+       if (    Global.project.getProcess()!=null &&
+                Global.project.getProcess().getResults()!=null &&
+                Global.project.getProcess().getResults().getResult(4)!=null)
+            {
+          if (Global.project.getProcess().getResults().getResult(4).getMainDelivery()!=null)
+                this.techniqueSelection= (ModelingTechniqueSelection) Global.project.getProcess().getResults().getResult(4).getMainDelivery();
+          else  if (Global.project.getProcess().getResults().getResult(4).getSupplementDeliveries()!=null
+                 && Global.project.getProcess().getResults().getResult(4).getSupplementDeliveries().getFirst()!=null)
+                this.techniqueSelection= (ModelingTechniqueSelection) Global.project.getProcess().getResults().getResult(4).getSupplementDeliveries().getFirst();
+            }
+
+this.refresh_evaluation_details();
+this.populate_acclimatisedData();
+ this.populate_evaluation();
+ 
+}
+
+
+ //RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+ //                         Refresh Plan Details
+ //RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+
+ private void refresh_evaluation_details()
+ {      
+
+this.Resources_jList.setModel(this.getProjectResourcesModel());
+this.Evaluation_Used_Resources_jList.setModel(this.getEvaluationUsedResourcesModel());
+//
+this.Model_Used_Resources_jList.setModel(this.getModelUsedResourcesModel());
+this.Model_Selected_Standards_jList.setModel(this.getModelSelectedStandardsModel());
+//
+this.Procedure_Project_Resources_jList.setModel(this.getProjectResourcesModel());
+this.Procedures_jList.setModel(this.getEvaluationProcedures());
+this.Procedure_Resources_jList.setModel(this.getEvaluationProcedureResourcesModel());
+//
+this.Expected_MeasurmentOutcomes_jList.setModel(this.getExpectedOutcomes());
+this.Expected_Resources_jList.setModel(this.getExpectedResourcesModel());
+//
+this.Measurments_jList.setModel(this.getSelectedMeasuresModel());
+this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());
+this.Model_MeasuredOutcomes_jList.setModel(this.getModelOutcomes());
+this.Expected_MeasurmentOutcomes_jList.setModel(this.getExpectedOutcomes());
+
+
+ this.populateForm();
+ }
+
+//DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+//****************************************************************************
+//                              Delete Plan
+//DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+//****************************************************************************
+private void delete_evaluation()
+{
+ if (Global.currentPhase != null && Global.currentPhase.getResult()!=null &&
+     Global.currentPhase.getResult().getMainDelivery()!=null &&
+    this.modelEvaluation==Global.currentPhase.getResult().getMainDelivery() )
+    Global.currentPhase.getResult().setMainDelivery(null);
+ else
+ if (Global.currentPhase != null &&
+        Global.currentPhase.getResult()!=null&&
+        Global.currentPhase.getResult().getSupplementDeliveries()!=null  &&
+        Global.currentPhase.getResult().getSupplementDeliveries().getDeliveriesList().size()>0)
+    if (this.modelEvaluation!=null)
+    {
+      int index= Global.currentPhase.getResult().getSupplementDeliveries().getDeliveriesList().indexOf(this.modelEvaluation);
+          if (Global.currentPhase.getResult().getSupplementDeliveries().delete(this.modelEvaluation)>-1);
+        {
+            if (Global.currentPhase.getResult().getSupplementDeliveries().getDeliveriesList().size()>0)
+            {
+                if (index==0 && Global.currentPhase.getResult().getSupplementDeliveries().getDelivery(index)!=null)
+                    this.modelEvaluation = (ModelEvaluation) Global.currentPhase.getResult().getSupplementDeliveries().getDelivery(index);
+                else if(index>0)
+                    this.modelEvaluation = (ModelEvaluation) Global.currentPhase.getResult().getSupplementDeliveries().getDelivery(index-1);
+                //this.refresh_plan_details();
+                this.refresh_evaluation_details();
+                this.populate_evaluation();
+            }
+            else
+                this.clear_evaluation();
+        }
+     Global.currentPhase.save();
+ }
+ }
+
+
+
+//CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+//****************************************************************************
+//                     Clear Resource Plan & Resource
+//****************************************************************************
+ //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+ private void clear_evaluation()
+{
+this.modelEvaluation=null;
+clear_evaluation_details();
+clear_evaluationForm();
+ }
+
+ private void clear_evaluation_details()
+{
+    
+ this.resource=null;
+ this.measure=null;
+ this.measuredOutcome=null;
+ this.standard=null;
+ this.model=null;
+ this.procedure=null;
+
+this.ModelEvaluation_URL_jTextField.setText("");
+this.ResultSummary_jTextPane1.setText("");
+this.Resources_jList.setModel(this.getProjectResourcesModel());
+this.Evaluation_Used_Resources_jList.setModel(this.getEvaluationUsedResourcesModel());
+//
+this.Model_Used_Resources_jList.setModel(this.getModelUsedResourcesModel());
+this.Model_Selected_Standards_jList.setModel(this.getModelSelectedStandardsModel());
+//
+this.Procedure_Project_Resources_jList.setModel(this.getProjectResourcesModel());
+this.Procedures_jList.setModel(this.getEvaluationProcedures());
+this.Procedure_Resources_jList.setModel(this.getEvaluationProcedureResourcesModel());
+this.Expected_Resources_jList.setModel(this.getExpectedResourcesModel());
+//
+this.Expected_MeasurmentOutcomes_jList.setModel(this.getExpectedOutcomes());
+//
+this.Measurments_jList.setModel(this.getSelectedMeasuresModel());
+this.Evaluation_Measurment_Outcomes_jList.setModel(this.getEvaluationOutcomes());
+this.Model_MeasuredOutcomes_jList.setModel(this.getModelOutcomes());
+this.Expected_MeasurmentOutcomes_jList.setModel(this.getExpectedOutcomes());
+
+
+ }
+
+ private void clear_evaluationForm()
+ {
+    this.ModelEvaluation_URL_jTextField.setText("");
+    this.ModelOverFit_jCheckBox.setSelected(false);
+    this.ModelUnderFit_jCheckBox.setSelected(false);
+    this.ModelPerformanceAcceptable_jCheckBox.setSelected(false);
+    //    
+    this.Evaluation_Outcomes_Details_jTextArea.setText("");
+    this.Expected_Outcomes_Details_jTextArea.setText("");
+    this.Performed_Outcomes_Details_jTextArea.setText("");
+    //
+    this.Boolean_jCheckBox.setVisible(false);
+    this.Result_jScrollPane.setVisible(false);
+    this.Result_jTextArea1.setVisible(false);
+    this.Scale_jComboBox.setVisible(false);
+    this.Result_jLabel.setVisible(false);    
+    //   
+    this.Measurments_jList.setSelectedIndex(-1);
+    this.Evaluation_Measurment_Outcomes_jList.setSelectedIndex(-1);
+    this.Model_MeasuredOutcomes_jList.setSelectedIndex(-1);
+    this.Expected_MeasurmentOutcomes_jList.setSelectedIndex(-1);
+
+    this.populateForm();
+ }
+
+//FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+//****************************************************************************
+//                            First & Last Plan
+//****************************************************************************
+//FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+ private void first_model()
+    {
+     if (Global.currentPhase.getResult()!=null && 
+         Global.currentPhase.getResult().getSupplementDeliveries()!=null)
+     {
+         this.save_evaluation();
+         this.model=(Model) Global.currentPhase.getResult().getSupplementDeliveries().getFirst();
+         //
+         this.clear_evaluation_details();
+         //
+         this.refresh_evaluation_details();
+         //
+         this.populate_evaluation();
+      }
+
+       // this.refresh_Resource(this.thisResource);
+ }
+
+ //****************************************************************************
+ private void last_model()
+ {
+if (Global.currentPhase.getResult()!=null &&
+         Global.currentPhase.getResult().getSupplementDeliveries()!=null)
+    {
+        this.save_evaluation();
+        this.model=(Model) Global.currentPhase.getResult().getSupplementDeliveries().getLast();
+        this.clear_evaluation_details();
+        this.refresh_evaluation_details();
+        //
+        this.populate_evaluation();
+  }    
+ }
+
+
+//NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+//****************************************************************************
+//                                Next Plan
+//****************************************************************************
+//NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+ private void next_model()
+    {
+      
+            if (this.model!=null)
+            {
+            if (Global.currentPhase.getResult()!=null &&
+                Global.currentPhase.getResult().getSupplementDeliveries()!=null &&
+                Global.currentPhase.getResult().getSupplementDeliveries().getNext(model)!=null
+                )
+                {
+                    this.save_evaluation();
+                    this.model=(Model) Global.currentPhase.getResult().getSupplementDeliveries().getNext(this.model);
+                    this.clear_evaluation_details();
+                    this.refresh_evaluation_details();
+                    //
+                    this.populate_evaluation();
+                }
+            }      
+        //else
+            //System.out.print("No Phase Performing is found ");
+    }
+
+//PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+//****************************************************************************
+//                     Previous Plan& Resource
+//****************************************************************************
+//PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+ private void previous_model()
+    {
+
+            if (this.model!=null)
+            {
+            if (Global.currentPhase.getResult()!=null &&
+                Global.currentPhase.getResult().getSupplementDeliveries()!=null &&
+                Global.currentPhase.getResult().getSupplementDeliveries().getPrevious(model)!=null
+                )
+                {
+                    this.save_evaluation();
+                    this.model=(Model) Global.currentPhase.getResult().getSupplementDeliveries().getPrevious(this.model);
+                    this.clear_evaluation_details();
+                    this.refresh_evaluation_details();
+                    //
+                    this.populate_evaluation();
+                }
+            }
+        //else
+            //System.out.print("No Phase Performing is found ");
+    }
+
+    /**
+    * @param args the command line arguments
+    */
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    if (Global.project == null) 
+                        Global.project = new Project();
+
+                    if (Global.project.getProcess() == null) 
+                        Global.project.setProcess(new Process());
+                     
+                    Global.project.getProcess().setVersion(1);
+
+                    if (Global.currentPhase==null)
+                            Global.currentPhase=new Phase("ObjectivesDefinition");
+                    
+                    new ModelEvaluationForm().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(ModelEvaluationForm.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
+                    Logger.getLogger(ModelEvaluationForm.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+    }
+
+//CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+//****************************************************************************
+//                     Clear Source Prerequisite & Source
+//****************************************************************************
+ //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+ private void clear_procedure()
+{
+     this.clear_procedureForm();
+     this.procedure=new Procedure();
+ }
+
+
+ //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+ //                         Clear Objectives Form
+ //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+ private void clear_procedureForm()
+ {
+     this.Purpose_jTextArea.setText("");
+     this.Result_jTextArea.setText("");
+     this.Procedure_jTextArea.setText("");
+     this.Procedure_URL_jTextField.setText("");
+     this.Procedure_Resources_jList.setModel(this.getEvaluationProcedureResourcesModel());
+     this.Procedures_jList.setModel(this.getEvaluationProcedures());
+     //
+     this.populateForm();
+ }
+
+//DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+//****************************************************************************
+//                              Delete Source
+//DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+//****************************************************************************
+ private void delete_procedure()
+    {
+
+    if (this.modelEvaluation!=null && this.procedure!=null &&
+       this.modelEvaluation.getValidationTest()!=null &&
+        this.modelEvaluation.getValidationTest().getProceduresList().size()>0)
+    {
+        int index= this.modelEvaluation.getValidationTest().getProceduresList().indexOf(this.procedure);
+        if (this.modelEvaluation.getValidationTest().delete(this.procedure)==0)
+        {
+            if (this.modelEvaluation.getValidationTest().getProceduresList().size()>0)
+            {
+                if (index==0)
+                    this.procedure = this.modelEvaluation.getValidationTest().getProcedure(index);
+                else
+                    this.procedure = this.modelEvaluation.getValidationTest().getProcedure(index-1);
+
+            }
+            else
+            this.clear_Procedure();
+        }
+
+    }
+ }
+
+
+//CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+//****************************************************************************
+//                     Clear Source Prerequisite & Source
+//****************************************************************************
+ //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+ private void clear_Procedure()
+{
+     this.clear_procedure_form();
+     this.procedure=new Procedure();
+ }
+
+
+ //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+ //                         Clear Objectives Form
+ //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+ private void clear_procedure_form()
+ {
+     this.Purpose_jTextArea.setText("");
+     this.Procedure_jTextArea.setText("");
+     this.Procedure_Resources_jList.setModel(this.getEvaluationProcedureResourcesModel());
+     this.Procedures_jList.setModel(this.getEvaluationProcedures());
+     //
+     this.populateForm();
+ }
+
+
+//SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+//                                Save Procedures
+//SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+    private void save_procedure()
+    {
+
+        if (this.procedure==null)
+            this.procedure=new Procedure();
+
+        if (!this.Purpose_jTextArea.getText().equals(""))
+            this.procedure.setPurpose(this.Purpose_jTextArea.getText());
+
+        if (!this.Result_jTextArea.getText().equals(""))
+            this.procedure.setResult(this.Result_jTextArea.getText());
+
+        if (!this.Procedure_jTextArea.getText().equals(""))
+            this.procedure.setDescription(this.Procedure_jTextArea.getText());
+
+        if (!this.Procedure_URL_jTextField.getText().equals(""))
+            try {
+                this.procedure.setResultURL(new URL(Procedure_URL_jTextField.getText()));
+            } catch (MalformedURLException ex) {
+                //Logger.getLogger(DataPreProcessingForm.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Wrong URL Format... use file:/ for local files!");
+            }
+        if (this.modelEvaluation==null)
+            this.modelEvaluation=new ModelEvaluation();
+
+        if (this.modelEvaluation!=null && this.modelEvaluation.getValidationTest()==null)
+            modelEvaluation.setValidationTest(new ValidationTest());
+
+        if (this.procedure!=null && this.modelEvaluation!=null && this.modelEvaluation.getValidationTest()!=null)
+            this.modelEvaluation.getValidationTest().save(this.procedure.clone());
+
+        this.clear_procedure();
+        this.clear_procedureForm();
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AcclimatizedData_View_jButton;
+    private javax.swing.JButton Add_Procedure_jButton2;
+    private javax.swing.JButton Add_jButton1;
+    private javax.swing.JTextField Algorithm_jTextPane;
+    private javax.swing.JComboBox Approaches_jComboBox;
+    private javax.swing.JCheckBox Boolean_jCheckBox;
+    private javax.swing.JButton BrowseEvaluation_jButton;
+    private javax.swing.JButton Browse_jButton;
+    private javax.swing.JButton Build_Model_Evaluation_jButton;
+    private javax.swing.JTextField ConsumedTimeDuration_jTextField;
+    private javax.swing.JLabel ConsumedTime_jLabel1;
+    private javax.swing.JDesktopPane Control_jDesktopPane;
+    private javax.swing.JButton Data_Next_jButton;
+    private javax.swing.JButton Data_Previous_jButton;
+    private javax.swing.JTextField Data_URL_jTextField;
+    private javax.swing.JButton Delete_Procedure_jButton1;
+    private javax.swing.JButton Delete_jButton;
+    private javax.swing.JButton Edit_Resource_jButton;
+    private javax.swing.JList Evaluation_Measurment_Outcomes_jList;
+    private javax.swing.JTextArea Evaluation_Outcomes_Details_jTextArea;
+    private javax.swing.JList Evaluation_Used_Resources_jList;
+    private javax.swing.JList Expected_MeasurmentOutcomes_jList;
+    private javax.swing.JTextArea Expected_Outcomes_Details_jTextArea;
+    private javax.swing.JList Expected_Resources_jList;
+    private javax.swing.JComboBox Goals_jComboBox;
+    private javax.swing.JList Measurments_jList;
+    private javax.swing.JTextField ModelEvaluation_URL_jTextField;
+    private javax.swing.JCheckBox ModelOverFit_jCheckBox;
+    private javax.swing.JCheckBox ModelPerformanceAcceptable_jCheckBox;
+    private javax.swing.JLabel ModelPerformance_jLabel;
+    private javax.swing.JCheckBox ModelUnderFit_jCheckBox;
+    private javax.swing.JButton ModelView_jButton;
+    private javax.swing.JList Model_MeasuredOutcomes_jList;
+    private javax.swing.JList Model_Selected_Standards_jList;
+    private javax.swing.JTextField Model_URL_jTextField;
+    private javax.swing.JList Model_Used_Resources_jList;
+    private javax.swing.JButton New_jButton1;
+    private javax.swing.JDesktopPane New_jDesktopPane;
+    private javax.swing.JTextArea Objectives_jTextArea;
+    private javax.swing.JButton Outcomes_Select_jButton;
+    private javax.swing.JButton Outcomes_UnSelect_jButton;
+    private javax.swing.JTextArea Performed_Outcomes_Details_jTextArea;
+    private javax.swing.JTabbedPane Performing_Details_TabbedPane;
+    private javax.swing.JDesktopPane Performing_Details_jDesktopPane_jDesktopPane;
+    private javax.swing.JLayeredPane Performing_jLayeredPane;
+    private javax.swing.JLabel Planning_CustomisedPlanItem_jLabel1;
+    private javax.swing.JDesktopPane Planning_Objectives_Control_jDesktopPane1;
+    private javax.swing.JDesktopPane Planning_Objectives_Control_jDesktopPane10;
+    private javax.swing.JDesktopPane Planning_Objectives_Control_jDesktopPane3;
+    private javax.swing.JLabel Planning_Planner_Name_jLabel12;
+    private javax.swing.JLabel Planning_Planner_Name_jLabel15;
+    private javax.swing.JLabel Planning_Planner_Name_jLabel16;
+    private javax.swing.JLabel Planning_Planner_Name_jLabel22;
+    private javax.swing.JLabel Planning_Planner_Name_jLabel23;
+    private javax.swing.JLabel Planning_Planner_Role_jLabel1;
+    private javax.swing.JDesktopPane Planning_Planner_info_jDesktopPane4;
+    private javax.swing.JDesktopPane Planning_Planner_jDesktopPane1;
+    private javax.swing.JDesktopPane Planning_Planner_jDesktopPane3;
+    private javax.swing.JDesktopPane Planning_Resource_jDesktopPane;
+    private javax.swing.JLabel Prerequisite_Source_ExternalSource_URL_jLabel4;
+    private javax.swing.JButton Procedure_Browse_jButton;
+    private javax.swing.JList Procedure_Project_Resources_jList;
+    private javax.swing.JList Procedure_Resources_jList;
+    private javax.swing.JTextField Procedure_URL_jTextField;
+    private javax.swing.JTextArea Procedure_jTextArea;
+    private javax.swing.JList Procedures_jList;
+    private javax.swing.JTextArea Purpose_jTextArea;
+    private javax.swing.JButton Refresh_jButton;
+    private javax.swing.JDesktopPane Reporting_Customised_jDesktopPane3;
+    private javax.swing.JDesktopPane Reporting_Customised_jDesktopPane5;
+    private javax.swing.JButton Resource_Edit_jButton;
+    private javax.swing.JDesktopPane Resource_jDesktopPane1;
+    private javax.swing.JButton Resources_Select_jButton1;
+    private javax.swing.JButton Resources_UnSelect_jButton1;
+    private javax.swing.JList Resources_jList;
+    private javax.swing.JTextPane ResultSummary_jTextPane;
+    private javax.swing.JTextPane ResultSummary_jTextPane1;
+    private javax.swing.JLabel Result_jLabel;
+    private javax.swing.JScrollPane Result_jScrollPane;
+    private javax.swing.JTextArea Result_jTextArea;
+    private javax.swing.JTextArea Result_jTextArea1;
+    private javax.swing.JButton Save_jButton;
+    private javax.swing.JComboBox Scale_jComboBox;
+    private javax.swing.JButton Select_Resource_jButton2;
+    private javax.swing.JComboBox Split_jComboBox;
+    private javax.swing.JCheckBox Supervised_jCheckBox;
+    private javax.swing.JComboBox Tasks_jComboBox;
+    private javax.swing.JTextField Technique_jTextField;
+    private javax.swing.JLabel URL_jLabel;
+    private javax.swing.JButton Unselect_Resource_jButton2;
+    private javax.swing.JButton ViewEvaluation_jButton;
+    private javax.swing.JLabel algorithm_jLabel1;
+    private javax.swing.JLabel goal_jLabel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JDesktopPane jDesktopPane8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane69;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane70;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JLabel task_jLabel;
+    // End of variables declaration//GEN-END:variables
+
+
+//PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+//****************************************************************************
+//                             Populate
+//****************************************************************************
+//PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+
+private void populateForm()
+{
+            this.repaint();
+            this.pack();
+ }
+
+
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+//                       Get Planned Objectives Model
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+public  DefaultComboBoxModel getSelectedScaleModel()
+{
+  DefaultComboBoxModel dcm=null;
+  ArrayList<String> selectedScaleList=new ArrayList<String>();
+  String[] scaleArrayNames = null;
+  if (this.qualitativeMeasure!=null)
+  {
+      if (this.qualitativeMeasure.getScale().size()>0)
+      {
+        selectedScaleList=this.qualitativeMeasure.getScale();
+        int size=selectedScaleList.size();
+        scaleArrayNames = new String[size];
+        int i=0;
+        for (Object o:selectedScaleList)
+            {
+              //--------------------------------------------------------------
+              String thisCause=(String) o;
+              //--------------------------------------------------------------
+              scaleArrayNames[i]=thisCause;
+              i=i+1;
+              //--------------------------------------------------------------
+             }
+        dcm=new DefaultComboBoxModel(scaleArrayNames);
+        return dcm;
+        }
+     else
+      {
+        String thisNames[] ={"<No category yet>"};
+        dcm=new DefaultComboBoxModel(thisNames);
+        return dcm;
+      }
+  }
+ else
+    {
+    String thisNames[] ={"<No category yet>"};
+    dcm=new DefaultComboBoxModel(thisNames);
+     return dcm;
+    }
+ }
+
+
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+//                       Get Project Remeasures Model
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+public  DefaultComboBoxModel getSelectedMeasuresModel()
+{
+  DefaultComboBoxModel dcm=null;
+  ArrayList<Measure> measuresList=new ArrayList<Measure>();
+  String[] measuresArrayNames = null;
+  if (this.techniqueSelection!=null && this.techniqueSelection.getMeasurability()!=null)
+  {
+      if ( this.techniqueSelection.getMeasurability().getMeasuresList().size()>0)
+      {
+        measuresList=this.techniqueSelection.getMeasurability().getMeasuresList();
+        int size=measuresList.size();
+        measuresArrayNames = new String[size];
+        int i=0;
+        for (Object o:measuresList)
+            {
+            String result="";
+             if (o.getClass().getSimpleName().equals("BooleanMeasure"))
+              {
+                  BooleanMeasure thisMeasure=(BooleanMeasure) o;
+                  result=thisMeasure.toString();
+              }
+              else if (o.getClass().getSimpleName().equals("QualitativeMeasure"))
+              {
+                  QualitativeMeasure thisMeasure=(QualitativeMeasure) o;
+                  result=thisMeasure.toString();
+              }
+              else if (o.getClass().getSimpleName().equals("QuantitativeMeasure"))
+              {
+                  QuantitativeMeasure thisMeasure=(QuantitativeMeasure) o;
+                  result=thisMeasure.toString();
+              }
+              else 
+              {
+                  Measure thisMeasure=(Measure) o;
+                  result=thisMeasure.toString();                  
+              }
+              measuresArrayNames[i]=result;
+              i=i+1;
+              //--------------------------------------------------------------
+             }
+        dcm=new DefaultComboBoxModel(measuresArrayNames);
+        return dcm;
+        }
+     else
+      {
+        String myNames[] ={"<No measure selected yet>"};
+        dcm=new DefaultComboBoxModel(myNames);
+        return dcm;
+      }
+  }
+ else
+    {
+    String myNames[] ={"<No measures selected yet>"};
+    dcm=new DefaultComboBoxModel(myNames);
+     return dcm;
+    }
+ }
+
+
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+//                       Get Project Remeasures Model
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+public  DefaultComboBoxModel getExpectedOutcomes()
+{
+
+ //private MeasurmentOutcome expectedOutcome =null;
+  DefaultComboBoxModel dcm=null;
+  ArrayList<MeasurmentOutcome> expectedOutcomesList=new ArrayList<MeasurmentOutcome>();
+  String[] expectedOutcomesArrayNames = null;
+  if (this.techniqueSelection!=null &&this.techniqueSelection.getSuccessCriteria()!=null &&
+      this.techniqueSelection.getSuccessCriteria().getExpectedOutcomes()!=null)
+  {
+      if ( this.techniqueSelection.getSuccessCriteria().getExpectedOutcomes().getOutcomesList().size()>0)
+      {
+        expectedOutcomesList=this.techniqueSelection.getSuccessCriteria().getExpectedOutcomes().getOutcomesList();
+        int size=expectedOutcomesList.size();
+        expectedOutcomesArrayNames = new String[size];
+        int i=0;
+        for (Object o:expectedOutcomesList)
+            {
+            String result="";
+            MeasurmentOutcome  measurmentOutcome=(MeasurmentOutcome) o;
+
+                  result=measurmentOutcome.toString();
+
+              expectedOutcomesArrayNames[i]=result;
+              i=i+1;
+              //--------------------------------------------------------------
+             }
+        dcm=new DefaultComboBoxModel(expectedOutcomesArrayNames);
+        return dcm;
+        }
+     else
+      {
+        String names[] ={"<No expected outcome selected yet>"};
+        dcm=new DefaultComboBoxModel(names);
+        return dcm;
+      }
+  }
+ else
+    {
+    String names[] ={"<No expected outcome selected yet>"};
+    dcm=new DefaultComboBoxModel(names);
+     return dcm;
+    }
+ }
+
+
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+//                       Get Project Remeasures Model
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+public  DefaultComboBoxModel getModelOutcomes()
+{
+ //private MeasurmentOutcome expectedOutcome =null;
+  DefaultComboBoxModel dcm=null;
+  ArrayList<MeasurmentOutcome> expectedOutcomesList=new ArrayList<MeasurmentOutcome>();
+  String[] expectedOutcomesArraythisNames = null;
+  if (this.model!=null &&
+//          this.model.getSuccessCriteria()!=null &&
+      this.model.getPerformance()!=null)
+  {
+      if ( this.model.getPerformance().getOutcomesList().size()>0)
+      {
+        expectedOutcomesList=this.model.getPerformance().getOutcomesList();
+        int size=expectedOutcomesList.size();
+        expectedOutcomesArraythisNames = new String[size];
+        int i=0;
+        for (Object o:expectedOutcomesList)
+            {
+            String result="";
+            MeasurmentOutcome  measurmentOutcome=(MeasurmentOutcome) o;
+
+                  result=measurmentOutcome.toString();
+
+              expectedOutcomesArraythisNames[i]=result;
+              i=i+1;
+              //--------------------------------------------------------------
+             }
+        dcm=new DefaultComboBoxModel(expectedOutcomesArraythisNames);
+        return dcm;
+        }
+     else
+      {
+        String thisNames[] ={"<No expected outcome selected yet>"};
+        dcm=new DefaultComboBoxModel(thisNames);
+        return dcm;
+      }
+  }
+ else
+    {
+    String thisNames[] ={"<No expected outcome selected yet>"};
+    dcm=new DefaultComboBoxModel(thisNames);
+     return dcm;
+    }
+ }
+
+
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+//                       Get Project Remeasures Model
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+public  DefaultComboBoxModel getEvaluationOutcomes()
+{
+  DefaultComboBoxModel dcm=null;
+  ArrayList<MeasurmentOutcome> expectedOutcomesList=new ArrayList<MeasurmentOutcome>();
+  String[] expectedOutcomesArraythisNames = null;
+  if (this.modelEvaluation!=null && this.modelEvaluation.getEvaluatedPerformance()!=null)
+  {
+      if ( this.modelEvaluation.getEvaluatedPerformance().getOutcomesList()!=null &&
+           this.modelEvaluation.getEvaluatedPerformance().getOutcomesList().size()>0)
+      {
+        expectedOutcomesList=this.modelEvaluation.getEvaluatedPerformance().getOutcomesList();
+        int size=expectedOutcomesList.size();
+        expectedOutcomesArraythisNames = new String[size];        
+        int i=0;
+        for (Object o:expectedOutcomesList)
+            {
+                String result="";
+                MeasurmentOutcome  measurmentOutcome=(MeasurmentOutcome) o;
+                result=measurmentOutcome.toString();
+                expectedOutcomesArraythisNames[i]=result;
+                i=i+1;               
+             }
+        
+        dcm=new DefaultComboBoxModel(expectedOutcomesArraythisNames);
+        return dcm;
+        }
+     else
+      {
+        String thisNames[] ={"<No expected outcome selected yet>"};
+        dcm=new DefaultComboBoxModel(thisNames);
+        return dcm;
+      }
+  }
+ else
+    {
+    String thisNames[] ={"<No expected outcome selected yet>"};
+    dcm=new DefaultComboBoxModel(thisNames);
+     return dcm;
+    }
+ }
+
+
+
+
+
+
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
+
+
+
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+//                       Get Project Resources Model
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+public  DefaultComboBoxModel getModelSelectedStandardsModel()
+{
+  DefaultComboBoxModel dcm=null;
+  ArrayList<Standard> selectedStandardsList=new ArrayList<Standard>();
+  String[] sourcesArrayNames = null;
+  if (this.model!=null && this.model.getStandards()!=null)
+  {
+      if (this.model.getStandards().getStandardsList().size()>0)
+      {
+        selectedStandardsList=this.model.getStandards().getStandardsList();
+        int size=selectedStandardsList.size();
+        sourcesArrayNames = new String[size];
+        int i=0;
+        for (Object o:selectedStandardsList)
+            {
+             String result="";
+              Standard thisStandard=(Standard) o;
+              result=thisStandard.toString();
+              sourcesArrayNames[i]=result;
+              i=i+1;
+             }
+        dcm=new DefaultComboBoxModel(sourcesArrayNames);
+        return dcm;
+        }
+     else
+      {
+        String names[] ={"<No source selected yet>"};
+        dcm=new DefaultComboBoxModel(names);
+        return dcm;
+      }
+  }
+ else
+    {
+    String names[] ={"<No source selected yet>"};
+    dcm=new DefaultComboBoxModel(names);
+     return dcm;
+    }
+ }
+
+
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+//                       Get Planned Resources Model
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+public  DefaultComboBoxModel getModelUsedResourcesModel()
+{
+  DefaultComboBoxModel dcm=null;
+  ArrayList<Resource> resourcesList=new ArrayList<Resource>();
+  String[] resourcesArrayNames = null;
+
+ if (this.model!=null &&
+//     this.model.getFeasibility()!=null &&
+     this.model.getRequirements()!=null)
+
+  {
+      if (this.model.getRequirements().getResourcesList().size()>0)
+      {
+        resourcesList=this.model.getRequirements().getResourcesList();
+        int size=resourcesList.size();
+        resourcesArrayNames = new String[size];
+        int i=0;
+        for (Object o:resourcesList)
+            {
+              Resource thisResource=(Resource) o;
+              String result="";
+              if (thisResource.getResourceType()!=null)
+                  result=thisResource.getResourceType().toString()+"  ";
+              if (thisResource.getDescription()!=null)
+                   result=result+ thisResource.getDescription();
+              resourcesArrayNames[i]=result;
+              i=i+1;
+             }
+        dcm=new DefaultComboBoxModel(resourcesArrayNames);
+        return dcm;
+        }
+     else
+      {
+        String names[] ={"<No selected resource yet>"};
+        dcm=new DefaultComboBoxModel(names);
+        return dcm;
+      }
+  }
+ else
+    {
+    String names[] ={"<No selected resource yet>"};
+    dcm=new DefaultComboBoxModel(names);
+     return dcm;
+    }
+ }
+
+
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+//                       Get Planned Resources Model
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+public  DefaultComboBoxModel getEvaluationUsedResourcesModel()
+{
+  DefaultComboBoxModel dcm=null;
+  ArrayList<Resource> resourcesList=new ArrayList<Resource>();
+  String[] resourcesArrayNames = null;
+
+ if (this.modelEvaluation!=null &&
+//     this.model.getFeasibility()!=null &&
+     this.modelEvaluation.getResources()!=null)
+
+  {
+      if (this.modelEvaluation.getResources().getResourcesList().size()>0)
+      {
+        resourcesList=this.modelEvaluation.getResources().getResourcesList();
+        int size=resourcesList.size();
+        resourcesArrayNames = new String[size];
+        int i=0;
+        for (Object o:resourcesList)
+            {
+              Resource thisResource=(Resource) o;
+              String result="";
+              if (thisResource.getResourceType()!=null)
+                  result=thisResource.getResourceType().toString()+"  ";
+              if (thisResource.getDescription()!=null)
+                   result=result+ thisResource.getDescription();
+              resourcesArrayNames[i]=result;
+              i=i+1;
+             }
+        dcm=new DefaultComboBoxModel(resourcesArrayNames);
+        return dcm;
+        }
+     else
+      {
+        String names[] ={"<No selected resource yet>"};
+        dcm=new DefaultComboBoxModel(names);
+        return dcm;
+      }
+  }
+ else
+    {
+    String names[] ={"<No selected resource yet>"};
+    dcm=new DefaultComboBoxModel(names);
+     return dcm;
+    }
+ }
+
+
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+//                       Get Project Resources Model
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+public  DefaultComboBoxModel getProjectResourcesModel()
+{
+  DefaultComboBoxModel dcm=null;
+  ArrayList<Resource> resourcesList=new ArrayList<Resource>();
+  String[] resourcesArrayNames = null;
+  if (Global.project!=null
+          && Global.project.getSupplements()!=null
+          && Global.project.getSupplements().getManagement()!=null )
+  {
+      if (  Global.project.getSupplements().getManagement().getResources()!=null
+              && Global.project.getSupplements().getManagement().getResources().getResourcesList().size()>0)
+      {
+        resourcesList=Global.project.getSupplements().getManagement().getResources().getResourcesList();
+        int size=resourcesList.size();
+        resourcesArrayNames = new String[size];
+        int i=0;
+        for (Object o:resourcesList)
+            {
+              Resource thisResource=(Resource) o;
+              String result="";
+              if (thisResource.getResourceType()!=null)
+                  result=thisResource.getResourceType().toString()+"  ";
+              if (thisResource.getDescription()!=null)
+                   result=result+ thisResource.getDescription();
+              resourcesArrayNames[i]=result;
+              i=i+1;
+             }
+        dcm=new DefaultComboBoxModel(resourcesArrayNames);
+        return dcm;
+        }
+     else
+      {
+        String names[] ={"<No resource available yet>"};
+        dcm=new DefaultComboBoxModel(names);
+        return dcm;
+      }
+  }
+ else
+    {
+    String names[] ={"<No resource available yet>"};
+    dcm=new DefaultComboBoxModel(names);
+     return dcm;
+    }
+ }
+
+
+
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+//                       Get Planned Resources Model
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+public  DefaultComboBoxModel getExpectedResourcesModel()
+{
+  DefaultComboBoxModel dcm=null;
+  ArrayList<Resource> resourcesList=new ArrayList<Resource>();
+  String[] resourcesArrayNames = null;
+
+ if (this.techniqueSelection!=null &&
+     this.techniqueSelection.getFeasibility()!=null &&
+     this.techniqueSelection.getFeasibility().getRequiredResources()!=null)
+
+  {
+      if (this.techniqueSelection.getFeasibility().getRequiredResources().getResourcesList().size()>0)
+      {
+        resourcesList=this.techniqueSelection.getFeasibility().getRequiredResources().getResourcesList();
+        int size=resourcesList.size();
+        resourcesArrayNames = new String[size];
+        int i=0;
+        for (Object o:resourcesList)
+            {
+              Resource thisResource=(Resource) o;
+              String result="";
+              if (thisResource.getResourceType()!=null)
+                  result=thisResource.getResourceType().toString()+"  ";
+              if (thisResource.getDescription()!=null)
+                   result=result+ thisResource.getDescription();
+              resourcesArrayNames[i]=result;
+              i=i+1;
+             }
+        dcm=new DefaultComboBoxModel(resourcesArrayNames);
+        return dcm;
+        }
+     else
+      {
+        String names[] ={"<No selected resource yet>"};
+        dcm=new DefaultComboBoxModel(names);
+        return dcm;
+      }
+  }
+ else
+    {
+    String names[] ={"<No selected resource yet>"};
+    dcm=new DefaultComboBoxModel(names);
+     return dcm;
+    }
+ }
+
+  //COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+//                       Get Project Remeasures Model
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+public  DefaultComboBoxModel getEvaluationProcedures()
+{
+  DefaultComboBoxModel dcm=null;
+  ArrayList<Procedure> proceduresList=new ArrayList<Procedure>();
+  String[] procedureArrayNames = null;
+  if (this.modelEvaluation!=null &&this.modelEvaluation.getValidationTest()!=null)
+  {
+      if ( this.modelEvaluation.getValidationTest().getProceduresList().size()>0)
+      {
+        proceduresList=this.modelEvaluation.getValidationTest().getProceduresList();
+        int size=proceduresList.size();
+        procedureArrayNames = new String[size];
+        int i=0;
+        for (Object o:proceduresList)
+            {
+            String result="";
+            Procedure  thisProcedure=(Procedure) o;
+            result=thisProcedure.toString();
+              procedureArrayNames[i]=result;
+              i=i+1;
+              //--------------------------------------------------------------
+             }
+        dcm=new DefaultComboBoxModel(procedureArrayNames);
+        return dcm;
+        }
+     else
+      {
+        String names[] ={"<No Validation Procedures Yet>"};
+        dcm=new DefaultComboBoxModel(names);
+        return dcm;
+      }
+  }
+ else
+    {
+    String names[] ={"<No Validation Procedures Yet>"};
+    dcm=new DefaultComboBoxModel(names);
+     return dcm;
+    }
+ }
+
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+//                       Get Planned Resources Model
+//COMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOCOMPOC
+public  DefaultComboBoxModel getEvaluationProcedureResourcesModel()
+{
+  DefaultComboBoxModel dcm=null;
+  ArrayList<Resource> resourcesList=new ArrayList<Resource>();
+  String[] resourcesArrayNames = null;
+
+ if (this.procedure!=null &&
+     this.procedure.getResources()!=null )
+
+  {
+      if (this.procedure.getResources().getResourcesList().size()>0)
+      {
+        resourcesList=this.procedure.getResources().getResourcesList();
+        int size=resourcesList.size();
+        resourcesArrayNames = new String[size];
+        int i=0;
+        for (Object o:resourcesList)
+            {
+              Resource thisResource=(Resource) o;
+              String result="";
+              if (thisResource.getResourceType()!=null)
+                  result=thisResource.getResourceType().toString()+"  ";
+              if (thisResource.getDescription()!=null)
+                   result=result+ thisResource.getDescription();
+              resourcesArrayNames[i]=result;
+              i=i+1;
+             }
+        dcm=new DefaultComboBoxModel(resourcesArrayNames);
+        return dcm;
+        }
+     else
+      {
+        String names[] ={"<No selected resource yet>"};
+        dcm=new DefaultComboBoxModel(names);
+        return dcm;
+      }
+  }
+ else
+    {
+    String names[] ={"<No selected resource yet>"};
+    dcm=new DefaultComboBoxModel(names);
+     return dcm;
+    }
+ }
+
+
+
+}

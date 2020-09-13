@@ -1,0 +1,57 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+// <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
+// #[regen=yes,id=DCE.D1D73AFD-EE39-54FA-21C8-45B51FCAAEC1]
+// </editor-fold> 
+public class MetabolomicsObjectiveForm {
+
+    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
+    // #[regen=yes,id=DCE.A985CA11-B408-5D0B-0036-89883C7811A2]
+    // </editor-fold> 
+    int x;
+
+    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
+    // #[regen=yes,id=DCE.D9F1E88F-7CAB-E95B-5D81-1EC83CC7B451]
+    // </editor-fold> 
+    int y;
+
+    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
+    // #[regen=yes,id=DCE.3699C158-73A6-25E2-5EAC-8ADEE86278A3]
+    // </editor-fold> 
+    public MetabolomicsObjectiveForm () {
+        
+    }
+
+    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
+    // #[regen=yes,id=DCE.CC645EF9-D1DF-281E-B3E6-3C11156E631D]
+    // </editor-fold> 
+    public int getX () {
+        return x;
+    }
+
+    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
+    // #[regen=yes,id=DCE.9B5C43D2-DFD7-FA20-F65E-F2FAB69C1729]
+    // </editor-fold> 
+    public int getY () {
+        return y;
+    }
+
+    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
+    // #[regen=yes,id=DCE.B0F50382-4F57-A4FA-3F71-B3FF72A7BCA0]
+    // </editor-fold> 
+    public void setX (int x) {
+        this.x = x;
+    }
+
+    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
+    // #[regen=yes,id=DCE.8491C266-F590-268C-CC76-D93E17C0F585]
+    // </editor-fold> 
+    public void setY (int y) {
+        this.y = y;
+    }
+    
+    
+}

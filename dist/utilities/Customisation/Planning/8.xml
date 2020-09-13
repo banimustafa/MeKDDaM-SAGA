@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<planning xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>1. Review the knowledge representation features required for metabolomics data min- ing, which were identified in chapter chap:Requirements(see section 4.5)</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>1. Review the knowledge representation features required for metabolomics data min- ing, which were identified in chapter chap:Requirements(see section 4.5)</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <resources/>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>2. Identify the requirements and preferences of the domain expert regarding the knowl- edge representation.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>2. Identify the requirements and preferences of the domain expert regarding the knowl- edge representation.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>MANAGEMENT_RELATED</objectiveType>
+                <presetDescription>2. The presented Knowledge must be interpretable and comprehendible by the domain expert.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>2. The presented Knowledge must be interpretable and comprehendible by the domain expert.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>3. Knowledge presentation must support human interaction,  e.g.  the adjustment of the model inputs and parameters, and evaluating it impacts on the outcomes of the model.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>3. Knowledge presentation must support human interaction,  e.g.  the adjustment of the model inputs and parameters, and evaluating it impacts on the outcomes of the model.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>5. Knowledge  presentation  should  be performed  according  to  metabolomics  domain expert  perspective,  as the  domain expert  is  the  principle  knowledge  presentation stake holder.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>5. Knowledge  presentation  should  be performed  according  to  metabolomics  domain expert  perspective,  as the  domain expert  is  the  principle  knowledge  presentation stake holder.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>3. Match the defined knowledge representation features and facilities in step 1 and the identified domain expert requirements in step 2 to the available data mining model representation techniques and tools (see section 6.2.8).</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>3. Match the defined knowledge representation features and facilities in step 1 and the identified domain expert requirements in step 2 to the available data mining model representation techniques and tools (see section 6.2.8).</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>5. Knowledge  presentation  should  be performed  according  to  metabolomics  domain expert  perspective,  as the  domain expert  is  the  principle  knowledge  presentation stake holder.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>5. Knowledge  presentation  should  be performed  according  to  metabolomics  domain expert  perspective,  as the  domain expert  is  the  principle  knowledge  presentation stake holder.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>4. Assess the requirements of the decided representation technique, including: software tools, hardware and expertise as well as inputs, parameters, and expected outputs, and application  constraints,  including:  time,  cost,  and expertise  as  well  as  the availability of the software and hardware infrastructure.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>4. Assess the requirements of the decided representation technique, including: software tools, hardware and expertise as well as inputs, parameters, and expected outputs, and application  constraints,  including:  time,  cost,  and expertise  as  well  as  the availability of the software and hardware infrastructure.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>MANAGEMENT_RELATED</objectiveType>
+                <presetDescription>2. The presented Knowledge must be interpretable and comprehendible by the domain expert.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>2. The presented Knowledge must be interpretable and comprehendible by the domain expert.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>3. Knowledge presentation must support human interaction,  e.g.  the adjustment of the model inputs and parameters, and evaluating it impacts on the outcomes of the model.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>3. Knowledge presentation must support human interaction,  e.g.  the adjustment of the model inputs and parameters, and evaluating it impacts on the outcomes of the model.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>4. Knowledge presentation must support traceability of model inputs, parameters, justifications, decisions and outcomes.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>4. Knowledge presentation must support traceability of model inputs, parameters, justifications, decisions and outcomes.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>5. Knowledge  presentation  should  be performed  according  to  metabolomics  domain expert  perspective,  as the  domain expert  is  the  principle  knowledge  presentation stake holder.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>5. Knowledge  presentation  should  be performed  according  to  metabolomics  domain expert  perspective,  as the  domain expert  is  the  principle  knowledge  presentation stake holder.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>7. Knowledge presentation must encourage visualisation where possible.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>7. Knowledge presentation must encourage visualisation where possible.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>6. Knowledge presentation must allow multiple presentation of the same model that reflects the knowledge from different perspectives.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>6. Knowledge presentation must allow multiple presentation of the same model that reflects the knowledge from different perspectives.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>5. Prototype the data mining model representation iteratively through the steps 3-4 until the desired features are satisfied, the requirements of the domain expert are met, and the phase objectives are achieved.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>5. Prototype the data mining model representation iteratively through the steps 3-4 until the desired features are satisfied, the requirements of the domain expert are met, and the phase objectives are achieved.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>3. Knowledge presentation must support human interaction,  e.g.  the adjustment of the model inputs and parameters, and evaluating it impacts on the outcomes of the model.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>3. Knowledge presentation must support human interaction,  e.g.  the adjustment of the model inputs and parameters, and evaluating it impacts on the outcomes of the model.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>5. Evaluate the data mining model representation (to be carried out by domain expert) interpretability as a metabolomics knowledge.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>6. Evaluate the data mining model representation (to be carried out by domain expert) interpretability as a metabolomics knowledge.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Computer Science Dept,
+ Aberysswtyth  University,  Wales, UK</contactDetails>
+            <name>Nigel Hardy</name>
+            <role>DOMAIN_EXPERT</role>
+            <level>POFESSIONAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>5. Knowledge  presentation  should  be performed  according  to  metabolomics  domain expert  perspective,  as the  domain expert  is  the  principle  knowledge  presentation stake holder.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>5. Knowledge  presentation  should  be performed  according  to  metabolomics  domain expert  perspective,  as the  domain expert  is  the  principle  knowledge  presentation stake holder.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>3. Knowledge presentation must support human interaction,  e.g.  the adjustment of the model inputs and parameters, and evaluating it impacts on the outcomes of the model.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>3. Knowledge presentation must support human interaction,  e.g.  the adjustment of the model inputs and parameters, and evaluating it impacts on the outcomes of the model.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+    <planList xsi:type="plan" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <presetPlanItem>
+            <description>7. Present the successful model representation as a metabolomics knowledge.</description>
+            <subPlanList xsi:type="planItem">
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </presetPlanItem>
+        <customisedPlanItem>
+            <description>7. Present the successful model representation as a metabolomics knowledge.</description>
+            <subPlanList xsi:type="planItem">
+                <description></description>
+                <optional>false</optional>
+            </subPlanList>
+            <optional>false</optional>
+        </customisedPlanItem>
+        <planner>
+            <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+            <name>Ahmed BaniMustafa</name>
+            <role>DATA_MINER</role>
+            <level>NORMAL</level>
+        </planner>
+        <objectives version="1">
+            <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+            <objectivesList xsi:type="phaseObjective" version="1">
+                <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+                <objectiveType>FUNCTIONAL</objectiveType>
+                <presetDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</presetDescription>
+                <fulfilled>false</fulfilled>
+                <customisedDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</customisedDescription>
+                <customised>true</customised>
+            </objectivesList>
+        </objectives>
+        <customised>true</customised>
+        <performed>false</performed>
+    </planList>
+</planning>

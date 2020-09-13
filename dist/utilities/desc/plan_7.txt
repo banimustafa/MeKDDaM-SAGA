@@ -1,0 +1,7 @@
+1. Test the data mining model, which was built in phase 6 using the data acclimatised in phase 5 and allocated for model testing.
+2. Measure the model performance according to the criteria defined in phase 4, e.g. accuracy, sensitivity, specificity, scalability, etc.
+3. Validate the model fitness (over-fitness or under-fitness).
+4. Assess the model fulfilment of the defined process objectives.
+5. Assess the model according to the success criteria defined in the process objective, e.g.  classify samples, uncovering interesting/ hidden patterns, trends, or relation- ships in the data.
+6. Assess the model according to the success criteria defined in the technique selection phase.
+7. In the case of obtaining unsatisfactory results from the steps 1-6, consider selecting a different  data  mining technique  and building an alternative  model  or a combination of models.  This can be done by performing feedback to technique selection phase, and re-running the data acclimatisation, model building, and model evaluation phases.

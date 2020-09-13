@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<objectives xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1" xsi:schemaLocation=" " xsi:noNamespaceSchemaLocation=" ">
+    <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>1. Presenting the discovered knowledge according to the requirements and preferences of the domain expert.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <objectiveType>MANAGEMENT_RELATED</objectiveType>
+        <presetDescription>2. The presented Knowledge must be interpretable and comprehendible by the domain expert.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>2. The presented Knowledge must be interpretable and comprehendible by the domain expert.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>3. Knowledge presentation must support human interaction,  e.g.  the adjustment of the model inputs and parameters, and evaluating it impacts on the outcomes of the model.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>3. Knowledge presentation must support human interaction,  e.g.  the adjustment of the model inputs and parameters, and evaluating it impacts on the outcomes of the model.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>4. Knowledge presentation must support traceability of model inputs, parameters, justifications, decisions and outcomes.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>4. Knowledge presentation must support traceability of model inputs, parameters, justifications, decisions and outcomes.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>5. Knowledge  presentation  should  be performed  according  to  metabolomics  domain expert  perspective,  as the  domain expert  is  the  principle  knowledge  presentation stake holder.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>5. Knowledge  presentation  should  be performed  according  to  metabolomics  domain expert  perspective,  as the  domain expert  is  the  principle  knowledge  presentation stake holder.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>6. Knowledge presentation must allow multiple presentation of the same model that reflects the knowledge from different perspectives.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>6. Knowledge presentation must allow multiple presentation of the same model that reflects the knowledge from different perspectives.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+    <objectivesList xsi:type="phaseObjective" version="1">
+        <dateTime>Mon Mar 12 16:49:21 GMT 2012</dateTime>
+        <objectiveType>FUNCTIONAL</objectiveType>
+        <presetDescription>7. Knowledge presentation must encourage visualisation where possible.</presetDescription>
+        <fulfilled>false</fulfilled>
+        <customisedDescription>7. Knowledge presentation must encourage visualisation where possible.</customisedDescription>
+        <customised>true</customised>
+    </objectivesList>
+</objectives>

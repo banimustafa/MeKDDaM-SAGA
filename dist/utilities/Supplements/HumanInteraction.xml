@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<humanInteraction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="">
+    <analystsList xsi:type="analyst">
+        <contactDetails>Aberyswtyth, wales, UK</contactDetails>
+        <name>Ahmed BaniMustafa</name>
+        <role>DATA_MINER</role>
+        <level>NORMAL</level>
+    </analystsList>
+    <analystsList xsi:type="analyst">
+        <contactDetails>Computer Science Dept,
+ Aberysswtyth  University,  Wales, UK</contactDetails>
+        <name>Nigel Hardy</name>
+        <role>DOMAIN_EXPERT</role>
+        <level>POFESSIONAL</level>
+    </analystsList>
+</humanInteraction>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<quality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="">
+    <specificationsList xsi:type="qualitySpecification" version="1">
+        <dateTime>Tue Mar 13 12:23:44 GMT 2012</dateTime>
+        <description>This quality assurance ploicy document 
+describes the quality assurance policy of the analysed data</description>
+        <domainType>DATA</domainType>
+        <qualityType>NON_FUNCTIONAL</qualityType>
+        <specificationURL>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Documents/quality/data_quality_assurance_policy.txt</specificationURL>
+        <release>1.0</release>
+    </specificationsList>
+    <specificationsList xsi:type="qualitySpecification" version="1">
+        <dateTime>Tue Mar 13 12:23:44 GMT 2012</dateTime>
+        <description>This document describes 
+the standard policy regarding the process execution</description>
+        <domainType>PROCEDURES</domainType>
+        <qualityType>FUNCTIONAL</qualityType>
+        <specificationURL>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Documents/quality/procedures_quality_assurance_policy.txt</specificationURL>
+        <release>2.0</release>
+    </specificationsList>
+    <specificationsList xsi:type="qualitySpecification" version="1">
+        <dateTime>Tue Mar 13 12:23:44 GMT 2012</dateTime>
+        <description>This quality document describes 
+the quality asurance of the process reports.</description>
+        <domainType>REPORTS</domainType>
+        <qualityType>NON_FUNCTIONAL</qualityType>
+        <specificationURL>file:/E:/PhD/PhD/PhDThesis/PhDApplication/Application_Documents/quality/reports_quality_assurance_policy.txt</specificationURL>
+        <release>3.0</release>
+    </specificationsList>
+</quality>
